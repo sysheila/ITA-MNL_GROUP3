@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="ISO-8859-1">
+<head>
+<title>Javascript Earth</title>
+<script src="jquery.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	console.log("\nEXERCISE 5\n");
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
+	var yyyy = today.getFullYear();
+	var dayArr = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+	if(dd<10) {
+	    dd = '0'+dd
+	} 
+
+	if(mm<10) {
+	    mm = '0'+mm
+	} 
+	
+	var hour = today.getHours()<12 ? today.getHours() : today.getHours()-12;
+	var type = today.getHours()<12 ? "AM" : "PM";
+	var current = "Today is "+dayArr[today.getDay()-1]+". Current time is "+hour+":"+today.getMinutes()+":"+today.getSeconds()+" "+type;
+	
+	console.log("Today is "+dayArr[today.getDay()-1]);
+	console.log("Current time is "+hour+":"+today.getMinutes()+":"+today.getSeconds()+" "+type);
+	
+	console.log("\nEXERCISE 6\n");
+	areaTriangle(5, 6, 7);
+	
+	function areaTriangle(a, b, c){
+		var s = 0.5*(a+b+c);
+		var area = s*((s-a)*(s-b)*(s-c));
+		console.log("The square root of Triangle ("+a+","+b+","+c+") is "+Math.sqrt(area));
+		return Math.sqrt(area);
+	}
+	
+	console.log("\nEXERCISE 7\n");
+	camelize("hello po");
+	camelize("JavaScript Hello");
+	
+	function camelize(str){
+		var splitStr = str.split(/[\s]+/);
+		var finalStr = "";
+		console.log(str);
+		console.log(splitStr);
+		
+		for(var i=0; i<splitStr.length; i++){
+			if(i==0){
+				finalStr+= lowerCaseFirstLetter(splitStr[i]);
+			}else{
+				finalStr+= capitalizeFirstLetter(splitStr[i]);
+			}
+		}
+		console.log(finalStr);
+		return finalStr;
+	}
+	
+	function capitalizeFirstLetter(string) {
+	    return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+	function lowerCaseFirstLetter(string) {
+	    return string.charAt(0).toLowerCase() + string.slice(1);
+	}
+	
+	console.log("\nEXERCISE 8\n");
+	
+	for(var i = 2008; i<=2017; i++){
+		isLeap = new Date(i, 1, 29).getMonth() == 1;
+		console.log(i + " Leap? " + isLeap);
+	}
+	
+	function isLeapYear(year){
+		isLeap = new Date(year, 1, 29).getMonth() == 1;
+		return isLeap;
+	}
+	
+	console.log("\nEXERCISE 9\n");
+	
+	var example = "Example";
+	
+	stringInverter(example);
+	
+	function stringInverter(str){
+		var strArr = example.split('');
+		var newArr = "";
+		for(var i=(strArr.length-1); i>=0; i--){
+			newArr+=strArr[i];
+		}
+		console.log(example + " to " +newArr);
+		return newArr;
+	}
+	
+	console.log("\nEXERCISE 10\n");	
+	factor(5);
+	function factor(number){
+		var res = 0;
+		for(var i=number; i>1; i--){
+			if(res==0){
+				res= i*(i-1);
+			}
+			else{
+				res=res*(i-1);
+			}
+			// console.log(i+" * "+(i-1)+" "+res);
+		}
+		console.log("Factorial of "+number +" = "+res);
+		return res;
+		
+	}
+
+	console.log("\nExercise 11\n");
+	//String God
+	
+	console.log("\nExercise 12\n");
+	console.log(isNumber("A"))
+	console.log(isNumber(5))
+	console.log(isNumber(5.0))
+	console.log(isNumber("1Ab"))
+	console.log(isNumber(false))
+	
+	function isNumber(number){
+		return !isNaN(parseFloat(number)) && isFinite(number);
+	}
+	
+	console.log("\nExercise 13\n");
+	//Prime Number
+	var limit = 100;
+	
+	$(document).ready(function(){
+		$("#today").append(current);
+		$("#btnGetArea").click(function(){
+			var side1 = parseInt($("#txtTri1").val());
+			var side2 = parseInt($("#txtTri2").val());
+			var side3 = parseInt($("#txtTri3").val());
+			console.log($("#txtTri2").val());
+			
+			var area = areaTriangle(side1, side2, side3);
+			console.log(area);
+			$("#areaResult").text(area);
+		});
+		$("#btnCamel").click(function(){
+			var camelText = $("#txtCamel").val();
+			var result = camelize(camelText);
+			$("#lblCamel").text(result);
+		});
+		$("#btnLeap").click(function(){
+
+			var txtYear = parseInt($("#txtLeap").val());
+			var result = isLeapYear(txtYear) ? "Yaas!" : "Nope.";
+			$("#lblLeap").text(result);
+		});
+		$("#btnInvert").click(function(){
+			var txtInvert = $("#txtInvert").val();
+			var result = stringInverter(txtInvert);
+			$("#lblInvert").text(result);
+		});
+		$("#btnFactorial").click(function(){
+			var txtFactorial = parseInt($("#txtFactorial").val());
+			var result = factor(txtFactorial);
+			$("#lblFactorial").text(result);
+		});
+		$("#btnNumeric").click(function(){
+			var txtNumeric = $("#txtNumeric").val();
+			var result = isNumber(txtNumeric) ? "Yes, it is." : "No, not this one.";
+			$("#lblNumeric").text(result);
+		});
+	});
+	
+	
+</script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h2 class="text"><p id="today"></p></h2>
+			</div>
+		</div>
+		<div class="row well">
+			<div class="col-md-6 col-md-offset-3">
+				<h3>Area of Triangle</h3>
+				<input type="text" class="form-control" name="txtTri1" id="txtTri1" placeholder="Side A"/>
+				<input type="text" class="form-control" name="txtTri2" id="txtTri2" placeholder="Side B"/>
+				<input type="text" class="form-control" name="txtTri3" id="txtTri3" placeholder="Side C"/>
+				<button type="button" id="btnGetArea" name="btnGetArea" class="btn btn-info">Compute Area</button>
+				<h5>Result : <label id="areaResult"></label></h5>
+			</div>
+		</div>
+		<div class="row well">
+			<div class="col-md-6 col-md-offset-3">
+				<h3>Camel Case</h3>
+				<input type="text" class="form-control" name="txtCamel" id="txtCamel" placeholder="Enter 1 or more words"/>
+				<button type="button" id="btnCamel" name="btnCamel" class="btn btn-info">Go</button>
+				<h5>Camel Case : <label id="lblCamel"></label></h5>
+			</div>
+		</div>
+		<div class="row well">
+			<div class="col-md-6 col-md-offset-3">
+				<h3>Is it a Leap Year?</h3>
+				<input type="text" class="form-control" name="txtLeap" id="txtLeap" placeholder="Enter a year"/>
+				<button type="button" id="btnLeap" name="btnLeap" class="btn btn-info">Check</button>
+				<h5>Is it? <label id="lblLeap"></label></h5>
+			</div>
+		</div>
+		<div class="row well">
+			<div class="col-md-6 col-md-offset-3">
+				<h3>Invert a String</h3>
+				<input type="text" class="form-control" name="txtInvert" id="txtInvert" placeholder="Enter a word"/>
+				<button type="button" id="btnInvert" name="btnInvert" class="btn btn-info">Invert</button>
+				<h5>The Inverted: <label id="lblInvert"></label></h5>
+			</div>
+		</div>
+		<div class="row well">
+			<div class="col-md-6 col-md-offset-3">
+				<h3>Factorial</h3>
+				<input type="text" class="form-control" name="txtFactorial" id="txtFactorial" placeholder="Enter a number"/>
+				<button type="button" id="btnFactorial" name="btnFactorial" class="btn btn-info">Go</button>
+				<h5>Result: <label id="lblFactorial"></label></h5>
+			</div>
+		</div>
+		<div class="row well">
+			<div class="col-md-6 col-md-offset-3">
+				<h3>Check if Numeric</h3>
+				<input type="text" class="form-control" name="txtNumeric" id="txtNumeric" placeholder="Enter anything"/>
+				<button type="button" id="btnNumeric" name="btnNumeric" class="btn btn-info">Go</button>
+				<h5>Well? <label id="lblNumeric"></label></h5>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
