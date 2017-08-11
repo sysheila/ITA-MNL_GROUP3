@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Howdie</title>
+<head>
+	<!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+</head>
+
+
+<script type="text/javascript">
+
+
+function factorialNum() {
+	//var f = [];
+	var n = document.forms.factorial.number.value;
+
+	  if(n == 0) {
+        displayNum(1);
+	  } else {
+        product = 1;
+        for(i = 1; i<= n; i++) {
+            product *= i;
+        }
+        displayNum( product);
+    }
+
+  }
+
+function displayNum(num){
+	document.getElementById('factorials').innerHTML = "Factorial: " +num;
+}
+
+function generateStringCombi(){
+	var f =[];
+	var n = [];
+	var string=document.getElementById("stringCombination").value;
+	for(i=0; i<string.length;i++){
+		for(j=i; j<string.length; j++){
+			if(i==j){
+				f.push(string[i]);
+			}
+			else{
+				f.push(f[f.length-1] + string[j]);
+			}
+		}
+	}
+	alert(f);
+}
+
+function reverseString(){
+	var string = document.getElementById("reverseStrings").value;
+	alert( string.split("").reverse().join(""));
+}
+
+function leapYearNum(){
+	var leapYearNum = document.getElementById("leapYear").value;
+	alert(leapYearNum);
+	if((leapYearNum%4)==0){
+		alert("Yes");
+	}
+	else{
+		alert("No");
+	}
+}
+
+function calendarTime(){
+	var today = new Date();
+	var day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+	var d = today.getDay();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1;
+	var yyyy = today.getFullYear();
+	var hh = today.getHours();
+	var MM = today.getMinutes();
+	var ss = today.getSeconds();
+
+	if(dd<10) {
+		dd = '0'+dd
+	} 
+
+	if(mm<10) {
+		mm = '0'+mm
+	} 
+	
+	if(hh>12){
+		hh = hh-12;
+		hh = hh + ' PM ';
+	}
+	d = day[d];
+	today = mm + '/' + dd + '/' + yyyy;
+	alert("Today is: " + d + " " + today +  "\n" + hh + " : " + MM + " : " + ss);
+}
+
+function computeTriangle(){
+	var sideA = parseInt(document.getElementById("sideA").value);
+	var sideB = parseInt(document.getElementById("sideB").value);
+	var sideC = parseInt(document.getElementById("sideC").value);
+	var p = ((sideA+sideB+sideC)/2);
+	var area = Math.sqrt((p*(p-sideA)*(p-sideB)*(p-sideC)));
+	alert(area.toFixed(2));
+}
+
+function cammelize(){
+	var stringArr = [];
+	var newStringArr = [];
+	var string = document.getElementById("cammelCaseStr").value;
+	stringArr = string.split(' ');
+	for(i=0; i<stringArr.length;i++){
+		newStringArr.push(stringArr[i].charAt(0).toUpperCase()+(stringArr[i].substring(1,stringArr[i].length)));
+	}
+	newStringArr = newStringArr.toString().replace(",", '');
+	alert(newStringArr);
+}
+
+function isNumeric(){
+	var string = document.getElementById("numericNum").value;
+	var pattern = /^-*\d*\.*\d+$/;
+	if(string.match(pattern)){
+		alert("Yes");
+	}
+	else{
+		alert("No");
+	}
+}
+
+function primeFactorsTo(){
+	var prim = document.getElementById("prime").value;
+	var prim1 = [2,3,5,7,9];
+	var arr = [];
+	for(i=prim; i>0; i--){
+		if((i%3==0)&&(i%5==0)&&(i%7==0) ){
+			arr.push(i);
+		}
+	}
+	alert(arr);
+}
+
+</script>
+<body>
+	
+    
+	<div  class="container" id="factorialDiv">
+		<form  id="factorial">
+		    <div>
+		        <input id="number" type="number" >
+		     	<button name = "button" value = "OK" type = "button" onclick="javascript: factorialNum();">Enter</button>
+		   </div>
+		    
+		    <div class="col-sm-offset-2 col-sm-8">
+				    	<label id="factorials">Factorial:</label>
+			</div>
+		</form>
+	 </div>
+	 
+	<div id="stringCombi">
+		<form  id="stringCombi">
+		    <div>
+		        <input id="stringCombination" type="name" >
+		     	<button name = "button" value = "OK" type = "button" onclick="javascript: generateStringCombi();">Generate</button>
+		   </div>
+		    
+		    <div class="col-sm-offset-2 col-sm-8">
+				    	<label id="combi">Combi:</label>
+			</div>
+		</form>
+	 </div>
+	 
+	 <div id="reverseStringDiv">
+		<form id="reverseArr">
+		    <div>
+		        <input id="reverseStrings" type="name" >
+		     	<button name = "button" value = "OK" type = "button" onclick="javascript: reverseString();">Reverse</button>
+		   </div>
+		    
+		    <div class="col-sm-offset-2 col-sm-8">
+				    	<label id="combi">Reverse:</label>
+			</div>
+		</form>
+	 </div>
+	 
+	 <div id="leapYearDiv">
+		<form>
+		    <div>
+		        <input id="leapYear" type="number" >
+		     	<button name = "button" value = "OK" type = "button" onclick="javascript: leapYearNum();">LeapYear</button>
+		   </div>
+		    
+		    <div class="col-sm-offset-2 col-sm-8">
+				    	<label id="combi">Leap Year:</label>
+			</div>
+		</form>
+	 </div>
+	 
+	 <div id="calendarTimeDiv">
+		<form>
+		    <div>
+		        <label id="calendarTimeLabel">Calendar/Time:</label>
+		     	<button name = "button" value = "OK" type = "button" onclick="javascript: calendarTime();">Calendar/Time</button>
+		   </div>
+		</form>
+	 </div>
+	 
+	<div id="triangleDiv">
+		<form>
+		    <div>
+				<input id="sideA" type="number" >
+				<input id="sideB" type="number" >
+				<input id="sideC" type="number" >
+		        <label id="triangle"> Area is: </label>
+		     	<button name = "button" value = "OK" type = "button" onclick="javascript: computeTriangle();">Compute</button>
+		   </div>
+		</form>
+	 </div>
+	 
+	 <div id="cammelCaseDiv">
+		<form>
+		    <div>
+		        <input id="cammelCaseStr" type="name" >
+		     	<button name = "button" value = "OK" type = "button" onclick="javascript: cammelize();">Cammelize</button>
+		   </div>
+		    
+		    <div class="col-sm-offset-2 col-sm-8">
+				    	<label id="cam">Cammelize:</label>
+			</div>
+		</form>
+	 </div>
+	 
+	  <div id="numericDiv">
+		<form>
+		    <div>
+		        <input id="numericNum" type="name" >
+		     	<button name = "button" value = "OK" type = "button" onclick="javascript: isNumeric();">Numeric</button>
+		   </div>
+		    
+		    <div class="col-sm-offset-2 col-sm-8">
+				    	<label id="numer">Numeric:</label>
+			</div>
+		</form>
+	 </div>
+	 
+	 <div id="primeDiv">
+		<form>
+		    <div>
+		        <input id="prime" type="name" >
+		     	<button name = "button" value = "OK" type = "button" onclick="javascript: primeFactorsTo();">Prime</button>
+		   </div>
+		    
+		    <div class="col-sm-offset-2 col-sm-8">
+				    	<label id="prim">Prime:</label>
+			</div>
+		</form>
+	 </div>
+	 
+	
+	
+</body>
+</html>
