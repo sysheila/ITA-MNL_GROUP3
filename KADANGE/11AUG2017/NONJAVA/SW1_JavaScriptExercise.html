@@ -9,22 +9,11 @@
 			var factForm = document.getElementById("factorialForm");
 			var factorial = parseInt(factForm.elements.inputFacNum.value);
 			var ctr = 0;
-			var result = factorial;
 			if(factorial>=0){
-				while(factorial>1){				
-					var x=factorial-1;
-					result = parseInt(result)*parseInt(x);
-					
-					console.log("factorial: "+factorial);
-					console.log("x: "+x);
-					console.log("result: "+result);
-					factorial--;
+				var result = 1;
+				for(var x=0;x<factorial;x++){
+					result = result*(x+1);
 				}
-				/* while(ctr<=factorial){
-					var x=ctr+1;
-					result = ctr*x;
-					ctr++;
-				} */
 				alert("Factorial: "+result);
 			}else{
 				alert("Invalid number");
@@ -33,15 +22,15 @@
 		//String combination
 		function stringCombination(){
 			var input = document.getElementById("stringRandomForm").elements.inputStringRand.value;
-			var output="";
+			var output = new Array();
 			for (var i = 0; i < input.length; i++) {
-				var comb = input.charAt(i);
-				output = output+comb+"\n";
-				//console.log(comb);
+				var char = input.substring(i,i+1);
+				output.push(input.substring(i,i+1));
 				for (var j = i + 1; j < input.length; j++) {
-					//console.log(comb += input.charAt(j));
+					output.push(char = char+input.substring(j,j+1));
 				}
 			}
+			alert(output);
 		}
 
 		//Reverse String
@@ -80,10 +69,14 @@
 		//Check leap year
 		function checkLeapYear(){
 			var year = document.getElementById("leapYearCheckerForm").elements.inputLeapYear.value;
-			if(year%4==0){
-				alert("Year: "+year+" is a leap year");
+			if(year.length==0){
+				alert("No year entered");
 			}else{
-				alert("Year: "+year+" is not a leap year");
+				if(year%4==0){
+					alert("Year: "+year+" is a leap year");
+				}else{
+					alert("Year: "+year+" is not a leap year");
+				}
 			}
 		}
 		
@@ -94,17 +87,19 @@
 			var testRes2 = check('1.5'); */
 			console.log(check('1.5'));
 			console.log(check('qwe'));
-			if(!check(input)){
+			if(input=="" || check(input)){
 				alert(input+" is not a number");
 			}else{
 				alert(input+" is a number");
 			}
 		}
 		function check(input){
-			if(parseFloat(input).toString()=="NaN"){
-				return false;
-			}else{
+			if(Number(input)!="NaN"){
+				console.log(Number(input));
 				return true;
+			}else{
+				console.log(Number(input));
+				return false;
 			}
 		}
 		
@@ -119,43 +114,31 @@
 			}
 			for(var x=0;x<numList.length;x++){
 				var flag = false;
-				if(numList[x]<=2){
-					console.log(numList[x]);
-					if(numList[x]==2){
+				if(numList[x]<=7){
+					if(numList[x]==2 || numList[x]==3 || numList[x]==5 || numList[x]==7){
 						primeList.push(numList[x]);
-						console.log(primeList[x]);
 					}
 					continue;
 				}
-				/* var ctr=0;
-				while(ctr<numList.length){
-					if(!numList[ctr]%primeList[ctr]){
-						primeList.push(numList[ctr]);
-					}
-				} */
-				if(!primeList.includes(numList[x])){
-					if(numList[x]%2!=0){
-						console.log(numList[x]);
-						primeList.push(numList[x]);
-						console.log(primeList[x]);
-					}else{
-						/* if(numList[x]%2!=0){
-							if(numList[x]%3!=0){
-								console.log(numList[x]);
-								primeList.push(numList[x]);
-								console.log(primeList[x]);
-							}
-						} */
-						if(!(numList[x]%2!=0) && numList[x]%3!=0){
-							console.log(numList[x]);
-							primeList.push(numList[x]);
-							console.log(primeList[x]);
-						} 
-					}
+				if(numList[x]%2==0 || numList[x]%3==0 || numList[x]%5==0 || numList[x]%7==0){
+					
+				}else{
+					primeList.push(numList[x]);
 				}
 			}
 			alert(primeList);
-			alert(numList);
+		}
+		
+		//Get Area of Triangle
+		function computeAreaOfTri(){
+			var input = document.getElementById("triangleAreaForm").elements.inputTriangleArea.value.split(" ");
+			if(input.length<3){
+				alert('Input must be "A B C" where A,B, and C is a number')
+			}else{
+				var perimeter = (parseInt(input[0])+parseInt(input[1])+parseInt(input[2]))/2;
+				var area = Math.sqrt(perimeter*(perimeter-parseInt(input[0]))*(perimeter-parseInt(input[1]))*(perimeter-parseInt(input[2])));
+				alert("The area of "+input+" is "+area);
+			}
 		}
 	</script>
 </head>
@@ -187,7 +170,7 @@
 		</form>
 		
 		<form id="leapYearCheckerForm">
-			Enter String: <input id="inputLeapYear" type="number" name="input" min="1000"/>
+			Enter String: <input id="inputLeapYear" type="number" name="input" min="1000" />
 			<input type="button" onclick="checkLeapYear()" value="Leap Year"/>
 		</form>
 		
@@ -199,6 +182,11 @@
 		<form id="primeNumberListForm">
 			Enter String: <input id="inputPrimeNumber" type="text" name="input"/>
 			<input type="button" onclick="getPrimeNumberList()" value="Get Prime Number"/>
+		</form>
+		
+		<form id="triangleAreaForm">
+			Enter String: <input id="inputTriangleArea" type="text" name="input" value="5 6 7"/>
+			<input type="button" onclick="computeAreaOfTri()" value="Compute Area"/>
 		</form>
 		
 	</div>
