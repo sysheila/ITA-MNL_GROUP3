@@ -127,7 +127,7 @@
 		return !isNaN(parseFloat(number)) && isFinite(number);
 	}
 	
-	console.log("hey"+arrayDeveloper("kate"));
+	console.log("hey "+arrayDeveloper("kate"));
 	
 	function arrayDeveloper(str){
 		length = str.length;
@@ -152,12 +152,12 @@
 			if(i!=0){
 				var j=0;
 				while(j<=i){
-					res+=charArr[j]+" ";
+					res+=charArr[j]+",";
 					j++;
 				}
 			}
 			else{
-				res+=charArr[i]+" ";
+				res+=charArr[i]+",";
 			}
 		}
 		return res;
