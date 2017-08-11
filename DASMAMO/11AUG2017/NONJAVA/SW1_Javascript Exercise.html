@@ -134,14 +134,17 @@ function isNumeric(){
 
 function primeFactorsTo(){
 	var prim = document.getElementById("prime").value;
-	var prim1 = [2,3,5,7,9];
-	var arr = [];
-	for(i=prim; i>0; i--){
-		if((i%3==0)&&(i%5==0)&&(i%7==0) ){
-			arr.push(i);
-		}
-	}
-	alert(arr);
+	var num = [], i, j;
+	var primes = [];
+	for (i = 2; i <= prim; ++i) {
+        if (!num[i]) {
+            primes.push(i);
+            for (j = i << 1; j <= prim; j += i) {
+                num[j] = true;
+            }
+        }
+    }
+    alert(primes);
 }
 
 </script>
