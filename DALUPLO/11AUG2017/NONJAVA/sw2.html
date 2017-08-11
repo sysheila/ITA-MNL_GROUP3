@@ -1,0 +1,327 @@
+<html>
+    <head>
+        <script>
+            function factorial(n){
+
+                var y = parseInt(n);
+                var fac = parseInt(1);
+               
+                while(y>1){
+                    fac = fac*y;
+                    y--;
+                }
+
+                dispFactorial.innerHTML = fac;
+                
+            }
+            
+            function getAreaOfTriangle(a,b,c){
+                var sideA = parseFloat(a);
+                var sideB = parseFloat(b);
+                var sideC = parseFloat(c);
+                var sum = parseFloat(sideA+sideB+sideC)/2;
+
+                var totalArea = parseFloat(Math.sqrt(sum*(sum-sideA)*(sum-sideB)*(sum-sideC)));
+            
+                dispAreaTriangle.innerHTML = totalArea;
+                
+            }
+            
+            function getWords(word) {
+                var fn = function(current, remaining, charOfWords) {
+                    if (!current && !remaining)
+                        return;
+                    if (!remaining) {
+                        charOfWords.push(current);
+                    } else {
+                        fn(current + remaining[0], remaining.slice(1), charOfWords);
+                        fn(current, remaining.slice(1), charOfWords);
+                    }
+                    return charOfWords;
+                }
+                 dispAreaString.innerHTML = fn("", word, []);
+            }
+            
+            function getReverse(word) {
+                var reverseWord = new Array(word.length);
+                var toReverse = word.split("");
+                var j = word.length-1;
+                
+                for(i = 0 ; i < word.length ; i++){
+                    reverseWord[i] = toReverse[j];
+                    j--;
+                }
+                
+              
+                dispReverse.innerHTML = reverseWord.join("");
+            }
+            
+            function isLeapYear(year) {
+                var checkYear = parseInt(year);
+                
+                if(parseInt(checkYear%4)==0)  dispLeap.innerHTML = "Yes";
+                else  dispLeap.innerHTML = "No";
+                
+              
+            }
+            
+            function isNumeric(num) {
+                if(/^(0|[1-9][0-9]*)$|^-(0|[1-9][0-9]*)$|(^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*))$|(^-(0|[1-9][0-9]*)\.(0|[1-9][0-9]*))$/.test(num))  dispNumeric.innerHTML = "Yes";
+                else  dispNumeric.innerHTML = "No";
+            }
+            
+            function getAllPrime(num) {
+                num = parseInt(num);
+                var i;
+                var primes = "" ;
+                 for(i=2;i<=num;i++){
+                    if(i!=2 && i!=3 && i!=5 && i!=7){
+                       if(i%2==0 || i%3==0 || i%5==0 || i%7==0){
+                           
+                        }
+                        else{
+                        primes = primes + "  " + i; 
+                        }
+                    }
+                    else {
+                        primes = primes + "  " + i;
+                    }
+                     
+                     
+                 }
+                 dispPrime.innerHTML = primes;
+                
+            }
+            
+            function toCamelCase(word) {
+                var wordArray = word.split(" ");
+                var i;
+                var singleWord;
+                var finalWord=wordArray[0].split("");
+                finalWord[0] = finalWord[0].toUpperCase();
+                finalWord = finalWord.join("");
+   
+                for(i = 1; i<parseInt(wordArray.length); i++){
+                    singleWord = wordArray[i].split("");
+                    singleWord[0] = singleWord[0].toUpperCase();
+                    finalWord = finalWord+singleWord.join("");
+                
+                }
+                dispCamel.innerHTML = finalWord;
+            }
+            
+            function getCurrentTime(){
+                var day;
+                var time;
+                var today = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+                var date = new Date();
+                var morn = "PM";
+                
+                var hours = date.getHours()%12;
+                if (hours == 0) {
+                    hours += 12;
+                    var morn = "AM";
+                    
+                }
+                
+                dispDay.innerHTML = today[date.getDay()];
+                dispTime.innerHTML = hours +" " + morn + ": " + date.getMinutes() +": "+  date.getSeconds();
+            
+            }
+            
+            
+        </script>
+    </head>
+    <body>
+        <div>
+            <!----------------------------------------------------- CURRENT TIME ---------------------------------------------------->
+               <fieldset style="margin:1.5%">
+                <table>
+                    <tr>
+                        <td>
+                            <h1>Current Time</h1>
+                            
+                            <div>
+                                <button onclick = "getCurrentTime()"> Check </button>
+                            </div>
+                        
+                            <h3>Today is : <label  id="dispDay"></label> </h3>
+                            <h3>Current Time is : <label  id="dispTime"></label> </h3>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>  
+
+
+            <!----------------------------------------------------- ---------------- ---------------------------------------------------->
+              <!----------------------------------------------------- AREA OF TRIANGLE ---------------------------------------------------->
+            <fieldset style="margin:1.5%">
+                <table>
+                    <tr>
+                        <td>
+                            <h1> Area of a Triangle</h1>
+                            <p><label>Side A = <input id="valueOf_a"></label> 
+                            <p><label>Side B = <input id="valueOf_b"></label> 
+                            <p><label> Side C = <input id="valueOf_c"></label> 
+                            <div>
+                                <button onclick = "getAreaOfTriangle(document.getElementById('valueOf_a').value,document.getElementById('valueOf_b').value,document.getElementById('valueOf_c').value)"> Get Area</button>
+                            </div>
+                        </td>
+                        <td>
+                            <h3> Area of Triangle: </h3>
+                            <h1 id="dispAreaTriangle"></h1> </p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <!----------------------------------------------------- ---------------- ---------------------------------------------------->
+     <!----------------------------------------------------- CAMEL CASE ---------------------------------------------------->
+            <fieldset style="margin:1.5%">
+                <table>
+                    <tr>
+                        <td>
+                            <h1>camelCase</h1>
+                            <p><label>Enter: <input id="valueOf_camel"></label> 
+
+                            <div>
+                                <button onclick = "toCamelCase(document.getElementById('valueOf_camel').value)"> convert </button>
+                            </div>
+                        </td>
+                        <td>
+                            <h3> Camel Case: </h3>
+                            <h1 id="dispCamel"></h1> </p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        <!----------------------------------------------------- ---------------- ---------------------------------------------------->
+  <!----------------------------------------------------- LEAP YEAR ---------------------------------------------------->
+            <fieldset style="margin:1.5%">
+                <table>
+                    <tr>
+                        <td>
+                            <h1> Enter year</h1>
+                            <p><label>Enter Text = <input id="valueOf_year"></label> 
+
+                            <div>
+                                <button onclick = "isLeapYear(document.getElementById('valueOf_year').value)"> Check </button>
+                            </div>
+                        </td>
+                        <td>
+                            <h3> Is leap year? </h3>
+                            <h1 id="dispLeap"></h1> </p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <!----------------------------------------------------- ---------------- ---------------------------------------------------->
+            <!----------------------------------------------------- REVERSE ---------------------------------------------------->
+
+            <fieldset style="margin:1.5%">
+                <table>
+                    <tr>
+                        <td>
+                            <h1> Reverse Word</h1>
+                            <p><label>Enter Text = <input id="valueOf_toReverse"></label> 
+
+                            <div>
+                                <button onclick = "getReverse(document.getElementById('valueOf_toReverse').value)"> Get Reverse Word </button>
+                            </div>
+                        </td>
+                        <td>
+                            <h3> Reverse Word: </h3>
+                            <h1 id="dispReverse"></h1> </p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <!----------------------------------------------------- ---------------- ---------------------------------------------------->
+            <!----------------------------------------------------- FACTORIAL ---------------------------------------------------->
+            <fieldset style="margin:1.5%">
+                <table>
+                    <tr>
+                        <td>
+                        <h1> Factorial</h1>
+                        <h3>Enter a digit</h3>
+                        <p><label>n = <input id="valueOf_n"></label> 
+                        <div>
+                        <button onclick = "factorial(document.getElementById('valueOf_n').value)"> Get factorial</button>
+                        </div>
+                        </td>                      
+                        <td>
+                            <h3> n! = </h3>
+                        <h1 id="dispFactorial"></h1> </p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+             <!----------------------------------------------------- ---------------- ---------------------------------------------------->
+           
+             <!----------------------------------------------------- WORD ECTRACTOR ---------------------------------------------------->
+            <fieldset style="margin:1.5%">
+                <table>
+                    <tr>
+                        <td>
+                            <h1> Word Extractor</h1>
+                            <p><label>Eneter Text = <input id="valueOf_string"></label> 
+
+                            <div>
+                                <button onclick = "getWords(document.getElementById('valueOf_string').value)"> Get Words </button>
+                            </div>
+                        </td>
+                        <td>
+                            <h3> Words: </h3>
+                            <h1 id="dispAreaString"></h1> </p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <!----------------------------------------------------- ---------------- ---------------------------------------------------->
+            
+             <!----------------------------------------------------- NUMERIC ---------------------------------------------------->
+            <fieldset style="margin:1.5%">
+                <table>
+                    <tr>
+                        <td>
+                            <h1>Numeric</h1>
+                            <p><label>Enter: <input id="valueOf_enteredString"></label> 
+
+                            <div>
+                                <button onclick = "isNumeric(document.getElementById('valueOf_enteredString').value)"> Check </button>
+                            </div>
+                        </td>
+                        <td>
+                            <h3> Is numeric? </h3>
+                            <h1 id="dispNumeric"></h1> </p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <!----------------------------------------------------- ---------------- ---------------------------------------------------->
+            <!----------------------------------------------------- PRIME    ---------------------------------------------------->
+            <fieldset style="margin:1.5%">
+                <table>
+                    <tr>
+                        <td>
+                            <h1>Prime</h1>
+                            <p><label>Enter: <input id="valueOf_prime"></label> 
+
+                            <div>
+                                <button onclick = "getAllPrime(document.getElementById('valueOf_prime').value)"> Check </button>
+                            </div>
+                        </td>
+                        <td>
+                            <h3> Prime Numbers:</h3>
+                            <h1 id="dispPrime"></h1> </p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            
+            <!----------------------------------------------------- ---------------- ---------------------------------------------------->
+             
+            
+        </div>
+    </body>
+</html>
