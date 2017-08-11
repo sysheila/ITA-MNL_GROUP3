@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome :D</title>
+	<script>
+		//Factorial =====================
+		function calFactorial(){
+			var factForm = document.getElementById("factorialForm");
+			var factorial = parseInt(factForm.elements.inputFacNum.value);
+			var ctr = 0;
+			var result = factorial;
+			if(factorial>=0){
+				while(factorial>1){				
+					var x=factorial-1;
+					result = parseInt(result)*parseInt(x);
+					
+					console.log("factorial: "+factorial);
+					console.log("x: "+x);
+					console.log("result: "+result);
+					factorial--;
+				}
+				/* while(ctr<=factorial){
+					var x=ctr+1;
+					result = ctr*x;
+					ctr++;
+				} */
+				alert("Factorial: "+result);
+			}else{
+				alert("Invalid number");
+			}
+		}
+		//String combination
+		function stringCombination(){
+			var input = document.getElementById("stringRandomForm").elements.inputStringRand.value;
+			var output="";
+			for (var i = 0; i < input.length; i++) {
+				var comb = input.charAt(i);
+				output = output+comb+"\n";
+				//console.log(comb);
+				for (var j = i + 1; j < input.length; j++) {
+					//console.log(comb += input.charAt(j));
+				}
+			}
+		}
+
+		//Reverse String
+		function reverseString() {
+			var string = document.getElementById("revrseStringForm").elements.inputReverseString.value;
+			var length = parseInt(string.length);
+			var array = new Array;
+			var x = 0;
+			while (x < length) {
+				array.push(string.substring(x, x + 1));
+				x++;
+			}
+			alert("Reverse String is " + array.reverse().join(""));
+		}
+
+		//Camel Case
+		function camelCaseString() {
+			var input = document.getElementById("camelCaseStringForm").elements.inputCamelString.value;
+			var inputArray = input.split(/[: ]/);
+			for(var i=0;i<inputArray.length;i++){
+				var char = inputArray[i].charAt().toUpperCase();
+				inputArray[i] = char+inputArray[i].substr(1);
+			}
+			alert(inputArray.join(""));
+		}
+		
+		//Get Date / Time
+		function getCurrentDateTime(){
+			var date = new Date();
+			var time = date.toLocaleTimeString().split(/[: ]/);
+			//document.getElementById("inputDateTime").innerHTML = time[0]+time[3]+":"+time[1]+":"+time[2];
+			var day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+			alert("Today is: "+day[date.getDay()]+" \nCurrent time is: "+time[0]+time[3]+":"+time[1]+":"+time[2]);
+		}
+		
+		//Check leap year
+		function checkLeapYear(){
+			var year = document.getElementById("leapYearCheckerForm").elements.inputLeapYear.value;
+			if(year%4==0){
+				alert("Year: "+year+" is a leap year");
+			}else{
+				alert("Year: "+year+" is not a leap year");
+			}
+		}
+		
+		//Numeric Checker
+		function numberChecker(){
+			var input = document.getElementById("numericCheckerForm").elements.inputCheckNumber.value;
+			/* var testRes = check('qwe');
+			var testRes2 = check('1.5'); */
+			console.log(check('1.5'));
+			console.log(check('qwe'));
+			if(!check(input)){
+				alert(input+" is not a number");
+			}else{
+				alert(input+" is a number");
+			}
+		}
+		function check(input){
+			if(parseFloat(input).toString()=="NaN"){
+				return false;
+			}else{
+				return true;
+			}
+		}
+		
+		//Prime number lister
+		function getPrimeNumberList(){
+			var input = parseInt(document.getElementById("primeNumberListForm").elements.inputPrimeNumber.value);
+			var primeList = new Array();
+			var numList = new Array();
+			var x=0;
+			for(var i=1;i<(input+1);i++){
+				numList.push(i);
+			}
+			for(var x=0;x<numList.length;x++){
+				var flag = false;
+				if(numList[x]<=2){
+					console.log(numList[x]);
+					if(numList[x]==2){
+						primeList.push(numList[x]);
+						console.log(primeList[x]);
+					}
+					continue;
+				}
+				/* var ctr=0;
+				while(ctr<numList.length){
+					if(!numList[ctr]%primeList[ctr]){
+						primeList.push(numList[ctr]);
+					}
+				} */
+				if(!primeList.includes(numList[x])){
+					if(numList[x]%2!=0){
+						console.log(numList[x]);
+						primeList.push(numList[x]);
+						console.log(primeList[x]);
+					}else{
+						/* if(numList[x]%2!=0){
+							if(numList[x]%3!=0){
+								console.log(numList[x]);
+								primeList.push(numList[x]);
+								console.log(primeList[x]);
+							}
+						} */
+						if(!(numList[x]%2!=0) && numList[x]%3!=0){
+							console.log(numList[x]);
+							primeList.push(numList[x]);
+							console.log(primeList[x]);
+						} 
+					}
+				}
+			}
+			alert(primeList);
+			alert(numList);
+		}
+	</script>
+</head>
+<body>
+	<div id="display">
+		<form id="factorialForm">
+			Enter number: <input id="inputFacNum" type="number" name="input"/>
+			<input type="button" onclick="calFactorial()" value="Factorial"/>
+		</form>
+		
+		<form id="stringRandomForm">
+			Enter String: <input id="inputStringRand" type="text" name="input"/>
+			<input type="button" onclick="stringCombination()" value="Random"/>
+		</form>
+		
+		<form id="revrseStringForm">
+			Enter String: <input id="inputReverseString" type="text" name="input"/>
+			<input type="button" onclick="reverseString()" value="Reverse"/>
+		</form>
+		
+		<form id="camelCaseStringForm">
+			Enter String: <input id="inputCamelString" type="text" name="input"/>
+			<input type="button" onclick="camelCaseString()" value="Camel Case"/>
+		</form>
+		
+		<form id="currentDateTimeForm">
+			Enter String: <input id="inputDateTime" type="text" name="input" disabled="disabled"/>
+			<input type="button" onclick="getCurrentDateTime()" value="Current Date/Time"/>
+		</form>
+		
+		<form id="leapYearCheckerForm">
+			Enter String: <input id="inputLeapYear" type="number" name="input" min="1000"/>
+			<input type="button" onclick="checkLeapYear()" value="Leap Year"/>
+		</form>
+		
+		<form id="numericCheckerForm">
+			Enter String: <input id="inputCheckNumber" type="text" name="input"/>
+			<input type="button" onclick="numberChecker()" value="Validate Number"/>
+		</form>
+		
+		<form id="primeNumberListForm">
+			Enter String: <input id="inputPrimeNumber" type="text" name="input"/>
+			<input type="button" onclick="getPrimeNumberList()" value="Get Prime Number"/>
+		</form>
+		
+	</div>
+</body>
+</html>
