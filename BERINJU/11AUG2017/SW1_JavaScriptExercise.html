@@ -1,0 +1,122 @@
+<html>
+<head>
+<script language="javascript">
+
+function factorial(n) {
+	if(n == 0) { //base case
+		return 1
+	} else { //recursive factorial call
+		return n * factorial(n - 1);
+	}
+}
+
+function leapYear(year){ //leap year every 4 years with 2 special cases, every 100 and 400 years
+  return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+}
+
+function combinations(input){
+    combinations = []; //create array
+    for(var i=0; i<input.length; i++){
+        var comb =input.charAt(i); //get current letter
+        combinations.push(comb);
+        for(var j=i+1; j<input.length; j++){
+          combinations.push(comb += input.charAt(j)); //combine with remaining letters
+        }
+    }
+    console.log("combinations : " +combinations);
+}
+
+
+function todayIs(number){
+    if(number == 1) return "Monday";
+    if(number == 2) return "Tuesday";
+    if(number == 3) return "Wednesday";
+    if(number == 4) return "Thursday";
+    if(number == 5) return "Friday";
+    if(number == 6) return "Saturday";
+    if(number == 7) return "Sunday";
+}
+
+function timeStamp() {
+    var now = new Date(); //returns current date
+    var time = [ now.getHours(), now.getMinutes(), now.getSeconds() ]; //get initial time data
+    var suffix = ( time[0] < 12 ) ? "AM" : "PM";
+    time[0] = (time[0] < 12) ? time[0]+suffix : time[0]-12+suffix; //convert to 12 hour format, add suffix to follow the given output format eg. 3 PM : 59 : 59
+    time[0] = time[0] || 12; //pag 12 edi 12.
+    for ( var i = 1; i < 3; i++ ) {
+        if ( time[i] < 10 ) {
+            time[i] = "0" + time[i]; //add 0 in the start if time is 1 digit only
+        }
+    }
+    console.log("Today is " + todayIs(now.getDay()));
+    console.log("Current time is : " + time.join(" : "));
+}
+
+function reverseString(input){
+    var array = [];
+    var reversed = "";
+    for(var i=0; i<input.length; i++){
+        array.push(input.charAt(i)); //create array out of the string
+    }
+    console.log("reversed : " +array.reverse().join(""));
+}
+
+
+function areaOfATriangle(s1,s2,s3){ //Heron's formula, alternative to 1/2 Base * Height
+    var perimeter = (s1 + s2 + s3)/2; //semiperimeter
+    var area =  Math.sqrt(perimeter*((perimeter-s1)*(perimeter-s2)*(perimeter-s3)));
+    console.log("area of triangle : " + area);
+}
+
+function camelize(input){
+    var array = input.split(' '); //create array out of separate words
+    for(var i=0; i<array.length; i++){
+        array[i] = array[i].charAt(0).toUpperCase() + array[i].substring(1); //uppercase the first letter per word, then append the remaining characters
+    }
+    console.log("camelize : " + array.join("")); //convert again to string
+}
+
+function isPrime(num) {
+    if(num < 2) return false; //base case
+    for (var i = 2; i < num; i++) { //if it is divisible by it's numbers
+        if(num%i==0)
+            return false;
+    }
+    return true;
+}
+
+function primeFactorsTo(input){ //call the function and print it
+    for(var i = 0; i < input; i++){
+        if(isPrime(i)) console.log("Prime Numbers : " + i);
+    }
+}
+
+function isNumeric(input){
+    var patt = new RegExp("^[-+]?[0-9]+(.[0-9]*)?$");
+    var res = patt.test(input);
+    console.log("isNumeric : " + res);
+}
+
+//// Ctrl + Shift + I for browser console ///
+////   --------- Ctrl + F  ------------   ///
+///    to find the function definitions   ///
+///   ----------[Exercises]------------   ///
+timeStamp();                              //5
+areaOfATriangle(5,6,7);                   //6
+camelize("junno paolo beringuela");       //7
+console.log("isLeap : " + leapYear(2016));//8
+reverseString("Junno");                   //9
+console.log("Factorial : "+factorial(10));//10
+combinations("dog");                      //11
+isNumeric("-0123123a.1231232135");        //12
+primeFactorsTo(15);                       //13
+//////////////////////////////////////////////
+
+</script>
+</head>
+
+
+<body></body>
+
+
+</html>
