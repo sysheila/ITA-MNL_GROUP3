@@ -18,7 +18,6 @@
 
 <script type="text/javascript">
 
-
 function factorialNum() {
 	//var f = [];
 	var n = document.forms.factorial.number.value;
@@ -35,8 +34,8 @@ function factorialNum() {
 }
 
 function displayNum(num){
-	//document.getElementById('factorials').innerHTML = "Factorial: " +num;
-	alert(num);
+	document.getElementById('factorials').innerHTML = "Factorial: " + num;
+	//alert(num);
 }
 
 function generateStringCombi(){
@@ -53,21 +52,24 @@ function generateStringCombi(){
 			}
 		}
 	}
-	alert(f);
+//	alert(f);
+	document.getElementById('stringComb').innerHTML = "Combinations: " + f;
 }
 
 function reverseString(){
 	var string = document.getElementById("reverseStrings").value;
-	alert( string.split("").reverse().join(""));
+	//alert( s);
+	document.getElementById('reverses').innerHTML = "Reverse: " + string.split("").reverse().join("");
 }
 
 function leapYearNum(){
 	var leapYearNum = document.getElementById("leapYear").value;
 	if((((leapYearNum%4)==0) &&  (leapYearNum % 100 != 0)) || (leapYearNum % 400 == 0)){
-		alert(leapYearNum + " is a leap year.");
+		//ert(leapYearNum + " is a leap year.");
+		document.getElementById('leapYr').innerHTML = leapYearNum + " is a leap year. ";
 	}
 	else{
-		alert(leapYearNum + " is not a leap year.");
+		document.getElementById('leapYr').innerHTML = leapYearNum + " is not a leap year. ";
 	}
 }
 
@@ -99,7 +101,7 @@ function calendarTime(){
 	}
 	d = day[d];
 	today = mm + '/' + dd + '/' + yyyy;
-	alert("Today is: " + d + " " + today +  "\n" + hh + " : " + MM + " : " + ss);
+	document.getElementById('calTime').innerHTML = "Today is: " + d + " " + today +  "\n" + hh + " : " + MM + " : " + ss ;
 }
 
 function computeTriangle(){
@@ -108,7 +110,7 @@ function computeTriangle(){
 	var sideC = parseInt(document.getElementById("sideC").value);
 	var p = ((sideA+sideB+sideC)/2);
 	var area = Math.sqrt((p*(p-sideA)*(p-sideB)*(p-sideC)));
-	alert(area.toFixed(2));
+	document.getElementById('triangle').innerHTML = "Area: " + area.toFixed(2);
 }
 
 function cammelize(){
@@ -120,17 +122,21 @@ function cammelize(){
 		newStringArr.push(stringArr[i].charAt(0).toUpperCase()+(stringArr[i].substring(1,stringArr[i].length)));
 	}
 	newStringArr = newStringArr.toString().replace(",", '');
-	alert(newStringArr);
+	//alert(newStringArr);
+	document.getElementById('cammel').innerHTML = "Cammelized: " + newStringArr;
+
 }
 
 function isNumeric(){
 	var string = document.getElementById("numericNum").value;
 	var pattern = /^-*\d*\.*\d+$/;
 	if(string.match(pattern)){
-		alert("Yes");
+	//	alert("Yes");
+		document.getElementById('numeric').innerHTML =  "Yes";
 	}
 	else{
-		alert("No");
+		//alert("No");
+		document.getElementById('numeric').innerHTML = "No";
 	}
 }
 
@@ -146,7 +152,9 @@ function primeFactorsTo(){
             }
         }
     }
-    alert(primes);
+   // alert(primes);
+   document.getElementById('prim').innerHTML = "Prime numbers are: " + primes;
+
 }
 
 </script>
@@ -169,9 +177,10 @@ function primeFactorsTo(){
 					      	<div id="cammelCase">
 					      		<form accept-charset=utf-8>
 								        <input id="cammelCaseStr" type="text" >
-								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: cammelize();"> Cammelize
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: cammelize();return false;"> Cammelize
 								     		<i class="material-icons right">send</i>
 								     	</button>
+								     	<label id="cammel"> </label>
 								</form>
 					      	</div>
 
@@ -179,9 +188,10 @@ function primeFactorsTo(){
 								<form  id="stringCombi">
 								    <div>
 								        <input id="stringCombination" type="text" >
-								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: generateStringCombi();"> Generate
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: generateStringCombi(); return false;"> Generate
 								     		<i class="material-icons right">send</i>
 								     	</button>
+								     	<label id="stringComb"> </label>
 								   </div>
 								</form>
 					 		</div>
@@ -190,9 +200,10 @@ function primeFactorsTo(){
 								<form id="reverseArr">
 								    <div>
 								        <input id="reverseStrings" type="text" >
-								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: reverseString();"> Reverse
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: reverseString();return false;"> Reverse
 								     		<i class="material-icons right">send</i>
 								     	</button>
+								     	<label id="reverses"> </label>
 								   </div>
 								</form>
 					 		</div>
@@ -216,9 +227,10 @@ function primeFactorsTo(){
 								<form>
 								    <div>
 								        <input id="leapYear" type="number" >
-								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: leapYearNum();"> LeapYear
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: leapYearNum();return false;"> LeapYear
 								     		<i class="material-icons right">send</i>
 								     	</button>
+								     	<label id="leapYr"> </label>
 								   </div>
 								</form>
 							</div>
@@ -226,9 +238,10 @@ function primeFactorsTo(){
 							<div id="calendarTimeDiv">
 								<form>
 								    <div>
-								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: calendarTime();"> Calendar/Time
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: calendarTime();return false;"> Calendar/Time
 								     		<i class="material-icons right">send</i>
 								     	</button>
+								     	<label id="calTime"> </label>
 								   </div>
 								</form>
 							</div>
@@ -258,9 +271,10 @@ function primeFactorsTo(){
 										<input id="sideA" type="number" >
 										<input id="sideB" type="number" >
 										<input id="sideC" type="number" >
-								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: computeTriangle();">Compute
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: computeTriangle();return false;">Compute
 								     		<i class="material-icons right">send</i>
 								     	</button>
+								     	<label id="triangle"> </label>
 								   </div>
 								</form>
 							</div>
@@ -269,7 +283,7 @@ function primeFactorsTo(){
 								<form  id="factorial">
 								    <div>
 								        <input id="number" type="number" >
-								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: factorialNum();">Enter
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: factorialNum();return false;">Enter
 								     		<i class="material-icons right">send</i>
 								     	</button>
 								     	<label id="factorials"> </label>
@@ -281,9 +295,10 @@ function primeFactorsTo(){
 								<form>
 								    <div>
 								        <input id="numericNum" type="number" >
-								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: isNumeric();"> Numeric
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: isNumeric();return false;"> Numeric
 								     		<i class="material-icons right">send</i>
 								     	</button>
+								     	<label id="numeric"> </label>
 								   </div>
 								</form>
 						 	</div>
@@ -292,9 +307,10 @@ function primeFactorsTo(){
 								<form>
 								    <div>
 								        <input id="prime" type="number" >
-								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: primeFactorsTo();"> Prime
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: primeFactorsTo();return false;"> Prime
 								     		<i class="material-icons right">send</i>
 								     	</button>
+								     	<label id="prim"> </label>
 								   </div>
 								</form>
 							</div>
