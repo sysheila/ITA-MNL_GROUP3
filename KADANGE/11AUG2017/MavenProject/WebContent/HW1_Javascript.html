@@ -5,7 +5,6 @@
 <title>JavaScript Howework</title>
 </head>
 <body>
-	<!-- Assignment number 1 -->
 	<p>1)  Write a JavaScript program to draw the following rectangular shape.</p>
 	<canvas id="myPageCanvas1" width="200" height="200">
 		test canvas
@@ -118,28 +117,34 @@
 		var page4Context = page4Canvas.getContext("2d");
 		//arc(x,y,r,sAngle,eAngle,counterclockwise);
 		
-		//Create the outer circle
-		/* page4Context.beginPath();
-		page4Context.arc(100,100,90,0,2 * Math.PI);
-		page4Context.stroke(); */
-		
 		//Create gradient background
-		var grd = page4Context.createLinearGradient(0,0,150,150);
+		var grd = page4Context.createLinearGradient(0,0,220,0);
 		grd.addColorStop(0,"white");
 		grd.addColorStop(1,"black");
-		page4Context.fillStyle = grd;
-		page4Context.fillRect(0,0,200,200);
-		var p=10;
+		
+		//Set small circles
+		var p=10,point=0.5;
 		for (var x = 0; x <= bw; x += 35) {
 			page4Context.moveTo(0.5 + x + p, p);
 			page4Context.lineTo(0.5 + x + p, bh + p);
 			
 			//Create small circles
 			page4Context.beginPath();
-			page4Context.arc(x + p,x + p,10,0,2 * Math.PI);
+			page4Context.fillStyle = grd;
+			page4Context.arc(point+x + p,point+x + p,10,0,2 * Math.PI);
+			page4Context.fill();
 			page4Context.stroke();
 		}
-		console.log("tes");
+		console.log("test");
 	</script>
+	<br/>
+	<p>5) Create a simple homepage with at least 2 child pages linked to it. Add the following components throughout the pages:</p>
+	<ul>
+		<li>Grid</li><li>Form</li><li>Message Box</li><li>Charts</li><li>Tool Tip</li><li>Window</li>
+	</ul>
+	<p>Try to design the pages as user friendly as possible using Ext JS. Add text and graphics contents.<br/>
+	Chose a suitable built in theme in Ext Js or use customized theme.</br>
+	Add events and event listener to the pages.</p>
+
 </body>
 </html>
