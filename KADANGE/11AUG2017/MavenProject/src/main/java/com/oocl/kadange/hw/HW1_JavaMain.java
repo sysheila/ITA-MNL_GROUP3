@@ -9,11 +9,18 @@ public class HW1_JavaMain {
 		
 		System.out.println("======================================");
 		//Producer / Consumer
-		String input = "apple";
-		BufferQueue q = new BufferQueue(input.length());
+		String input = "apple12345test";
+		int threadCount = 2;
+		BufferQueue q = new BufferQueue(input.length()*threadCount);
+		//Create producer thread
+		for(int i=0; i<threadCount; i++) {
+			new Thread(new Producer(q, "Producer Thread "+(i+1), input.length(), input));
+		}
 		
-		new Thread(new Producer(q, "Thread 1", input.length(), input));
-		new Thread(new Consumer(q, "Thread 2", input.length()));
+		//Create consumer thread
+		for(int i=0; i<threadCount; i++) {
+			new Thread(new Consumer(q, "\t\t\t\tConsumer Thread "+(i+1), input.length()));
+		}
 	}
 	
 }

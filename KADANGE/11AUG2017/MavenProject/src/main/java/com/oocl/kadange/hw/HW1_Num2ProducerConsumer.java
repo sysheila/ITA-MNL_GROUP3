@@ -7,8 +7,6 @@ class BufferQueue {
 	CharBuffer buffer;
 	Boolean flag = false;
 	
-	public BufferQueue() {}
-	
 	public BufferQueue(int max){
 		buffer = CharBuffer.allocate(max);
 	}
@@ -17,7 +15,7 @@ class BufferQueue {
 		this.buffer.put(val);
 		if(this.flag){
 			try {
-				//System.out.println(name+" is waiting...");
+				System.out.println(name+" is waiting...");
 				wait();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -26,13 +24,13 @@ class BufferQueue {
 		}
 		System.out.println(name+" put: "+val);
 		this.flag = true;
-		notify();
+		notifyAll();
 	}
 	
 	public synchronized void outputBuffer(String name, int index){
 		if(!this.flag){
 			try {
-				//System.out.println(name+" is waiting...");
+				System.out.println(name+" is waiting...");
 				wait();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -41,7 +39,7 @@ class BufferQueue {
 		}
 		System.out.println(name+" got: "+this.buffer.get(index));
 		this.flag = false;
-		notify();
+		notifyAll();
 	}
 }
 
