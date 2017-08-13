@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+	function drawSquareOne() {
+		var canvas = document.getElementById('canvasOne');
+		if (canvas.getContext) {
+			var context = canvas.getContext('2d');
+
+			context.fillRect(20, 20, 100, 100);
+			context.clearRect(40, 40, 60, 60);
+			context.strokeRect(45, 45, 50, 50);
+		}
+	}
+	function drawSquareTwo() {
+		var canvas = document.getElementById("canvasTwo");
+		if (canvas.getContext) {
+			var context = canvas.getContext("2d");
+
+			context.fillStyle = "rgb(256,0,0)";
+			context.fillRect(15, 10, 55, 50);
+
+			context.fillStyle = "rgba(0, 0, 200, 0.6)";
+			context.fillRect(35, 30, 55, 50);
+		}
+	}
+	function drawSmiley() {
+		var canvas = document.getElementById('canvasThree');
+		if (canvas.getContext) {
+			var context = canvas.getContext('2d');
+			context.beginPath();
+			// Outer circle
+			context.arc(75, 75, 50, 0, Math.PI * 2, true);
+			context.moveTo(110, 75);
+			// Mouth 
+			context.arc(75, 75, 35, 0, Math.PI, false);
+			// Lefy and Right eye
+			context.moveTo(55, 65);
+			context.arc(60, 65, 5, 0, Math.PI * 2, true);
+			context.arc(90, 65, 5, 0, Math.PI * 2, true);
+			context.stroke();
+		}
+	}
+	function drawDiagonal() {
+		var ctx = document.getElementById("canvasDiagonal").getContext("2d");
+		var counter = 0;
+		for (var i = 0; i < 6; i++) {
+			for (var j = 0; j < 6; j++) {
+				//Start from white and goes to black
+				ctx.fillStyle = "rgb(" + Math.floor(255 - 42.5 * i) + ","
+						+ Math.floor(255 - 42.5 * i) + ","
+						+ Math.floor(255 - 42.5 * j) + ")";
+
+				ctx.beginPath();
+				if (i === counter && j === counter) {
+					//creates the circles
+					ctx.arc(25 + j * 50, 30 + i * 50, 20, 0, Math.PI * 2, true);
+					ctx.fill();
+					//creates a border around the circles so white one will be vissible
+					ctx.stroke();
+				}
+			}
+			counter++;
+		}
+	}
+	draw();
+	function draw() {
+		drawSquareOne();
+		drawSquareTwo();
+		drawSmiley();
+		drawDiagonal();
+	}
+</SCRIPT>
+<meta charset=utf-8 />
+<title>Draw a rectangular shape</title>
+</head>
+<body onload="draw();">
+	<canvas id="canvasOne" width="150" height="150"></canvas>
+	<br />
+	<canvas id="canvasTwo" width="150" height="150"></canvas>
+	<br />
+	<canvas id="canvasThree" width="250" height="250"></canvas>
+	<br />
+	<canvas id="canvasDiagonal" width="1500" height="800"></canvas>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+    "type": "graythemeresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyGrayTheme"
+    },
+    "designerId": "39e2d7ca-8158-4943-bc1b-b4dd01af04c8",
+    "storage": {
+        "needsCompile": false,
+        "simple": {
+            "pkgVersion": 1
+        },
+        "nameIndex": 1,
+        "varData": {}
+    }
+}
