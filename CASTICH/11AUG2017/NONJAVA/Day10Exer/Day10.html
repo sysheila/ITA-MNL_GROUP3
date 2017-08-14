@@ -232,6 +232,12 @@
 			var result = isNumber(txtNumeric) ? "Yes, it is." : "No, not this one.";
 			$("#lblNumeric").text(result);
 		});
+		$("#btnTraverser").click(function(){
+			var txtTraverser = $("#txtTraverser").val();
+			var result = arrayDeveloper(txtTraverser);
+			$("#lblTraverser").text(result);
+		});
+		
 		$("#btnPrime").click(function(){
 			$("#tblBody").empty();
 			var txtPrime = parseInt($("#txtPrime").val());
