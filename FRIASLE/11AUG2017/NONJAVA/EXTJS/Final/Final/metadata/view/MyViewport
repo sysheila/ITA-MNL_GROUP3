@@ -1,0 +1,96 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userClassName": "MyViewport"
+    },
+    "designerId": "68d722fa-799a-4086-b481-3984f1067128",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": "My Form"
+            },
+            "designerId": "59e69b4b-232a-40d4-98fb-a4ed1c13fd36",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "View Records",
+                        "width": 276
+                    },
+                    "designerId": "2a400fd6-a526-41fa-a713-a8a853c00e37",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "this.push(Ext.create('MyApp.view.MainView',{\r",
+                                    "title:'Test' }));"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "d8407982-5b9e-4dfc-a2c3-bcf17148c5f9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Chart",
+                        "width": 339
+                    },
+                    "designerId": "d175c265-6044-489e-9fd2-96d985bc6efb",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick1",
+                                "implHandler": [
+                                    "this.push(Ext.create('MyApp.view.MyViewport1',{\r",
+                                    "title:'Test' }));"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "eb9e68b0-1d7d-490b-8432-c0f00f3a60cd"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

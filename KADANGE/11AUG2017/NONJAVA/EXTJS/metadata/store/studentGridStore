@@ -1,0 +1,55 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "    {",
+            "        \"name\": \"Gene Anthony Kadano\",",
+            "        \"score\": 91,",
+            "        \"date\": \"08/11/2017\",",
+            "        \"pass\": true",
+            "    },",
+            "    {",
+            "        \"name\": \"Junno Beringuela\",",
+            "        \"score\": 94,",
+            "        \"date\": \"08/11/2017\",",
+            "        \"pass\": true",
+            "    },",
+            "    {",
+            "        \"name\": \"Monica Dasmariñas\",",
+            "        \"score\": 93,",
+            "        \"date\": \"08/11/2017\",",
+            "        \"pass\": true",
+            "    },",
+            "    {",
+            "        \"name\": \"Louise-Marie Dalupan\",",
+            "        \"score\": 94,",
+            "        \"date\": \"08/11/2017\",",
+            "        \"pass\": true",
+            "    },",
+            "    {",
+            "        \"name\": \"Levi Frias\",",
+            "        \"score\": 91,",
+            "        \"date\": \"08/11/2017\",",
+            "        \"pass\": true",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "studentGridStore",
+        "model": "StudentGridModel",
+        "storeId": "studentGridStore"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyStore",
+    "designerId": "bfc05999-461d-4c51-ae33-1f0f5a79e26c"
+}

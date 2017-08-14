@@ -1,0 +1,165 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userClassName": "MyViewport",
+        "itemId": "myviewport2"
+    },
+    "designerId": "ec4a4623-78b2-495a-bdea-1d0ea4ff8fb4",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": "The Pony"
+            },
+            "designerId": "3543796e-c170-4997-be45-dc5115749c4f",
+            "cn": [
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Input some message for they bronicle",
+                        "layout|anchor": "100%"
+                    },
+                    "designerId": "d3c597b2-9ebd-4db4-ba84-e5e54e016a53"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Go to first chid page",
+                        "width": 265
+                    },
+                    "designerId": "44e40016-0d86-4d81-a28d-6e0829b10f1d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "this.push(Ext.create('MyApp.view.MyViewport1',{\r",
+                                    "    title:'Test' }));"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "202df2d4-7eed-4f9d-9da5-31b7ca2b4ec8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Go to second child page",
+                        "width": 255
+                    },
+                    "designerId": "eed2bf18-dc7d-4aef-b445-70b6985fc65d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick1",
+                                "implHandler": [
+                                    "this.push(Ext.create('MyApp.view.MyViewport3',{\r",
+                                    "    title:'Test' }));"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "32f451c8-e432-4648-a163-9d40d58efcfe"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Enter",
+                        "width": 357
+                    },
+                    "designerId": "80d0c707-258f-42c1-ab4d-4a1297744692"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Output",
+                        "inputId": "outputId",
+                        "layout|anchor": "100%"
+                    },
+                    "designerId": "49ae356c-3a8d-4397-9412-853d5f627ab2"
+                },
+                {
+                    "type": "Ext.panel.Tool",
+                    "reference": {
+                        "name": "tools",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "8d690fe1-0f3f-4e32-8790-974cbcb3c2e6",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onToolClick",
+                                "implHandler": [
+                                    "alert(\"tooltip cllicked\");"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "81732b76-4050-4800-8972-04e593ab5d4e"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

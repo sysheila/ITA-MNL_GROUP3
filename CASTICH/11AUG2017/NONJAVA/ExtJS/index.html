@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="ISO-8859-1">
+<head>
+<title>Javascript Earth</title>
+<link href="http://cdn.sencha.io/ext-4.1.1-gpl/resources/css/ext-all.css" rel="stylesheet" />
+<script src="http://cdn.sencha.io/ext-4.1.1-gpl/ext-all.js"></script>
+<script>
+
+Ext.application({
+    name: 'Day10Assignment',
+    launch: function() {
+        Ext.create('Ext.container.Viewport', {
+            width: 100,
+            items: [
+                panel1,
+                panel2
+            ],
+        });
+    }
+});
+
+var panel1 = Ext.create('Ext.panel.Panel', {
+    title: 'Form',
+    items: [
+		{
+			id: 'fName',
+	        xtype: 'field',
+	        fieldLabel: 'First Name'
+	    },
+	    {
+	    	id: 'lName',
+	        xtype: 'field',
+	        fieldLabel: 'Last Name'
+    	},
+    	{
+    		id: 'btnLogin',
+    		xtype: 'button',
+    		text: 'Hello',
+    		handler: function(){
+                var firstName = Ext.getCmp('fName').getValue();
+                var lastName = Ext.getCmp('lName').getValue();
+
+                if(firstName=="" && lastName==""){
+                    Ext.Msg.alert('Hello!', 'Welcome, please enter your name.');
+                }
+                else{
+                    Ext.Msg.alert('Hello!', 'Welcome, ' + firstName + " "+ lastName +"!");
+                }
+    		},
+            tooltip:"Please make sure to write your name. ;)"
+    	},
+        {
+            id: 'btnWindow',
+            xtype: 'button',
+            text: 'Open Window',
+            handler: function(){
+               Ext.getCmp('theWindow').show();
+            }
+        }
+    ]
+});
+
+var panel2 = Ext.create('Ext.panel.Panel', {
+    title: 'Others',
+    html: 'This is another panel. :3'
+});
+
+var people = [['Bruce','45','Gotham']]
+
+Ext.create('Ext.window.Window', {
+    id: "theWindow",
+    title: 'Other People',
+    height: 200,
+    width: 400,
+    layout: 'fit',
+    items: {  // Let's put an empty grid in just to illustrate fit layout
+        xtype: 'grid',
+        border: false,
+        columns: [{header: 'Name', dataIndex:'name'},{header: 'Age', dataIndex:'age'},{header: 'Location', dataIndex:'location'}],                 // One header just for show. There's no data,
+        store: Ext.create('Ext.data.ArrayStore', {})
+    }
+});
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Howework</title>
+</head>
+<body>
+	<p>1)  Write a JavaScript program to draw the following rectangular shape.</p>
+	<canvas id="myPageCanvas1" width="200" height="200">
+		test canvas
+	</canvas>
+	<script type="text/javascript">
+		//Prepare canvas and context
+		var page1Canvas = document.getElementById("myPageCanvas1");
+		var page1Context = page1Canvas.getContext("2d");
+		
+		//Outer frame
+		page1Context.fillStyle = "black";
+		page1Context.fillRect(10,10,180,180);
+		
+		//second frame
+		page1Context.fillStyle = "white";
+		page1Context.fillRect(35,35,130,130);
+		
+		//third frame
+		page1Context.fillStyle = "black";
+		page1Context.fillRect(40,40,120,120);
+		
+		//inner frame
+		page1Context.fillStyle = "white";
+		page1Context.fillRect(42,42,116,116);
+	</script>
+	<br/>
+	<p>2) Write a JavaScript program to draw two intersecting rectangles, one of which has alpha transparency.</p>
+	<canvas id="myPageCanvas2" width="200" height="200">
+		test canvas
+	</canvas>
+	<script type="text/javascript">
+		//Prepare canvas and context
+		var page2Canvas = document.getElementById("myPageCanvas2");
+		var page2Context = page2Canvas.getContext("2d");
+		
+		//First box
+		page2Context.fillStyle = "red";
+		page2Context.fillRect(10,10,120,120);
+		
+		//Second box
+		page2Context.fillStyle = "blue";
+		page2Context.globalAlpha = ".5";
+		page2Context.fillRect(70,70,120,120);
+	</script>
+	<br/>
+	<p>3) Write a JavaScript program to draw the following diagram [use moveto() function].</p>
+	<canvas id="myPageCanvas3" width="200" height="200">
+		test canvas
+	</canvas>
+	<script type="text/javascript">
+		//Prepare canvas and context
+		var page3Canvas = document.getElementById("myPageCanvas3");
+		var page3Context = page3Canvas.getContext("2d");
+		var bw=200, bh=200, p=0;
+		//prepare grid for canvas
+		function drawBoard(){
+			for (var x = 0; x <= bw; x += 10) {
+				page3Context.moveTo(0.5 + x + p, p);
+				page3Context.lineTo(0.5 + x + p, bh + p);
+			}
+
+
+			for (var x = 0; x <= bh; x += 10) {
+				page3Context.moveTo(p, 0.5 + x + p);
+				page3Context.lineTo(bw + p, 0.5 + x + p);
+			}
+
+			page3Context.strokeStyle = "black";
+			page3Context.stroke();
+		}
+		//drawBoard();
+		//arc(x,y,r,sAngle,eAngle,counterclockwise);
+		function moveto(){
+			//Create the outer circle
+			page3Context.beginPath();
+			page3Context.arc(100,100,90,0,2 * Math.PI);
+			page3Context.stroke();
+			
+			//Create half circle inside the outer circle
+			page3Context.beginPath();
+			page3Context.arc(100,100,65,0,1 * Math.PI);
+			page3Context.stroke();
+			
+			//Create left eye inside the outer circle
+			page3Context.beginPath();
+			page3Context.arc(70,80,12,0,2 * Math.PI);
+			page3Context.stroke();
+			
+			//Create right eye inside the outer circle
+			page3Context.beginPath();
+			page3Context.arc(130,80,12,0,2 * Math.PI);
+			page3Context.stroke();
+			
+			//Create line across both eyes
+			page3Context.beginPath();
+			page3Context.moveTo(58,80);
+			page3Context.lineTo(142,80);
+			page3Context.stroke();
+		}
+		moveto();
+	</script>
+	<br/>
+	<p>4) Write a JavaScript program to draw the following diagram [diagonal, white to black circles]</p>
+	<canvas id="myPageCanvas4" width="200" height="200" style="border:1px solid #c3c3c3;">
+		test canvas
+	</canvas>
+	<script type="text/javascript">
+		//Prepare canvas and context
+		var page4Canvas = document.getElementById("myPageCanvas4");
+		var page4Context = page4Canvas.getContext("2d");
+		//arc(x,y,r,sAngle,eAngle,counterclockwise);
+		
+		//Create gradient background
+		var grd = page4Context.createLinearGradient(0,0,220,0);
+		grd.addColorStop(0,"white");
+		grd.addColorStop(1,"black");
+		
+		//Set small circles
+		var p=10,point=0.5;
+		for (var x = 0; x <= bw; x += 35) {
+			page4Context.moveTo(0.5 + x + p, p);
+			page4Context.lineTo(0.5 + x + p, bh + p);
+			
+			//Create small circles
+			page4Context.beginPath();
+			page4Context.fillStyle = grd;
+			page4Context.arc(point+x + p,point+x + p,10,0,2 * Math.PI);
+			page4Context.fill();
+			page4Context.stroke();
+		}
+		console.log("test");
+	</script>
+	<br/>
+	<p>5) Create a simple homepage with at least 2 child pages linked to it. Add the following components throughout the pages:</p>
+	<ul>
+		<li>Grid</li><li>Form</li><li>Message Box</li><li>Charts</li><li>Tool Tip</li><li>Window</li>
+	</ul>
+	<p>Try to design the pages as user friendly as possible using Ext JS. Add text and graphics contents.<br/>
+	Chose a suitable built in theme in Ext Js or use customized theme.</br>
+	Add events and event listener to the pages.</p>
+
+</body>
+</html>
