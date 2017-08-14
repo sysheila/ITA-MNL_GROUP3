@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MyController"
+        ],
+        "models": [
+            "MyModel"
+        ],
+        "name": "HW1",
+        "stores": [
+            "MyStore"
+        ],
+        "views": [
+            "MyViewport",
+            "MyViewport1",
+            "MyWindow",
+            "MyViewport2"
+        ]
+    },
+    "configAlternates": {
+        "models": "typedarray",
+        "name": "string",
+        "stores": "typedarray",
+        "views": "typedarray",
+        "controllers": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

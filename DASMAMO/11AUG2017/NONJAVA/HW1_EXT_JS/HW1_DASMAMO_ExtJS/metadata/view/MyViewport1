@@ -1,0 +1,158 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "myviewport1",
+        "designer|userClassName": "MyViewport1",
+        "height": 250,
+        "layout": "fit",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto",
+        "layout": "string"
+    },
+    "name": "MyViewport1",
+    "designerId": "3c0c86e3-a44a-4393-b6e6-ba5188b35d30",
+    "viewControllerInstanceId": "a062610f-a416-48a4-b9d2-f363b4181693",
+    "viewModelInstanceId": "a497484b-4c96-4481-b00a-6041f1712327",
+    "cn": [
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "height": 100,
+                "maxHeight": 100,
+                "maxWidth": 100,
+                "minHeight": 100,
+                "minWidth": 100,
+                "src": "https://image.flaticon.com/icons/png/128/138/138339.png",
+                "width": 100
+            },
+            "configAlternates": {
+                "dock": "string",
+                "height": "auto",
+                "maxHeight": "number",
+                "maxWidth": "number",
+                "minHeight": "number",
+                "minWidth": "number",
+                "src": "uri",
+                "width": "auto"
+            },
+            "name": "MyImg",
+            "designerId": "4d709eb1-973b-4b34-bdd5-8828f57a310a"
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Data"
+            },
+            "configAlternates": {
+                "title": "string"
+            },
+            "name": "MyGridPanel",
+            "designerId": "cb7f352b-547a-45db-945a-fb2bf4c5da0a",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "string",
+                        "text": "String"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn",
+                    "designerId": "b506947d-3968-49fd-883d-232a7afcbd4d"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "number",
+                        "text": "Number"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyNumberColumn",
+                    "designerId": "f16528e0-5993-465e-8f7d-bb6a876e5ae6"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "date",
+                        "text": "Date"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyDateColumn",
+                    "designerId": "90527b32-97c0-46d9-9d65-89cf29ed1636"
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "bool",
+                        "text": "Boolean"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyBooleanColumn",
+                    "designerId": "3360cec1-08ed-465d-8307-59f458e8d460"
+                },
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable",
+                    "designerId": "d1055879-9696-42f8-bfa9-651b922b28fc"
+                }
+            ]
+        }
+    ]
+}
