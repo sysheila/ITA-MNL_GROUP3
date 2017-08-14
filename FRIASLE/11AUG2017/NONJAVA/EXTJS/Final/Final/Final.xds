@@ -1,0 +1,47 @@
+{
+    "name": "Final",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": "D:/EXTJSITA/FinalPublish"
+    },
+    "xdsVersion": "3.0.2",
+    "xdsBuild": 1375,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "698b7864-df89-4b9c-959f-0212282d4ead",
+            "23afc0a3-a1b1-4f10-9622-02ebe055e576",
+            "68d722fa-799a-4086-b481-3984f1067128",
+            "995cd732-5afe-4a1d-aa21-ffe11c3b413c"
+        ],
+        "store": [
+            "0b3e9ea8-52b8-4463-9375-44b5a27689ff"
+        ],
+        "controller": [
+            "2856dba3-c512-4b02-8986-a3e844ab0885"
+        ],
+        "model": [
+            "44284846-393f-4336-9e37-fe0ed78e1e2a"
+        ],
+        "resource": [
+            "67363d08-999e-4648-b11d-5d9fe657da91",
+            "b965b017-2c63-4043-a222-33a95a56bba7"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
