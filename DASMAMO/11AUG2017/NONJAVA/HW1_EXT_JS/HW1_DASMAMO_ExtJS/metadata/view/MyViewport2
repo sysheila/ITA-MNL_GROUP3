@@ -1,0 +1,118 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "myviewport2",
+        "designer|userClassName": "MyViewport2",
+        "height": 250,
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "MyViewport2",
+    "designerId": "95d822ab-8e66-4763-9b6a-b78034048284",
+    "viewControllerInstanceId": "d0a7c98a-e9ed-4c87-af67-7d649b13db8f",
+    "viewModelInstanceId": "39f39fcd-3222-4944-b1da-4dcf1e86fe63",
+    "cn": [
+        {
+            "type": "Ext.chart.CartesianChart",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 200,
+                "insetPadding": [
+                    "20"
+                ],
+                "store": "MyStore",
+                "width": 200
+            },
+            "configAlternates": {
+                "height": "auto",
+                "insetPadding": "object",
+                "store": "store",
+                "width": "auto"
+            },
+            "name": "ColumnChart",
+            "designerId": "e61708bf-0ad7-47fb-8495-4af9cf181025",
+            "isBuiltIn": true,
+            "iconCls": "icon-column-chart",
+            "autoName": "ColumnChart",
+            "cn": [
+                {
+                    "type": "Ext.chart.axis.Category",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "Ratings"
+                        ],
+                        "title": "Category Axis"
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "title": "string"
+                    },
+                    "name": "MyCategoryAxis",
+                    "designerId": "208168c4-2d60-48a2-bf78-09c423d07ada"
+                },
+                {
+                    "type": "Ext.chart.axis.Numeric",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "Name",
+                            "Ratings"
+                        ],
+                        "position": "left",
+                        "title": "Numeric Axis"
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "position": "string",
+                        "title": "string"
+                    },
+                    "name": "MyNumericAxis",
+                    "designerId": "61b4e808-5d4f-49f2-934c-f89bf20811c5"
+                },
+                {
+                    "type": "Ext.chart.series.Bar",
+                    "reference": {
+                        "name": "series",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "xField": "Name",
+                        "yField": [
+                            "Ratings"
+                        ]
+                    },
+                    "configAlternates": {
+                        "xField": "datafield",
+                        "yField": "typedarray"
+                    },
+                    "name": "MyBarSeries",
+                    "designerId": "031fdaff-5d2c-4b9d-bfd0-303798950e38"
+                }
+            ]
+        }
+    ]
+}
