@@ -1,0 +1,473 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "outerviewport",
+        "designer|userClassName": "OuterViewport",
+        "flex": 1,
+        "height": 250,
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "flex": "number",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "MyViewport",
+    "designerId": "ab87965b-dfdb-4eb6-8149-a3327fb924f1",
+    "configMeta": {
+        "data": {
+            "mock": true
+        }
+    },
+    "viewControllerInstanceId": "b6610195-546a-4669-8214-9928947294c7",
+    "viewModelInstanceId": "5810d5cf-3072-47bf-8807-bd5c25fff415",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "store": "studentGridStore",
+                "title": "Class List"
+            },
+            "configAlternates": {
+                "store": "store",
+                "title": "string"
+            },
+            "name": "MyGridPanel",
+            "designerId": "f5b616f2-70df-4dbd-873b-1eedee8324ff",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "name",
+                        "flex": 1,
+                        "id": "studentNameId",
+                        "text": "Student Name"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "flex": "number",
+                        "id": "string",
+                        "text": "string"
+                    },
+                    "name": "MyColumn",
+                    "designerId": "76f0b622-ebaf-42fb-ad20-225089e48d17"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "score",
+                        "flex": 1,
+                        "format": "0,000",
+                        "id": "exerciseScoreId",
+                        "text": "Exercise Score"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "flex": "number",
+                        "format": "string",
+                        "id": "string",
+                        "text": "string"
+                    },
+                    "name": "MyNumberColumn",
+                    "designerId": "1b9be02a-3b12-42be-a523-030bde8342a9"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "date",
+                        "flex": 1,
+                        "id": "dateScoreId",
+                        "text": "Date"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "flex": "number",
+                        "id": "string",
+                        "text": "string"
+                    },
+                    "name": "MyDateColumn",
+                    "designerId": "1c8fe46c-a2d7-47ef-a11b-c3d837c35de0"
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "pass",
+                        "flex": 1,
+                        "id": "studentScorePassId",
+                        "text": "Pass"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "flex": "number",
+                        "id": "string",
+                        "text": "string"
+                    },
+                    "name": "MyBooleanColumn",
+                    "designerId": "23737c5c-da43-4829-beb9-fb472bc307a8"
+                },
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "scrollable": true
+                    },
+                    "configAlternates": {
+                        "scrollable": "auto"
+                    },
+                    "name": "MyTable",
+                    "designerId": "622030c6-987a-42c2-8272-225a6e82ac6e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "flex": 1,
+                "layout": "auto",
+                "title": "First Form"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "designer|initialView": "boolean",
+                "designer|userAlias": "string",
+                "designer|userClassName": "string",
+                "height": "auto",
+                "title": "string",
+                "width": "auto",
+                "flex": "number",
+                "layout": "string"
+            },
+            "name": "MyForm",
+            "designerId": "e34bbdb2-c2c5-4996-a1f4-c81cbd346d31",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "TextBoxContainer"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyContainer",
+                    "designerId": "3f55ddb9-392a-40fe-bb1e-f0e219e0716d",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "Input a text",
+                                "fieldLabel": "First Textbox:",
+                                "name": ""
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "emptyText": "string",
+                                "name": "string"
+                            },
+                            "name": "MyTextField",
+                            "designerId": "bd46e29b-9b03-4156-bdf4-2139e42a85d5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "ChartContainer"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyContainer1",
+                    "designerId": "8cf9a756-8352-473d-8d6f-ee609881cb7b",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "ButtonContainer"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string"
+                            },
+                            "name": "MyContainer2",
+                            "designerId": "a153bc9b-ec3d-4c1f-85bf-c9faf5365401",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "helloWorldBtn",
+                                        "id": "helloWorldBtnId",
+                                        "text": "Click me!"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "id": "string",
+                                        "text": "string"
+                                    },
+                                    "name": "MyButton",
+                                    "designerId": "44da648b-0955-4c4c-b8a7-5be267779f2e",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onHelloWorldBtnIdClick",
+                                                "implHandler": [
+                                                    "Ext.create('MyApp.view.MyWindow').show();"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me",
+                                                "single": false
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string",
+                                                "single": "boolean"
+                                            },
+                                            "name": "onHelloWorldBtnIdClick",
+                                            "designerId": "2eb84adc-0cf9-433a-bd8e-bb1b4bfecd52"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "nextPage",
+                                        "flex": null,
+                                        "frame": false,
+                                        "id": "nextPageId",
+                                        "text": "Next page"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "flex": "number",
+                                        "frame": "boolean",
+                                        "id": "string",
+                                        "padding": "auto",
+                                        "text": "string"
+                                    },
+                                    "name": "MyButton1",
+                                    "designerId": "d3942364-c0af-4cbd-a430-882e727b7cb4",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onNextPageIdClick",
+                                                "implHandler": [
+                                                    "console.log(\"Next page clicked!\");",
+                                                    "Ext.create('MyApp.view.OuterViewport1',{}).show();"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onNextPageIdClick",
+                                            "designerId": "8a24db70-1d93-4f66-b8ca-629fd437128b"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.chart.CartesianChart",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "monthlyDataChart",
+                                "height": 250,
+                                "id": "monthlyDataChartId",
+                                "insetPadding": [
+                                    "20"
+                                ],
+                                "store": "chartGridStore",
+                                "width": 400
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "height": "auto",
+                                "id": "string",
+                                "insetPadding": "object",
+                                "store": "store",
+                                "width": "auto"
+                            },
+                            "name": "ColumnChart",
+                            "designerId": "579cf6c7-8137-4fc6-817d-5e22df2bdffe",
+                            "isBuiltIn": true,
+                            "iconCls": "icon-column-chart",
+                            "autoName": "ColumnChart",
+                            "cn": [
+                                {
+                                    "type": "Ext.chart.axis.Category",
+                                    "reference": {
+                                        "name": "axes",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "monthlyName",
+                                        "fields": [
+                                            "month"
+                                        ],
+                                        "id": "monthlyNameId",
+                                        "title": "Month",
+                                        "titleMargin": 2
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "fields": "typedarray",
+                                        "id": "string",
+                                        "title": "string",
+                                        "titleMargin": "number"
+                                    },
+                                    "name": "MyCategoryAxis1",
+                                    "designerId": "24e010cf-9925-4a25-99b0-fcf00e537da2"
+                                },
+                                {
+                                    "type": "Ext.chart.axis.Numeric",
+                                    "reference": {
+                                        "name": "axes",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "monthlyData",
+                                        "fields": [
+                                            "netValue"
+                                        ],
+                                        "id": "monthlyDataId",
+                                        "position": "left",
+                                        "title": "Net Value"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "fields": "typedarray",
+                                        "id": "string",
+                                        "position": "string",
+                                        "title": "string"
+                                    },
+                                    "name": "MyNumericAxis1",
+                                    "designerId": "d1f9d788-1a51-4db3-adb2-11089c32b910"
+                                },
+                                {
+                                    "type": "Ext.chart.series.Bar",
+                                    "reference": {
+                                        "name": "series",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "store": [
+                                            "chartGridStore"
+                                        ],
+                                        "xField": "month",
+                                        "yField": [
+                                            "netValue"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "xField": "datafield",
+                                        "yField": "typedarray",
+                                        "store": "binding"
+                                    },
+                                    "name": "MyBarSeries1",
+                                    "designerId": "f045650f-5576-4e0b-a03c-57174b9d3beb"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
