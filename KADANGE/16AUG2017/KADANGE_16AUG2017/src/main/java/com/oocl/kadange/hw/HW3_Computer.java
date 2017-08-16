@@ -13,12 +13,12 @@ public class HW3_Computer {
 		this.mouse = mouse;
 	}
 	
-	public void getSpeaker() {
+	public void getKeyboard() {
 		//return keyboard;
 		System.out.println(keyboard);
 	}
 	
-	public void setSpeaker(String keyboard) {
+	public void setKeyboard(String keyboard) {
 		this.keyboard = keyboard;
 	}
 

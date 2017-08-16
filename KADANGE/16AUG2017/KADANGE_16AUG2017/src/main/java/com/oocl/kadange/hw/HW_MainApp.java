@@ -26,7 +26,7 @@ public class HW_MainApp {
 		AbstractApplicationContext context3 = new ClassPathXmlApplicationContext("HW1_Beans.xml");
 		HW3_Computer com = (HW3_Computer)context3.getBean("computer");
 		com.getMouse();
-		com.getSpeaker();
+		com.getKeyboard();
 		
 		HW3_Laptop lap = (HW3_Laptop)context3.getBean("laptop");
 		lap.getMouse();
