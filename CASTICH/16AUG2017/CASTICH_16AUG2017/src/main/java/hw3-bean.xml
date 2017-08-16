@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	   
+   <bean id="employee" class = "com.oocl.castich.hw3.Employee">
+      <property name="company" value = "Google"/>
+   </bean>
+
+   <bean id ="employeeChild1" class="com.oocl.castich.hw3.Employee" parent="employee">
+      <property name = "id" value = "0001"/>
+      <property name = "name" value = "Larry Page"/>
+   </bean>
+	   
+   <bean id ="employeeChild2" class="com.oocl.castich.hw3.Employee" parent="employee">
+      <property name = "id" value = "0002"/>
+      <property name = "name" value = "Sergey Brin"/>
+   </bean>
+</beans>
