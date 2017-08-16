@@ -23,7 +23,7 @@
 	%>
 		<%= mult %>
 	<% 	} %>
-	<h2>Null Vector</h2>
+	<h2> Null Vector</h2>
 	<div>
  	
  	

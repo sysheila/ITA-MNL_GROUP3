@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+	<!--  init-method="init" destroy-method="destroy"  -->
+	<!--  <bean id="textEditor" class="com.oocl.berinju.sw2.TextEditor">
+		<property name="spellChecker">
+			<bean id="spellChecker" class="com.oocl.berinju.sw2.SpellChecker" />
+		</property>
+	</bean>-->
+	<bean id="connect" class="com.oocl.berinju.hw2.HW2_NetworkManager"  init-method="init" destroy-method="destroy" >
+		<property name="message" value="Hello..">
+		</property>
+	</bean>  
+
+
+
+ </beans>
