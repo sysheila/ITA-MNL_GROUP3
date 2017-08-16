@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+	
+	<bean id="parentCompany" class="com.oocl.daluplo.hw3.Employee" abstract="true">
+        <property name="company" value="Orient Overseas Container Line" />
+    </bean>
+    <bean id="employee1" parent="parentCompany" class="com.oocl.daluplo.hw3.Employee">
+        <property name="name" value="Dash"></property>
+		<property name="role" value="Programmer"></property>
+		<property name="employeeId" value="2016-660"></property>
+    </bean>
+    <bean id="employee2" parent="parentCompany" class="com.oocl.daluplo.hw3.Employee">
+        <property name="name" value="Ricky"></property>
+		<property name="role" value="System Analist"></property>
+		<property name="employeeId" value="2012-000"></property>
+    </bean>
+     <bean id="employee3" parent="parentCompany" class="com.oocl.daluplo.hw3.Employee">
+        <property name="name" value="Itian"></property>
+		<property name="role" value="Programmer"></property>
+		<property name="employeeId" value="2016-775"></property>
+    </bean>
+	
+	
+</beans> 
