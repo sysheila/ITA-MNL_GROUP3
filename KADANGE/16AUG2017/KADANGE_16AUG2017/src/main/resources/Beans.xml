@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+	xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation = "http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="helloSpring" class="com.oocl.kadange.example.HelloSpringTest">
+		<property name="message" value="Hello Spring!"/>
+	</bean>
+	
+	<!-- singleton is the default
+		singleton initialize only once 
+		prototype can be any -->
+	<bean id="helloSpring2" class="com.oocl.kadange.example.HelloSpringTest_Scope" scope="singleton">
+		<property name="message" value="Hello Spring Scope!"/>
+	</bean>
+	
+	<bean id="helloSpring3" class="com.oocl.kadange.example.HelloSpringTest_InitDestroy" init-method="init" destroy-method="destroy" >
+		<property name="message" value="Hello Spring3!"/>
+	</bean>
+	
+	<bean id="textEditor" class="com.oocl.kadange.example.TextEditor" >
+		<property name="spellChecker" >
+			<bean class="com.oocl.kadange.example.SpellChecker" />
+		</property>
+	</bean>
+	
+</beans>
