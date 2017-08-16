@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+	xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation = "http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="takeOrder" class="com.oocl.kadange.hw.HW1_OrderTaker" >
+		<property name="order" >
+			<bean class="com.oocl.kadange.hw.HW1_Order" />
+		</property>
+	</bean>
+	
+	<bean id="networkManager" class="com.oocl.kadange.hw.HW2_NetworkManager" init-method="init" destroy-method="destroy">
+		<property name="manager" value="I am the network manager"/>
+	</bean>
+	
+	<bean id="computer" class="com.oocl.kadange.hw.HW3_Computer">
+		<property name="mouse" value="This is a Computer mouse"/>
+		<property name="keyboard" value="This is a Computer speaker"/>
+	</bean>
+	
+	<bean id="laptop" class="com.oocl.kadange.hw.HW3_Laptop" parent="computer">
+		<property name="mouse" value="This is a laptop mouse"/>
+		<property name="monitor" value="This is a laptop monitor"/>
+	</bean>
+
+</beans>
