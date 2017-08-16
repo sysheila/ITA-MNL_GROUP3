@@ -23,7 +23,7 @@
 	%>
 		<%= mult %>
 	<% 	} %>
-	<h2> Enter Text</h2>
+	<h2>Null Vector</h2>
 	<div>
  	
  	
