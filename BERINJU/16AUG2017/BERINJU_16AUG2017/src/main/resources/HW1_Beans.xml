@@ -1,0 +1,26 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+	<!--  init-method="init" destroy-method="destroy"  -->
+	<!--  <bean id="textEditor" class="com.oocl.berinju.sw2.TextEditor">
+		<property name="spellChecker">
+			<bean id="spellChecker" class="com.oocl.berinju.sw2.SpellChecker" />
+		</property>
+	</bean>-->
+	<bean id="factory" class="com.oocl.berinju.hw1.HW1_AnimalFactory">
+		<property name="animal">
+			<bean id="animal" class="com.oocl.berinju.hw1.HW1_Dog" />
+		</property>
+	</bean>  
+	<bean id="factory2" class="com.oocl.berinju.hw1.HW1_AnimalFactory">
+		<property name="animal">
+			<bean id="animal2" class="com.oocl.berinju.hw1.HW1_Cat" />
+		</property>
+	</bean>  
+
+
+ </beans>
