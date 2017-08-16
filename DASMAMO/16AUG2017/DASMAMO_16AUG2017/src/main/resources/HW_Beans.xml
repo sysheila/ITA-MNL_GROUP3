@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation = "http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- Number1 -->
+	<bean id="listOrder" class="com.oocl.dasmamo.hw.HW1_Order">
+		<property name="item">
+			<bean class="com.oocl.dasmamo.hw.HW1_NameOrder"></bean>
+		</property>
+		<property name="price" >
+			<bean  class="com.oocl.dasmamo.hw.HW1_PriceOrder"></bean>
+		</property>
+		<property name="address">
+			<bean  class="com.oocl.dasmamo.hw.HW1_AddressOrder"></bean>	
+		</property>
+	</bean> 
+	
+	<!-- Number 2 -->
+	<bean id="networkManager" class="com.oocl.dasmamo.hw.HW2_NetworkManager"  scope="singleton"  init-method="init"  destroy-method="cleanUp"></bean> 
+
+	<!-- Number 3 -->
+	<bean id="employeeParent" class="com.oocl.dasmamo.hw.HW3_Employee"   init-method="init"  destroy-method="cleanUp">
+		<property name="company" value="OOCL"></property>
+	</bean> 
+	<bean id="employeeChild" class="com.oocl.dasmamo.hw.HW3_Employee" parent="employeeParent">
+		<property name="name" value="Nix Dasmarinas"></property>
+		<property name="role" value="Programmer"></property>
+		<property name="empID" value="2011-30865"></property>
+	</bean>
+
+</beans>
