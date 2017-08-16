@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+	xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation = "http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="drawingClass" class="com.oocl.kadange.sw.SW2_Drawing" >
+		<property name="shape" >
+			<bean class="com.oocl.kadange.sw.SW2_Shape" />
+		</property>
+	</bean>
+
+</beans>
