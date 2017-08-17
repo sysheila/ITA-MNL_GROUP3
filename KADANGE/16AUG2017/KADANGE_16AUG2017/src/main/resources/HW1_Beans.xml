@@ -16,7 +16,7 @@
 	
 	<bean id="computer" class="com.oocl.kadange.hw.HW3_Computer">
 		<property name="mouse" value="This is a Computer mouse"/>
-		<property name="keyboard" value="This is a Computer speaker"/>
+		<property name="keyboard" value="This is a Computer keyboard"/>
 	</bean>
 	
 	<bean id="laptop" class="com.oocl.kadange.hw.HW3_Laptop" parent="computer">
