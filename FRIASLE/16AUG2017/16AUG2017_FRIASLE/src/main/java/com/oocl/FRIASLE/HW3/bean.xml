@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="baseEmployeeBean" class="com.oocl.FRIASLE.HW3.Employee">
+		<property name="company" value="Java2novice" />
+	</bean>
+	<bean id="myEmployeeBean" class ="com.oocl.FRIASLE.HW3.Employee"  parent="baseEmployeeBean">
+		<property name="empId" value="2016" />
+		<property name="name" value="Levi" />
+	</bean>
+</beans>
