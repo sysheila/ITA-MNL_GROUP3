@@ -1,0 +1,202 @@
+<html>
+<head>
+<title> Draggable </title>
+<link href="http://cdn.sencha.io/ext-4.1.1-gpl/resources/css/ext-all.css" rel="stylesheet" />
+<script src="http://cdn.sencha.io/ext-4.1.1-gpl/ext-all.js" ></script>
+<script>
+Ext.application({
+    name: 'DND',
+
+    launch: function() {
+
+        var overrides = {
+            startDrag: function(e) {
+                //shortcut to access our element later
+                if (!this.el) {
+                    this.el = Ext.get(this.getEl());
+                }
+                //add a css class to add some transparency to our div
+                this.el.addCls('selected');
+                //when we drop our item on an invalid place  we need to return it to its initial position
+                this.initialPosition = this.el.getXY();
+            },
+            onDrag: function(e) {
+                this.el.moveTo(e.getPageX() - 32, e.getPageY() - 32);
+            },
+            onDragEnter: function(e, id) {
+                Ext.fly(id).addCls('valid-zone');
+            },
+            onDragOver: function(e, id) {
+                Ext.fly(id).addCls('valid-zone');
+            },
+            onDragOut: function(e, id) {
+                console.log('onDragOut');
+            },
+            onDragDrop: function(e, id) {
+                // change the item position to absolute
+                this.el.dom.style.position = 'absolute';
+                //move the item to the mouse position
+                this.el.moveTo(e.getPageX() - 32, e.getPageY() - 32);
+                Ext.fly(id).removeCls('valid-zone');
+
+            },
+            /*
+            onInvalidDrop: function() {
+                this.el.removeCls('valid-zone');
+                this.el.moveTo(this.initialPosition[0], this.initialPosition[1]);
+            },
+            */
+            endDrag: function(e, id) {
+                this.el.removeCls('selected');
+                //Ext.fly(id).removeCls('drop-target');
+                this.el.highlight();
+            }
+        };
+
+        var tables = Ext.get('tables').select('div');
+        Ext.each(tables.elements, function(el) {
+            var dd = Ext.create('Ext.dd.DD', el, 'tablesDDGroup', {
+                isTarget: false
+            });
+            Ext.apply(dd, overrides);
+        });
+
+        //we set the drop targets
+        var mainTarget = Ext.create('Ext.dd.DDTarget', 'mainRoom', 'tablesDDGroup', {
+            ignoreSelf: false
+        });
+
+    }
+});
+</script>
+<style>
+#content{
+    width:80%;
+    height:400px;
+    padding:10px;
+    border:1px solid #000;
+}
+#tables{
+    float:left;
+    width:40%;
+    height:100%;
+    border:1px solid #AAA;
+    background-color:rgba(222, 222, 222, 1.0);
+}
+#mainRoom{
+    float:left;
+    width:55%;
+    height:100%;
+    margin-left:15px;
+    border:1px solid #AAA;
+    background-color:rgba(222, 222, 222, 1.0);
+}
+.table{
+    background-color:rgba(254, 108, 98, 1.0);
+    border-radius:2px;
+    border:1px solid gray;    
+    width:48px;
+    height:48px;
+    margin:10px;
+    color:#FFF;
+    cursor:pointer;
+    text-align:right;    
+    /*position:relative;
+    float:left;*/
+    display: inline-block;
+}
+.valid-zone{
+    background-color:rgba(157, 229, 86, 1.0) !important;
+}
+.selected{
+    opacity:0.5;
+}
+#image1{
+    background-image: url("image/91@2x.gif");
+    width:48px;
+    height:48px;
+}
+#image2{
+    background-image: url("image/93@2x.gif");
+    width:48px;
+    height:48px;
+}
+#image3{
+    background-image: url("image/94@2x.gif");
+    width:48px;
+    height:48px;
+}
+#image4{
+    background-image: url("image/95@2x.gif");
+    width:48px;
+    height:48px;
+}
+#image5{
+    background-image: url("image/96@2x.gif");
+    width:48px;
+    height:48px;
+}
+#image6{
+    background-image: url("image/98@2x.gif");
+    width:48px;
+    height:48px;
+}
+#image7{
+    background-image: url("image/99@2x.gif");
+    width:48px;
+    height:48px;
+}
+#image8{
+    background-image: url("image/100@2x.gif");
+    /*width:48px;
+    height:48px;*/
+    max-width: 100%;
+    max-width: 100%;
+}
+#image9{
+    background-image: url("image/102@2x.gif");
+    width:48px;
+    height:48px;
+}
+#image10{
+    background-image: url("image/104@2x.gif");
+    width:48px;
+    height:48px;
+}
+#image11{
+    background-image: url("image/106@2x.gif");
+    width:48px;
+    height:48px;
+}
+#image12{
+    background-image: url("image/108@2x.gif");
+    width:48px;
+    height:48px;
+}
+
+</style>
+</head>
+<body>
+<div id="content">   
+    <div id="tables"> 
+        <div id="image1" class="table">1</div>
+        <div id="image2" class="table">2</div>
+        <div id="image3" class="table">3</div>
+        <div id="image4" class="table">4</div>
+        
+        <div id="image5" class="table">5</div>
+        <div id="image6" class="table">6</div>
+        <div id="image7" class="table">7</div>
+        <div id="image8" class="table">8</div>
+        
+        <div id="image9" class="table">9</div>
+        <div id="image10" class="table">10</div>
+        <div id="image11" class="table">11</div>
+        <div id="image12" class="table">12</div>
+    </div>
+     <div id="mainRoom"></div>
+</div>
+</body>
+</html>
+
+
