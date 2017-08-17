@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="16AUG2017_FRIASLE">
+    <wb-module deploy-name="FRIASLE_16AUG2017">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
-        <property name="context-root" value="16AUG2017_FRIASLE"/>
-        <property name="java-output-path" value="/16AUG2017_FRIASLE/target/classes"/>
+        <property name="java-output-path" value="/FRIASLE_16AUG2017/target/classes"/>
+        <property name="context-root" value="FRIASLE_16AUG2017"/>
     </wb-module>
 </project-modules>
