@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Invalid Login</title>
+<script>
+	var z;
+	function login(username, password, form) {
+		/* z = (username + " " + password);
+		document.getElementById("test2").innerHTML = z;
+		console.log("testtesttest"); */
+		document.getElementById("formToLogin").action = "Login"
+	}
+	
+	function getCredentials(){
+		var form = document.getElementById("formToLogin");
+		form.action = "LoginError";
+	}
+</script>
+</head>
+<body>
+<P>Username, password incorrect</P>
+<form id="formToLogin" onsubmit=getCredentials()>
+	<button type="submit">Take me back!</button>
+</form>
+</body>
+</html>
