@@ -1,0 +1,50 @@
+{
+    "name": "HW3_Click",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.5.1.240",
+            "frameworkVersion": "6.5.0.775"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:49393/app\\HW3_Click",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "C:/Users/Monica/Documents/Publish",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "4.2.2",
+    "xdsBuild": 282,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext65",
+    "viewOrderMap": {
+        "view": [
+            "33ad25bf-be2f-4f43-a385-4252752928cb",
+            "93b73f14-731f-4a4c-9c2e-0159d8afbf6b",
+            "8469749e-d2db-4516-9f0b-ba97e0ab9d6e"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "9f93e895-c253-493a-af05-128f724599c2",
+            "e7fd7a36-ef62-44c7-a62b-4dd320ce382c"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
