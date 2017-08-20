@@ -1,10 +1,7 @@
 package com.oocl.kadange.hw;
 
-import java.io.Console;
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class HW8_ArrayListManipulation {

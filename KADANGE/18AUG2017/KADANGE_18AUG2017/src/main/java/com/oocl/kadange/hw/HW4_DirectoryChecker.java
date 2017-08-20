@@ -42,12 +42,7 @@ class Directory{
 public class HW4_DirectoryChecker extends Directory{
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//File number
-		//File name
-		//Directory number
-		//Directory name
-		File[] dir = getDirectory("C:\\Users\\Gene kadano\\Documents\\1 ITA Related\\Tools");
+		File[] dir = getDirectory("C:\\");
 		ArrayList<String> directories = checkDirectory(dir);
 		ArrayList<String> files = checkFiles(dir);
 		
