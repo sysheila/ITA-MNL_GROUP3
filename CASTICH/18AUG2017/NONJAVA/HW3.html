@@ -1,0 +1,123 @@
+<!DOCTYPE html><html>
+<head>
+    <title> HW3 </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all-debug.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-triton/resources/theme-triton-all-debug.css">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-triton/theme-triton-debug.js"></script>
+
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/packages/charts/classic/charts-debug.js"></script>
+    <link type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/packages/charts/classic/classic/resources/charts-all-debug.css">
+
+    <script type="text/javascript">
+    Ext.application({
+        name: 'cdnjs test with charts package',
+        launch: function() {
+
+            Ext.define('Customer', {
+                config : {
+                    name : ''
+                },
+                mixins : 
+                {
+                    observable : 'Ext.util.Observable'
+                },
+                constructor : function(config){
+                    this.mixins.observable.constructor.call(this, config);
+                },
+                updateName : function(newValue, oldValue){
+                    this.fireEvent('customerNameChanged', newValue);
+                },
+                listeners: {
+                    customerNameChanged: function(){
+                        Ext.Msg.alert('Success!', 'Customer name changed! (Custom Event: customerNameChanged)');
+                    }
+                }
+            });
+
+            var newCustomer = Ext.create('Customer', { name: '' });
+            
+            Ext.create('Ext.form.Panel', {
+            title: 'Customer Info',
+            width: 350,
+            bodyPadding: 10,
+            renderTo: Ext.getBody(),
+            items: [{
+                xtype: 'textfield',
+                name: 'focusTextfield',
+                fieldLabel: 'Focus',
+                listeners:{
+                    focus: function(){
+                        this.blur();
+                        Ext.Msg.alert('Success!', 'You focused on me! (Event: focus)');
+                    }
+                }
+            },
+            {
+                xtype: 'textfield',
+                id: 'name',
+                name: 'name',
+                fieldLabel: 'Customer Name',
+                allowBlank: false
+            },
+            {
+                xtype: 'label',
+                id: 'lblName',
+                name: 'lblName',
+                text: 'Customer Name: Not set'
+            },
+            {
+                xtype: 'buttongroup',
+                columns: 3,
+                items: [
+                    {
+                        xtype: 'button',
+                        name: 'btnSave',
+                        text: 'Update Customer',
+                        handler: function(){
+                                var cName = Ext.getCmp('name').getValue();
+                                newCustomer.setName(cName);
+                                var lbl = Ext.getCmp('lblName');
+                                lbl.setText("Customer Name: "+cName);
+
+                        }
+                    },
+                    {
+                        xtype: 'button',
+                        name: 'btnSubmit',
+                        text: 'Submit',
+                        handler: function(){
+                                Ext.Msg.alert('Success!', 'You clicked me! (Event: onclick)');
+
+                        }
+                    },
+                    {
+                        xtype: 'button',
+                        name: 'btnMouse',
+                        text: 'Mouseover Me',
+                        listeners: {
+                            mouseover: function() {
+                                Ext.Msg.alert('Success!', 'You moused over me! (Event: mouseover)');
+                            }                
+                        }
+                    }
+                ]
+            }
+            ],
+            listeners: {
+                afterrender: function() {
+                    Ext.Msg.alert('Success!', 'I have been rendered (Event: afterrender)');
+                }
+            }
+        });
+
+        }
+    });
+    </script>
+</head>
+<body>
+</body>
+</html>

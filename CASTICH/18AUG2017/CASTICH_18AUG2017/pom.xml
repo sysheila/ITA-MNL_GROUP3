@@ -3,4 +3,12 @@
   <groupId>ita_mnl_group3</groupId>
   <artifactId>CASTICH_18AUG2017</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+	  <dependency>
+	  <!-- jsoup HTML parser library @ https://jsoup.org/ -->
+		  <groupId>org.jsoup</groupId>
+		  <artifactId>jsoup</artifactId>
+		  <version>1.10.3</version>
+	  </dependency>
+  </dependencies>
 </project>

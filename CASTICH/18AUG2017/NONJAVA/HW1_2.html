@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="ISO-8859-1">
+	<head>
+		<title>JS HW</title>
+		<script src="jquery.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script type="text/javascript">
+
+			$(document).ready(function(){
+
+				$("#btnEnter").click(function(){
+
+					var rows =  parseInt($("#rows").val());
+					var cols =  parseInt($("#cols").val());
+					var tBody = $("#tBody");
+					tBody.empty();
+
+					var columnCount=1;
+					for(i=0; i<rows; i++){
+						var row = "<tr>";
+						for(j=0; j<cols; j++){
+							row+="<td> Row-"+(i+1)+" Column-"+columnCount+"</td>"
+							columnCount++;
+						}
+						row += "</tr>"
+						tBody.append(row);
+					}		
+				});
+
+				$("#move").click(function(){
+					var txt = $("#animateText")[0];
+					var txtPos = 550;
+					var btn = $("#animateBtn")[0];   
+				  	var btnPos = 0;
+					var img = $("#animateImg")[0];   
+				  	var imgPos = 0;
+
+				    var id = setInterval(frame, 5);
+
+					  function frame() {
+					    if (btnPos == 550) {
+					      clearInterval(id);
+					    btn.style.left='0px';
+					    } else {
+					      btnPos++; 
+					      btn.style.left = btnPos + 'px'; 
+					    }
+
+					    if(txtPos==0){
+					    	clearInterval(id);
+					    txt.style.left='0px';
+					    }
+
+					    else{
+					    	txtPos--;
+					    	txt.style.left = txtPos +'px';
+					    }
+
+					    if(imgPos==550){
+					    	clearInterval(id);
+					    img.style.top='0px';
+					    img.style.left='0px';
+					    }
+
+					    else{
+					    	imgPos++;
+					    	img.style.top = imgPos + 'px'
+					    	img.style.left = imgPos +'px';
+					    }
+
+					  }
+				});
+			});
+		</script>
+<style>
+	#animationContainer {
+	  width: 400px;
+	  height: 400px;
+	  position: relative;
+	}
+	#animateBtn, #animateText, #animateImg {
+	  position: relative;
+	}
+</style>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="row well">
+				<div class="col-md-6 col-md-offset-3">
+					<h1 class="text text-info">HW1</h1>
+					<div class="form-group">
+						<input type="text" name="rows" id="rows" class="form-control" placeholder="Enter row number"/>
+						<input type="text" name="cols" id="cols" class="form-control" placeholder="Enter column number"/>
+						<button type="button" class="btn btn-success" id="btnEnter">Enter</button>
+					</div>
+				</div>
+					<div clas="col-md-12">
+						<table class="table table-hover table-striped">
+						<tbody id="tBody"></tbody>
+						</table>
+					</div>
+			</div>
+			<div class="row well">
+				<div class="col-md-6 col-md-offset-3" id ="animationContainer">
+					<div class="form-group">
+						<button id="move" class="btn btn-success" type="button">Move</button>
+						<div>
+							<h4 class="text text-info" id="animateText">I'm a moving text</h4>
+						</div>
+						<div>
+							<button id ="animateBtn" class="btn btn-warning">I'm a moving button</button>
+						</div>
+						<div>
+							<img src="batman.png" id="animateImg"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

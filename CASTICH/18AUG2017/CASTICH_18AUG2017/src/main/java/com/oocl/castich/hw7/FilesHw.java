@@ -1,6 +1,8 @@
-package com.oocl.castich.sw1;
+package com.oocl.castich.hw7;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,11 +10,46 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Files {
+public class FilesHw {
+
+	public static void main(String[] args) {
+		String projectPath = System.getProperty("user.dir");
+		String filePath = projectPath+"\\src\\main\\resources\\input.txt";
+		BufferedWriter writer = null;
+		FileWriter output = null;
+		String current = "";
+		File outputFile = new File(projectPath+"\\src\\main\\resources","output.txt");
+
+		FileReader fr;
+		try {
+			fr = new FileReader(filePath);
+			BufferedReader br = new BufferedReader(fr);
+			outputFile.createNewFile();
+			output = new FileWriter(outputFile.getAbsolutePath());
+			writer = new BufferedWriter(output);
+			
+			while((current = br.readLine())!=null) {
+				System.out.println(current);
+				writer.write(current);
+				writer.newLine();
+			}
+			
+			writer.close();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}
+
+
+class Files {
 	
 	public static void main(String[] args) {
 		
-		String path = "D:\\GIT\\ITA-MNL_GROUP3\\CASTICH\\18AUG2017\\CASTICH_18AUG2017\\src\\main\\resources\\sw1_file.txt";
+		String path = "D:\\GIT\\ITA-MNL_GROUP3\\CASTICH\\18AUG2017\\CASTICH_18AUG2017\\src\\main\\resources\\file.txt";
 		List<String> result = new ArrayList<String>();
 		
 		try {
@@ -39,7 +76,7 @@ public class Files {
 		FileWriter output = null;
 		
 		try {
-			output = new FileWriter("D:\\GIT\\ITA-MNL_GROUP3\\CASTICH\\18AUG2017\\CASTICH_18AUG2017\\src\\main\\resources\\sw1_output.txt");
+			output = new FileWriter("D:\\GIT\\ITA-MNL_GROUP3\\CASTICH\\18AUG2017\\CASTICH_18AUG2017\\src\\main\\resources\\output.txt");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -69,15 +106,6 @@ public class Files {
 		finalList.addAll(stringList);
 		writer.close();
 		return finalList;
-	}
-	
-	public static void writeFile(String path) {
-		try {
-			FileWriter fw = new FileWriter(path, true);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	public static boolean isNumeric(String str){  
