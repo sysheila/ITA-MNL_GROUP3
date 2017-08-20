@@ -34,12 +34,12 @@ Ext.define('MyApp.view.MyViewport', {
             xtype: 'button',
             text: 'Click Me!',
             listeners: {
-                click: 'onButtonClick'
+                click: 'onFireEvent'
             }
         }
     ],
 
-    onButtonClick: function(button, e, eOpts) {
+    onFireEvent: function(button, e, eOpts) {
         Ext.Msg.alert('Status', 'This is an Ext JS message box! I am draggable too :D');
 
     }
