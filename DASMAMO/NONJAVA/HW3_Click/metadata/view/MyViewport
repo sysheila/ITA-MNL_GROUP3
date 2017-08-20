@@ -48,7 +48,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "onButtonClick",
+                        "fn": "onFireEvent",
                         "implHandler": [
                             "Ext.Msg.alert('Status', 'This is an Ext JS message box! I am draggable too :D');",
                             ""
@@ -62,7 +62,7 @@
                         "name": "string",
                         "scope": "string"
                     },
-                    "name": "onButtonClick",
+                    "name": "onFireEvent",
                     "designerId": "cdaf2424-3c9a-45ce-ba88-f4d1d1b196e1"
                 }
             ]
