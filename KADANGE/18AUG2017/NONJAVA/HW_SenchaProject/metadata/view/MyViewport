@@ -1,0 +1,198 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "myviewport",
+        "designer|userClassName": "MyViewport",
+        "height": 250,
+        "layout": "fit",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "width": "auto"
+    },
+    "name": "MyViewport",
+    "designerId": "4c393d80-2652-42c0-accb-64d098ae811c",
+    "viewControllerInstanceId": "799469d8-369b-4d16-8394-932c9c3ed2ea",
+    "viewModelInstanceId": "171a0114-e014-493d-81ef-6cc0be61ef8a",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "firstContainer",
+                "flex": 1,
+                "id": "firstContainerId",
+                "layout": "fit"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "flex": "number",
+                "id": "string",
+                "layout": "string"
+            },
+            "name": "MyContainer",
+            "designerId": "6aa3beca-ec3b-4947-8215-6ecd8e11ad3a",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "designer|displayName": "firstForm",
+                        "flex": null,
+                        "id": "firstFormId",
+                        "layout": "vbox",
+                        "title": "This is a Form"
+                    },
+                    "configAlternates": {
+                        "bodyPadding": "auto",
+                        "designer|displayName": "string",
+                        "flex": "number",
+                        "id": "string",
+                        "layout": "string",
+                        "title": "string"
+                    },
+                    "name": "MyForm",
+                    "designerId": "a8898015-a171-4756-b825-858e8b228600",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "3) Write custom events in extJS and fire the events with fireEventmethod. Try different events and event listeners. Then have it moving in different direction using drag operation."
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyLabel",
+                            "designerId": "c7bc39e7-06fc-4bd2-bb11-a5833ae600cb"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "firstButton",
+                                "draggable": true,
+                                "id": "firstButtonId",
+                                "text": "Click me!"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "draggable": "boolean",
+                                "id": "string",
+                                "text": "string"
+                            },
+                            "name": "MyButton",
+                            "designerId": "7d0ff392-948e-425c-9de6-2a5762981380",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onFirstButtonIdClick",
+                                        "implHandler": [
+                                            "Ext.MessageBox.alert(\"Mouse Click\",\"This is on mouse click on button!\");"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onFirstButtonIdClick",
+                                    "designerId": "9035c65f-1039-417b-b1ad-b176881ce539"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onFirstButtonIdMouseOut",
+                                        "implHandler": [
+                                            "Ext.MessageBox.alert(\"Mouse out\",\"This is on mouse out of button!\");"
+                                        ],
+                                        "name": "mouseout",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onFirstButtonIdMouseOut",
+                                    "designerId": "7e9c80a0-a7bb-45c6-b413-22405073af70"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "buffer": 5,
+                                        "fn": "onFirstButtonIdMove",
+                                        "implHandler": [
+                                            "Ext.MessageBox.alert(\"Button move\",\"Button has moved!\");"
+                                        ],
+                                        "name": "move",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "buffer": "number",
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onFirstButtonIdMove",
+                                    "designerId": "f8461d6f-692d-4205-94d8-5a6ec9b53679"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
