@@ -7,7 +7,7 @@ init = function(){
 	console.log("app.js initialized");
 }
 
-
+//******HW1******************//
 genTable = function(){
 	var rowSize = 0;
 	var colSize = 0;
@@ -37,7 +37,9 @@ clearTable = function(table){
     	table.deleteRow(0);
     }
 }
+//******End of HW1************//
 
+//*****HW2****************//
 
 main = function(){
 	init();

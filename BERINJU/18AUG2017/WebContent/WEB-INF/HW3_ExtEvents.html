@@ -1,11 +1,176 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<script type="text/javascript" src="js/app.js"></script>
+    <title> HW3 </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all-debug.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-triton/resources/theme-triton-all-debug.css">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-triton/theme-triton-debug.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/packages/charts/classic/charts-debug.js"></script>
+    <link type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/packages/charts/classic/classic/resources/charts-all-debug.css">
+
+    <script type="text/javascript">
+    Ext.onReady(function() {
+        
+        Ext.create('Ext.window.Window', {
+            title: 'Isaiah Thomas',
+            height: 500,
+            width: 300,
+            layout: 'fit',
+            renderTo : Ext.getElementById('helloWorldPanel2'),
+            items: { 
+                
+                    xtype: 'image',
+                    src: 'img/thomas.jpg',
+            },
+            listeners: {
+                    afterrender: function(c) {
+                        Ext.create('Ext.tip.ToolTip', {
+                            target: c.getEl(),
+                            html: 'Isaiah Thomas'
+                        });
+                    }
+                }
+        }).show(); 
+        Ext.create('Ext.Button', {
+           renderTo: Ext.getElementById('helloWorldPanel1'),
+           text: 'Logout',
+           listeners: {
+              click: function() {
+                 Ext.MessageBox.alert('Alert box', 'Logout successful! Bye!');	
+                 window.location.assign('index.html');
+              }
+           }
+        });
+        Ext.create('Ext.Button', {
+           renderTo: Ext.getElementById('helloWorldPanel1'),
+           text: 'Advanced Statistics',
+           listeners: {
+              click: function() {
+                 Ext.MessageBox.alert('Alert box', 'Loading');	
+                 window.location.assign('advanced.html');
+              }
+           }
+        });
+        Ext.create('Ext.form.Panel', {
+            title: 'Search Roster of Players',
+            bodyPadding: 5,
+            width: 350,
+        	
+            // The form will submit an AJAX request to this URL when submitted
+            url: '',
+            layout: 'anchor',
+            defaults: {
+                anchor: '100%'
+            },
+            defaultType: 'textfield',
+            items: [{
+                fieldLabel: 'First Name',
+                name: 'first',
+                allowBlank: false
+            },{
+                fieldLabel: 'Last Name',
+                name: 'last',
+                allowBlank: false
+            }],
+        
+            // Reset and Submit buttons
+            buttons: [{
+                text: 'Reset',
+                handler: function() {
+                    this.up('form').getForm().reset();
+                },
+                listeners: {
+                    mouseover: function() {
+                        Ext.Msg.alert('Event triggered', 'You have hovered over button');
+                    }                
+                }
+            }, {
+                text: 'Submit',
+                formBind: true, //only enabled once the form is valid
+                disabled: true,
+                handler: function() {
+                    Ext.Msg.alert('Sorry', 'Search feature is not available in offline mode');
+                }
+            }],
+            renderTo: Ext.getBody()
+        });
+        Ext.create('Ext.Img', {
+                src: 'resources/images/logo.png',
+                width: 500,
+                renderTo: Ext.getBody(),
+                listeners: {
+                    afterrender: function(c) {
+                        Ext.create('Ext.tip.ToolTip', {
+                            target: c.getEl(),
+                            html: 'photo grabbed from NBA.com '
+                        });
+                    }
+                }
+        });
+        Ext.create('Ext.data.Store', {
+    storeId: 'sampleStore',
+    fields: [{
+        name: 'Season',
+        type: 'string'
+    }, {
+        name: 'Points',
+        type: 'string'
+    }, {
+        name: 'Rebounds',
+        type: 'number'
+    }, {
+        name: 'Assists',
+        type: 'number'
+    }, {
+        name: 'FG',
+        type: 'number'
+    }],
+    data: [{
+        Season: "2016-2017",
+        Points: '23.3',
+        Rebounds: '3.1',
+        Assists: '6.7',
+        FG: '82.0%'
+    }, {
+        Season: "2016-2016",
+        Points: '20.5',
+        Rebounds: '3.1',
+        Assists: '6.0',
+        FG: '80.5%'
+    }]
+});
+Ext.create('Ext.grid.Panel', {
+	
+    title: 'Player Stats',
+    store: Ext.data.StoreManager.lookup('sampleStore'),
+    columns: [{
+        text: 'Season',
+        dataIndex: 'Season',
+    }, {
+        text: 'Points',
+        dataIndex: 'Points',
+    }, {
+        text: 'Rebounds',
+        dataIndex: 'Rebounds',
+    
+    }, {
+        text: 'Assists',
+        dataIndex: 'Assists',
+        
+    }, {
+        text: 'Field Goal %',
+        dataIndex: 'FG',
+        
+    }],
+	
+    height: 200,
+    width: 500  ,
+    renderTo: Ext.getBody()
+});
+     });
+    </script>
 </head>
 <body>
-
 </body>
 </html>
