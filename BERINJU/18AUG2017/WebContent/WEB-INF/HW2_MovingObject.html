@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="ISO-8859-1">
+	<head>
+		<title>JS HW</title>
+		<script src="js/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				$("#move").click(function(){
+					var txt = $("#text")[0];
+					var txtPos = 550;
+					var img = $("#image")[0];   
+				  	var imgPos = 0;
+				    var id = setInterval(frame, 5);
+					  function frame() {
+					    if (imgPos == 550) {
+					      clearInterval(id);
+					      img.style.left='0px';
+					    } else {
+					    	imgPos++; 
+					      img.style.left = imgPos + 'px'; 
+					    }
+					    if(txtPos==0){
+					    	clearInterval(id);
+					    txt.style.left='0px';
+					    }
+					    else{
+					    	txtPos++;
+					    	txt.style.left = txtPos +'px';
+					    }
+					  }
+				});
+			});
+		</script>
+<style>
+	#animate {
+	  width: 500px;
+	  height: 500px;
+	  position: relative;
+	}
+	#text, #image {
+	  position: relative;
+	}
+</style>
+
+	</head>
+	<body>
+			<div>
+				<div id ="animate">
+					<div>
+						<button id="move" type="button">Move</button>
+						<div>
+							<h2 id="text">Let's go!</h2>
+						</div>
+						<div>
+							<img id ="image" src="img/car.gif">
+						</div>
+					</div>
+				</div>
+			</div>
+		
+	</body>
+</html>
