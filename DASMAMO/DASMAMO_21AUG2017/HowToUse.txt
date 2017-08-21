@@ -1,0 +1,6 @@
+Homework Webservices:
+HW1: 
+ - http://localhost:8090/DASMAMO_21AUG2017/hw/removeWhite/<string>
+HW2: 
+ - http://localhost:8090/DASMAMO_21AUG2017/hw/openApp/1 for Notepad
+ - http://localhost:8090/DASMAMO_21AUG2017/hw/openApp/2 for Windows Media Player
