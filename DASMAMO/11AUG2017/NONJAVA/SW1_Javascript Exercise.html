@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Howdie</title>
+<title>Exercise W2D5</title>
 <head>
 	<!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -18,7 +18,6 @@
 
 <script type="text/javascript">
 
-
 function factorialNum() {
 	//var f = [];
 	var n = document.forms.factorial.number.value;
@@ -32,11 +31,11 @@ function factorialNum() {
         }
         displayNum( product);
     }
-
-  }
+}
 
 function displayNum(num){
-	document.getElementById('factorials').innerHTML = "Factorial: " +num;
+	document.getElementById('factorials').innerHTML = "Factorial: " + num;
+	//alert(num);
 }
 
 function generateStringCombi(){
@@ -53,22 +52,24 @@ function generateStringCombi(){
 			}
 		}
 	}
-	alert(f);
+//	alert(f);
+	document.getElementById('stringComb').innerHTML = "Combinations: " + f;
 }
 
 function reverseString(){
 	var string = document.getElementById("reverseStrings").value;
-	alert( string.split("").reverse().join(""));
+	//alert( s);
+	document.getElementById('reverses').innerHTML = "Reverse: " + string.split("").reverse().join("");
 }
 
 function leapYearNum(){
 	var leapYearNum = document.getElementById("leapYear").value;
-	alert(leapYearNum);
-	if((leapYearNum%4)==0){
-		alert("Yes");
+	if((((leapYearNum%4)==0) &&  (leapYearNum % 100 != 0)) || (leapYearNum % 400 == 0)){
+		//ert(leapYearNum + " is a leap year.");
+		document.getElementById('leapYr').innerHTML = leapYearNum + " is a leap year. ";
 	}
 	else{
-		alert("No");
+		document.getElementById('leapYr').innerHTML = leapYearNum + " is not a leap year. ";
 	}
 }
 
@@ -91,13 +92,16 @@ function calendarTime(){
 		mm = '0'+mm
 	} 
 	
-	if(hh>12){
+	if(hh>=12){
 		hh = hh-12;
 		hh = hh + ' PM ';
 	}
+	else if(hh<12){
+		hh = hh + ' AM ';
+	}
 	d = day[d];
 	today = mm + '/' + dd + '/' + yyyy;
-	alert("Today is: " + d + " " + today +  "\n" + hh + " : " + MM + " : " + ss);
+	document.getElementById('calTime').innerHTML = "Today is: " + d + " " + today +  "\n" + hh + " : " + MM + " : " + ss ;
 }
 
 function computeTriangle(){
@@ -106,7 +110,7 @@ function computeTriangle(){
 	var sideC = parseInt(document.getElementById("sideC").value);
 	var p = ((sideA+sideB+sideC)/2);
 	var area = Math.sqrt((p*(p-sideA)*(p-sideB)*(p-sideC)));
-	alert(area.toFixed(2));
+	document.getElementById('triangle').innerHTML = "Area: " + area.toFixed(2);
 }
 
 function cammelize(){
@@ -118,149 +122,201 @@ function cammelize(){
 		newStringArr.push(stringArr[i].charAt(0).toUpperCase()+(stringArr[i].substring(1,stringArr[i].length)));
 	}
 	newStringArr = newStringArr.toString().replace(",", '');
-	alert(newStringArr);
+	//alert(newStringArr);
+	document.getElementById('cammel').innerHTML = "Cammelized: " + newStringArr;
+
 }
 
 function isNumeric(){
 	var string = document.getElementById("numericNum").value;
 	var pattern = /^-*\d*\.*\d+$/;
 	if(string.match(pattern)){
-		alert("Yes");
+	//	alert("Yes");
+		document.getElementById('numeric').innerHTML =  "Yes";
 	}
 	else{
-		alert("No");
+		//alert("No");
+		document.getElementById('numeric').innerHTML = "No";
 	}
 }
 
 function primeFactorsTo(){
 	var prim = document.getElementById("prime").value;
-	var prim1 = [2,3,5,7,9];
-	var arr = [];
-	for(i=prim; i>0; i--){
-		if((i%3==0)&&(i%5==0)&&(i%7==0) ){
-			arr.push(i);
-		}
-	}
-	alert(arr);
+	var num = [], i, j;
+	var primes = [];
+	for (i = 2; i <= prim; ++i) {
+        if (!num[i]) {
+            primes.push(i);
+            for (j = i << 1; j <= prim; j += i) {
+                num[j] = true;
+            }
+        }
+    }
+   // alert(primes);
+   document.getElementById('prim').innerHTML = "Prime numbers are: " + primes;
+
 }
 
 </script>
-<body>
-	
-    
-	<div  class="container" id="factorialDiv">
-		<form  id="factorial">
-		    <div>
-		        <input id="number" type="number" >
-		     	<button name = "button" value = "OK" type = "button" onclick="javascript: factorialNum();">Enter</button>
-		   </div>
-		    
-		    <div class="col-sm-offset-2 col-sm-8">
-				    	<label id="factorials">Factorial:</label>
+	<body>
+		<div class="container">
+		   <div class="row">
+					<div class="card" >
+						<div class="card-content">
+              				<span class="card-title">Strings</span>
+            			</div>
+						<div class="card-tabs">
+							<ul class="tabs tabs-fixed-width">
+						        <li class="tab"><a href="#cammelCase">Cammel Case</a></li>
+						        <li class="tab"><a href="#stringCombinations">Combinations</a></li>
+						        <li class="tab"><a href="#reverse">Reverse</a></li>
+						    </ul>
+						</div>
+
+						<div class="card-content grey lighten-4">
+					      	<div id="cammelCase">
+					      		<form accept-charset=utf-8>
+								        <input id="cammelCaseStr" type="text" >
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: cammelize();return false;"> Cammelize
+								     		<i class="material-icons right">send</i>
+								     	</button>
+								     	<label id="cammel"> </label>
+								</form>
+					      	</div>
+
+					      	<div id="stringCombinations">
+								<form  id="stringCombi">
+								    <div>
+								        <input id="stringCombination" type="text" >
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: generateStringCombi(); return false;"> Generate
+								     		<i class="material-icons right">send</i>
+								     	</button>
+								     	<label id="stringComb"> </label>
+								   </div>
+								</form>
+					 		</div>
+
+					      	<div id="reverse">
+								<form id="reverseArr">
+								    <div>
+								        <input id="reverseStrings" type="text" >
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: reverseString();return false;"> Reverse
+								     		<i class="material-icons right">send</i>
+								     	</button>
+								     	<label id="reverses"> </label>
+								   </div>
+								</form>
+					 		</div>
+					    </div>
+					</div>
 			</div>
-		</form>
-	 </div>
-	 
-	<div id="stringCombi">
-		<form  id="stringCombi">
-		    <div>
-		        <input id="stringCombination" type="name" >
-		     	<button name = "button" value = "OK" type = "button" onclick="javascript: generateStringCombi();">Generate</button>
-		   </div>
-		    
-		    <div class="col-sm-offset-2 col-sm-8">
-				    	<label id="combi">Combi:</label>
+			<div class="row">
+					<div class="card" >
+						<div class="card-content">
+              				<span class="card-title">Date</span>
+            			</div>
+						<div class="card-tabs">
+							<ul class="tabs tabs-fixed-width">
+						        <li class="tab"><a href="#leapYearDiv">Leap Year</a></li>
+						        <li class="tab"><a class="active" href="#calendarTimeDiv">Calendar</a></li>
+						    </ul>
+						</div>
+
+						<div class="card-content grey lighten-4">
+							<div id="leapYearDiv">
+								<form>
+								    <div>
+								        <input id="leapYear" type="number" >
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: leapYearNum();return false;"> LeapYear
+								     		<i class="material-icons right">send</i>
+								     	</button>
+								     	<label id="leapYr"> </label>
+								   </div>
+								</form>
+							</div>
+		 
+							<div id="calendarTimeDiv">
+								<form>
+								    <div>
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: calendarTime();return false;"> Calendar/Time
+								     		<i class="material-icons right">send</i>
+								     	</button>
+								     	<label id="calTime"> </label>
+								   </div>
+								</form>
+							</div>
+						</div>
+					</div>
 			</div>
-		</form>
-	 </div>
-	 
-	 <div id="reverseStringDiv">
-		<form id="reverseArr">
-		    <div>
-		        <input id="reverseStrings" type="name" >
-		     	<button name = "button" value = "OK" type = "button" onclick="javascript: reverseString();">Reverse</button>
-		   </div>
-		    
-		    <div class="col-sm-offset-2 col-sm-8">
-				    	<label id="combi">Reverse:</label>
-			</div>
-		</form>
-	 </div>
-	 
-	 <div id="leapYearDiv">
-		<form>
-		    <div>
-		        <input id="leapYear" type="number" >
-		     	<button name = "button" value = "OK" type = "button" onclick="javascript: leapYearNum();">LeapYear</button>
-		   </div>
-		    
-		    <div class="col-sm-offset-2 col-sm-8">
-				    	<label id="combi">Leap Year:</label>
-			</div>
-		</form>
-	 </div>
-	 
-	 <div id="calendarTimeDiv">
-		<form>
-		    <div>
-		        <label id="calendarTimeLabel">Calendar/Time:</label>
-		     	<button name = "button" value = "OK" type = "button" onclick="javascript: calendarTime();">Calendar/Time</button>
-		   </div>
-		</form>
-	 </div>
-	 
-	<div id="triangleDiv">
-		<form>
-		    <div>
-				<input id="sideA" type="number" >
-				<input id="sideB" type="number" >
-				<input id="sideC" type="number" >
-		        <label id="triangle"> Area is: </label>
-		     	<button name = "button" value = "OK" type = "button" onclick="javascript: computeTriangle();">Compute</button>
-		   </div>
-		</form>
-	 </div>
-	 
-	 <div id="cammelCaseDiv">
-		<form>
-		    <div>
-		        <input id="cammelCaseStr" type="name" >
-		     	<button name = "button" value = "OK" type = "button" onclick="javascript: cammelize();">Cammelize</button>
-		   </div>
-		    
-		    <div class="col-sm-offset-2 col-sm-8">
-				    	<label id="cam">Cammelize:</label>
-			</div>
-		</form>
-	 </div>
-	 
-	  <div id="numericDiv">
-		<form>
-		    <div>
-		        <input id="numericNum" type="name" >
-		     	<button name = "button" value = "OK" type = "button" onclick="javascript: isNumeric();">Numeric</button>
-		   </div>
-		    
-		    <div class="col-sm-offset-2 col-sm-8">
-				    	<label id="numer">Numeric:</label>
-			</div>
-		</form>
-	 </div>
-	 
-	 <div id="primeDiv">
-		<form>
-		    <div>
-		        <input id="prime" type="name" >
-		     	<button name = "button" value = "OK" type = "button" onclick="javascript: primeFactorsTo();">Prime</button>
-		   </div>
-		    
-		    <div class="col-sm-offset-2 col-sm-8">
-				    	<label id="prim">Prime:</label>
-			</div>
-		</form>
-	 </div>
-	 
-	
-	
-</body>
+		 
+
+			<div class="row">
+					<div class="card" >
+						<div class="card-content">
+              				<span class="card-title">Numbers</span>
+            			</div>
+						<div class="card-tabs">
+							<ul class="tabs tabs-fixed-width">
+						        <li class="tab"><a href="#triangleDiv">Area of A Triangle</a></li>
+						        <li class="tab"><a class="active" href="#factorialDiv">Factorial</a></li>
+						        <li class="tab"><a href="#numericDiv">Numeric</a></li>
+						        <li class="tab"><a href="#primeDiv">Prime</a></li>
+						    </ul>
+						</div>
+
+						<div class="card-content grey lighten-4">
+							<div id="triangleDiv">
+								<form>
+								    <div>
+										<input id="sideA" type="number" >
+										<input id="sideB" type="number" >
+										<input id="sideC" type="number" >
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: computeTriangle();return false;">Compute
+								     		<i class="material-icons right">send</i>
+								     	</button>
+								     	<label id="triangle"> </label>
+								   </div>
+								</form>
+							</div>
+		 
+							<div class="row" id="factorialDiv">
+								<form  id="factorial">
+								    <div>
+								        <input id="number" type="number" >
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: factorialNum();return false;">Enter
+								     		<i class="material-icons right">send</i>
+								     	</button>
+								     	<label id="factorials"> </label>
+								   </div>
+								</form>
+							</div>
+
+						  	<div id="numericDiv">
+								<form>
+								    <div>
+								        <input id="numericNum" type="number" >
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: isNumeric();return false;"> Numeric
+								     		<i class="material-icons right">send</i>
+								     	</button>
+								     	<label id="numeric"> </label>
+								   </div>
+								</form>
+						 	</div>
+					 
+							<div id="primeDiv">
+								<form>
+								    <div>
+								        <input id="prime" type="number" >
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: primeFactorsTo();return false;"> Prime
+								     		<i class="material-icons right">send</i>
+								     	</button>
+								     	<label id="prim"> </label>
+								   </div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</body>
 </html>

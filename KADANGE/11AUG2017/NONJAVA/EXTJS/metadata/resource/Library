@@ -1,0 +1,24 @@
+{
+    "type": "libraryresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "basePath": "ext/build/",
+        "designer|userClassName": "Library",
+        "libraryRequires": [
+            "sencha-charts"
+        ],
+        "theme": "MyTritonTheme"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "libraryRequires": "typedarray",
+        "theme": "string",
+        "basePath": "uri"
+    },
+    "name": "Library",
+    "designerId": "2946902f-eabd-4639-ae8d-14047adee273"
+}

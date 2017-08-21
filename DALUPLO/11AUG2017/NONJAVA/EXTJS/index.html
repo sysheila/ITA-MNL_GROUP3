@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-crisp/resources/theme-crisp-all.css" rel="stylesheet" />
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+      <script type="text/javascript">
+         Ext.onReady(function(){
+            Ext.create('Ext.Button', {
+               renderTo: Ext.getElementById('button1'),
+               text: 'Charts and Table',
+               listeners: {
+                  click: function() {
+                    // Ext.MessageBox.alert('Alert box', 'Button 1 is clicked');	
+                     window.location.assign('ext3.html');
+                  }
+               }
+            });
+             Ext.create('Ext.Button', {
+               renderTo: Ext.getElementById('button2'),
+               text: 'hover me!',
+               listeners: {
+                  click: function() {
+                     Ext.MessageBox.alert('Alert box', 'Button 2 is clicked');	
+                  }
+               }
+            });
+             Ext.create('Ext.Button', {
+               renderTo: Ext.getElementById('button3'),
+               text: 'Form',
+               listeners: {
+                  click: function() {
+                   //  Ext.MessageBox.alert('Alert box', 'Button 3 is clicked');	
+                     window.location.assign('ext.html');
+                  }
+               }
+            });
+             Ext.create('Ext.Button', {
+                 renderTo: Ext.getElementById('button4'),
+                 text: 'window',
+                 listeners: {
+                    click: function() {
+                      // Ext.MessageBox.alert('Alert box', 'Button 1 is clicked');	
+                       window.location.assign('ext4.html');
+                    }
+                 }
+              });
+             Ext.create('Ext.tip.ToolTip', {
+            	    target: 'button2',
+            	    html: 'Tooltip for the field created ' + new Date().toString()
+            	});
+         });     
+      </script>
+   </head>
+   <body> <p>Please click the button to see event listener:</p>
+      <div><span id="button3"/></div>
+      <div><span id="button2"/></div>
+      <div><span id="button1"/></div>
+      <div><span id="button4"/></div>
+   </body>
+</html>

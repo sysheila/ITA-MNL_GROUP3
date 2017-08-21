@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Exercise W2D5</title>
+<head>
+	<!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" rel="stylesheet" />
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/packages/charts/classic/charts.js"></script>
+
+   <script type="text/javascript">
+		function drawRecta() {
+			var h = document.getElementById("height1").value;
+			var w = document.getElementById("width1").value;
+			var c = document.getElementById("canvas");
+			var ctx=c.getContext("2d");
+			if(h&&w){
+				ctx.fillStyle="black";
+				ctx.fillRect(400, 100, w, h);
+				ctx.fillStyle="white";
+				ctx.fillRect(430, 130, (w-60), (h-60));
+				ctx.fillStyle="black";
+				ctx.fillRect(440, 140, (w-80), (h-80));
+				ctx.fillStyle="white";
+				ctx.fillRect(443, 143, (w-86), (h-86));
+				ctx.stroke();
+			}
+			else{
+				alert("Enter height and width");
+			}
+		}
+
+		function drawTransRect(){
+			var h = document.getElementById("height2").value;
+			var w = document.getElementById("width2").value;
+			var c = document.getElementById("canvas2");
+			var ctx=c.getContext("2d");
+			if(h&&w){
+				ctx.fillStyle="red";
+				ctx.fillRect(400, 100, w, h);
+				ctx.fillStyle="blue";
+				ctx.globalAlpha = 0.50;
+				ctx.fillRect(450, 150, w, h);
+				ctx.stroke();
+			}
+			else{
+				alert("Enter height and width");
+			}
+		}
+		function moveTo(){
+			var c=document.getElementById("canvas3");
+			var ctx=c.getContext("2d");
+			
+			ctx.beginPath();
+			ctx.arc(500,250,200,0,2*Math.PI);
+			ctx.stroke();
+			ctx.closePath()
+			ctx.beginPath();
+			ctx.arc(550,200,25,0,2*Math.PI);
+			ctx.arc(450,200,25,1*Math.PI,3*Math.PI);
+			ctx.stroke();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.arc(500,235,150,0,1*Math.PI);
+			ctx.stroke();
+		}
+
+		function diagonalCirc(){
+			var c=document.getElementById("canvas4");
+			var ctx=c.getContext("2d");
+			var x = [100,250,400,550,700,850];
+		    var y = [75,225,375,525,675,825];
+		    var col = ["white","#d3d3d3","#a8a8a8", "#545454", "#2a2a2a", "black"];
+		    radius = 60;
+		    for (var i = 0; i <x.length; i++) {
+		    	ctx.fillStyle=col[i];
+		    	ctx.beginPath();
+				ctx.arc(x[i], y[i], radius, 0, 2 * Math.PI);
+				ctx.fill();
+				ctx.stroke();
+		    }
+		}
+   </script>
+</head>
+	<body>
+		<div class="navbar-fixed">
+		    <nav>
+		      <div class="nav-wrapper">
+		        <a href="#" class="brand-logo">Homework</a>
+		        <ul class="right hide-on-med-and-down">
+		          <li><a href="sass.html">Sass</a></li>
+		          <li><a href="badges.html">Components</a></li>
+		        </ul>
+		      </div>
+		    </nav>
+		</div>
+		
+		<div class="container">
+		   <div class="row">
+					<div class="card" >
+						<div class="card-content">
+              				<span class="card-title">Draw</span>
+            			</div>
+						<div class="card-tabs">
+							<ul class="tabs tabs-fixed-width">
+						        <li class="tab"><a href="#drawRect">Draw Rectangle</a></li>
+						        <li class="tab"><a href="#transp">Transparent Rectangle</a></li>
+						        <li class="tab"><a href="#smileyCirc">Smiley Circle</a></li>
+						        <li class="tab"><a class="active" href="#diagCirc">Diagonal Circles</a></li>
+						    </ul>
+						</div>
+
+						<div class="card-content grey lighten-4">
+					      	<div id="drawRect">
+					      		<form accept-charset=utf-8>
+								        <input id="height1" name="height1" type="number" placeholder="Height"/>
+										<input id="width1" name="width1" type="number" placeholder="Width"/>
+								     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: drawRecta();return false;">Draw
+								     		<i class="material-icons right">send</i>
+								     	</button>
+					      			
+								</form>
+								<canvas id="canvas"  width="1040" height="500" style="border:1px solid #d3d3d3;"> </canvas> 
+					      	</div>
+
+						  	<div id="transp">
+									<form accept-charset=utf-8>
+									        <input id="height2" name="height2" type="number" placeholder="Height"/>
+											<input id="width2" name="width2"type="number" placeholder="Width"/>
+									     	<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: drawTransRect();return false;">Draw
+									     		<i class="material-icons right">send</i>
+									     	</button>
+									</form>
+									<canvas id="canvas2"  width="1040" height="500" style="border:1px solid #d3d3d3;"> </canvas> 
+						 	</div>
+
+						 	<div id="smileyCirc">
+						 			<center>
+
+						 				<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: moveTo();return false;">Smile
+									     		<i class="material-icons right">send</i>
+										</button>
+									</center>
+									<canvas id="canvas3"  width="1040" height="500" style="border:1px solid #d3d3d3;"> </canvas> 
+
+						 	</div>
+
+						 	<div id="diagCirc">
+						 			<center>
+
+						 				<button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: diagonalCirc();return false;">Draw
+									     		<i class="material-icons right">send</i>
+										</button>
+									</center>
+									<canvas id="canvas4"  width="1040" height="1000" style="border:1px solid #d3d3d3;"> </canvas> 
+						 	</div>
+						      		
+						</div>
+					</div>
+				</div>
+		</div>
+	</body>
+</html>

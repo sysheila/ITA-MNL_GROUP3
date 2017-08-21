@@ -1,0 +1,65 @@
+{
+    "name": "HW1_DASMAMO_ExtJS",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.5.1.240",
+            "frameworkVersion": "6.5.0.775"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:55344/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "C:/Users/Monica/Documents/Publish",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "4.2.2",
+    "xdsBuild": 282,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext65",
+    "viewOrderMap": {
+        "view": [
+            "ae793c70-b91b-4633-9d1b-f42bfc4079ef",
+            "3cf211c0-02b5-442a-bb66-47b480f174af",
+            "1cb1c127-024e-424d-acae-4bf66f553877",
+            "3c0c86e3-a44a-4393-b6e6-ba5188b35d30",
+            "a497484b-4c96-4481-b00a-6041f1712327",
+            "a062610f-a416-48a4-b9d2-f363b4181693",
+            "5d87b8e7-fe01-444c-806e-ac9e3948b542",
+            "7187de74-36f1-4997-95e0-b0ada166d379",
+            "ba9eb558-a840-436e-94f2-54183e35f348",
+            "95d822ab-8e66-4763-9b6a-b78034048284",
+            "39f39fcd-3222-4944-b1da-4dcf1e86fe63",
+            "d0a7c98a-e9ed-4c87-af67-7d649b13db8f"
+        ],
+        "store": [
+            "14603a79-e8b8-41a7-86eb-3dc9e89f5ec1"
+        ],
+        "controller": [
+            "c0ba14d3-1c6a-4a09-a0ae-15f76b044b8f"
+        ],
+        "model": [
+            "31e7b718-d22e-440f-8206-38c790400f84"
+        ],
+        "resource": [
+            "e70f6f27-4271-4288-9847-b0482e457d36",
+            "6b7021d5-00da-4c51-930c-c51e87ccc2b0"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

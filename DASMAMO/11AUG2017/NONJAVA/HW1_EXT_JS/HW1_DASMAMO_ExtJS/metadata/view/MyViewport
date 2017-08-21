@@ -1,0 +1,221 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "myviewport",
+        "designer|userClassName": "MyViewport",
+        "height": 250,
+        "layout": "fit",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto",
+        "layout": "string"
+    },
+    "name": "MyViewport",
+    "designerId": "ae793c70-b91b-4633-9d1b-f42bfc4079ef",
+    "viewControllerInstanceId": "1cb1c127-024e-424d-acae-4bf66f553877",
+    "viewModelInstanceId": "3cf211c0-02b5-442a-bb66-47b480f174af",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "alignTarget": "",
+                "bodyPadding": 10,
+                "height": 515,
+                "layout": "fit",
+                "title": "Welcome",
+                "width": 880
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "height": "auto",
+                "layout": "string",
+                "title": "string",
+                "width": "auto",
+                "alignTarget": "string"
+            },
+            "name": "MyForm1",
+            "designerId": "06cabec9-2d7f-40d1-bcbb-138b8f2f7d48",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "formPanel",
+                        "itemId": "formPanel",
+                        "layout": "anchor"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "container|align": "string",
+                        "layout": "string"
+                    },
+                    "name": "MyContainer",
+                    "designerId": "ece6bf76-5a53-4da0-8d6b-2c780ce5461a",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "username",
+                                "fieldLabel": "",
+                                "maxWidth": 250,
+                                "minWidth": 250,
+                                "width": 250
+                            },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "maxWidth": "number",
+                                "minWidth": "number",
+                                "width": "auto"
+                            },
+                            "name": "MyTextField2",
+                            "designerId": "508fc706-dfc3-4e95-9524-bcdeed4c44be"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": null,
+                                "emptyText": "password",
+                                "fieldLabel": "",
+                                "maxWidth": 250,
+                                "minWidth": 250,
+                                "width": 250
+                            },
+                            "configAlternates": {
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "maxWidth": "number",
+                                "minWidth": "number",
+                                "width": "auto",
+                                "dock": "string"
+                            },
+                            "name": "MyTextField3",
+                            "designerId": "003c231a-3a69-4476-8caa-397d81fa044f"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Log In",
+                                "tooltip": "Log in!"
+                            },
+                            "configAlternates": {
+                                "text": "string",
+                                "tooltip": "string"
+                            },
+                            "name": "MyButton",
+                            "designerId": "21314ef5-e1f6-4606-b883-e2b38dd9332a",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "var m = Ext.create('HW1.view.MyViewport1',{});",
+                                            "m.show();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onButtonClick",
+                                    "designerId": "ee8c21f8-ef17-48ad-86b0-c6e694df7594"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Register",
+                                "tooltip": "Register"
+                            },
+                            "configAlternates": {
+                                "text": "string",
+                                "tooltip": "string"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "ef6fcfce-973d-4d8b-8dcd-0ed29ff9f147",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRegisterClick",
+                                        "implHandler": [
+                                            "       var m = Ext.create('HW1.view.MyWindow',{});",
+                                            "        m.show();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRegisterClick",
+                                    "designerId": "950c0a60-acf3-42a3-ad26-a7b700dcaab1"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

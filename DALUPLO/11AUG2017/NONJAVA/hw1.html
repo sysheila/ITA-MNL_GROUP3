@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JS</title>
+		<script>
+			function draw(){
+			  var canvas = document.getElementById('canvas');
+			  if (canvas.getContext){
+			    var context = canvas.getContext('2d');
+			    context.beginPath();
+			   // Outer circle
+			    context.arc(75,75,50,0,Math.PI*2,true);
+			    context.moveTo(110,75);
+			    // Mouth 
+			    context.arc(75,75,35,0,Math.PI,false); 
+			    // Lefy and Right eye
+			    context.moveTo(55,65);
+			    context.arc(60,65,5,0,Math.PI*2,true); 
+			    context.arc(90,65,5,0,Math.PI*2,true);
+			    context.stroke();
+			  }
+			  
+			  var canvasRect = document.getElementById('canvasRect');
+			  if (canvasRect.getContext){
+				  var contextRect = canvasRect.getContext('2d');
+
+				  contextRect.fillRect(20,20,100,100);
+				  contextRect.clearRect(40,40,60,60);
+				  contextRect.strokeRect(45,45,50,50);
+			  }
+			  
+			  var canvasColored = document.getElementById('canvasColored');
+			  if (canvasColored.getContext){
+				  var contextColor = canvasColored.getContext('2d');
+
+				  contextColor.fillStyle = "rgb(256,0,0)";
+				  contextColor.fillRect (15, 10, 55, 50);
+			        
+				  contextColor.fillStyle = "rgba(0, 0, 200, 0.6)";
+				  contextColor.fillRect (35, 30, 55, 50);
+			  }
+			  
+			  var canvasCirlcle = document.getElementById('canvasCircle');
+			  if (canvasCirlcle.getContext){
+				  
+			var contextCircle = canvasCirlcle.getContext('2d');
+
+					var counter = 0;
+					for (var i = 0; i < 6; i++) {
+						for (var j = 0; j < 6; j++) {
+							//Start from white and goes to black
+							contextCircle.fillStyle = "rgb("
+									+ Math.floor(255 - 42.5 * i) + ","
+									+ Math.floor(255 - 42.5 * i) + ","
+									+ Math.floor(255 - 42.5 * j) + ")";
+							contextCircle.beginPath();
+							if (i === counter && j === counter) {
+								//creates the circles
+								contextCircle.arc(25 + j * 50, 30 + i * 50, 20,
+										0, Math.PI * 2, true);
+								contextCircle.fill();
+								//creates a border around the circles so white one will be vissible
+								contextCircle.stroke();
+							}
+						}
+						counter++;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body onload="draw()">
+		<div>
+			<canvas id="canvasRect" width="250" height="250"></canvas>
+			<canvas id="canvasColored" width="250" height="250"></canvas>
+			<canvas id="canvas" width="250" height="250"></canvas>
+			<canvas id="canvasCircle" width="250" height="250"></canvas>
+		</div>
+	</body>
+</html>

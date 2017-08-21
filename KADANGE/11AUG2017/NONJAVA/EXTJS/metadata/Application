@@ -1,0 +1,34 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "StudentGridModel",
+            "ChartModel",
+            "PieChartModel"
+        ],
+        "name": "MyApp",
+        "stores": [
+            "studentGridStore",
+            "chartGridStore",
+            "pieChartStore"
+        ],
+        "views": [
+            "OuterViewport",
+            "MyWindow",
+            "OuterViewport1"
+        ]
+    },
+    "configAlternates": {
+        "name": "string",
+        "views": "typedarray",
+        "models": "typedarray",
+        "stores": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

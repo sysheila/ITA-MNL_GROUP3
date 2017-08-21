@@ -162,10 +162,38 @@
 		}
 		return res;
 	}
-	// console.log("\nExercise 13\n");
+	console.log("\nExercise 13\n");
 	//Prime Number
-	var limit = 100;
 	
+	function isPrime(n){
+		if(n == 2){
+        	return true;
+		}
+	    if(n == 3){
+	        return true;
+	    }
+	    if(n % 2 == 0){
+	        return false;
+		}
+	    if(n % 3 == 0){
+	        return false;
+	    }
+
+	    i = 5
+	    w = 2
+
+	    while(i * i <= n){
+	        if(n % i == 0){
+	            return false;
+	        }
+
+	        i += w
+	        w = 6 - w
+	    }
+
+	    return true
+	}
+
 	$(document).ready(function(){
 		$("#today").append(current);
 		$("#btnGetArea").click(function(){
@@ -208,6 +236,16 @@
 			var txtTraverser = $("#txtTraverser").val();
 			var result = arrayDeveloper(txtTraverser);
 			$("#lblTraverser").text(result);
+		});
+		
+		$("#btnPrime").click(function(){
+			$("#tblBody").empty();
+			var txtPrime = parseInt($("#txtPrime").val());
+			for(var i=1; i<=txtPrime; i++){
+				if(isPrime(i)){
+					$("#tblBody").append("<tr><td>"+i+"</td></tr>");
+				}
+			}
 		});
 	});
 	
@@ -280,6 +318,18 @@
 				<button type="button" id="btnTraverser" name="btnTraverser" class="btn btn-info">Go</button>
 				<h5>Result: <label id="lblTraverser"></label></h5>
 			</div>
+		</div>
+	</div>
+	<div class="row well">
+		<div class="col-md-6 col-md-offset-3">
+			<h3>Prime Numbers</h3>
+			<input type="text" class="form-control" name="txtPrime" id="txtPrime" placeholder="Enter a number"/>
+			<button type="button" id="btnPrime" name="btnPrime" class="btn btn-info">Proceed</button>
+			<h5>Result: </label></h5>
+			<table class="table table-bordered table-hover table-striped">
+				<tbody id="tblBody">
+				</tbody>
+			</table>
 		</div>
 	</div>
 </body>

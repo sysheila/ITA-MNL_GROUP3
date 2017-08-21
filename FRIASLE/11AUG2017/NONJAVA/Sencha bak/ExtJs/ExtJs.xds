@@ -1,0 +1,42 @@
+{
+    "name": "ExtJs",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/ExtJs/",
+        "exportPath": "C:/Users/levie/OneDrive/Documents/ITA/Sencha/Publish"
+    },
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "ec4a4623-78b2-495a-bdea-1d0ea4ff8fb4",
+            "e05c6b85-876e-4ec5-8887-9a8867e0140c",
+            "50fc2179-b4ae-4f88-8410-0c13525cffa6"
+        ],
+        "store": [],
+        "controller": [
+            "c4a873b6-ce6e-4b1b-83fb-c1f649d4451e"
+        ],
+        "model": [],
+        "resource": [
+            "6909f738-3474-42ee-a811-c3bdfe18cad4",
+            "39e2d7ca-8158-4943-bc1b-b4dd01af04c8"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

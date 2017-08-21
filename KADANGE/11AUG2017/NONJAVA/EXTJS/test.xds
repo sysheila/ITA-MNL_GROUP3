@@ -1,0 +1,70 @@
+{
+    "name": "test",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.5.1.240",
+            "frameworkVersion": "6.5.0.775"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:49476/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "C:/Users/Gene kadano/Documents/3 publish",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "installStatus": "Not Installed",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app",
+            "buildPlatform": false
+        }
+    },
+    "xdsVersion": "4.2.2",
+    "xdsBuild": 282,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext65",
+    "viewOrderMap": {
+        "view": [
+            "5810d5cf-3072-47bf-8807-bd5c25fff415",
+            "b6610195-546a-4669-8214-9928947294c7",
+            "6a8e35fb-fd2b-4254-86f2-9c223887c977",
+            "fa882b71-dbff-47a9-b821-ea855fc5fc1e",
+            "bb7ff161-4439-4b4d-9b18-3b145a96f8fe",
+            "d874ce43-5047-4179-a976-2a075bee7d75",
+            "39c68ed6-e0d6-4afe-aba8-a78e47b2d299",
+            "ab87965b-dfdb-4eb6-8149-a3327fb924f1",
+            "3286e632-c9ef-44b7-9893-5e41dde89a98"
+        ],
+        "store": [
+            "bfc05999-461d-4c51-ae33-1f0f5a79e26c",
+            "e7bb0432-dc59-4040-9eba-a4538f3ecd25",
+            "251eef81-8636-4dbe-a9d6-5bcbb2a6fe15"
+        ],
+        "controller": [],
+        "model": [
+            "4d473481-7d5c-45dc-b61f-d052f9fb4e70",
+            "e6030524-37e7-452e-b2d8-518cf6700fb3",
+            "48787281-da53-488f-bc4b-6f672bc67b77"
+        ],
+        "resource": [
+            "2946902f-eabd-4639-ae8d-14047adee273",
+            "c71f871f-c89f-4568-97ab-329b4c6f46c6"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

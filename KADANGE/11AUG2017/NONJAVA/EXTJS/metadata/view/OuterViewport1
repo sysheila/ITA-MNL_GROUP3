@@ -1,0 +1,143 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "outerviewport1",
+        "designer|userClassName": "OuterViewport1",
+        "height": 250,
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "MyViewport1",
+    "designerId": "3286e632-c9ef-44b7-9893-5e41dde89a98",
+    "viewControllerInstanceId": "39c68ed6-e0d6-4afe-aba8-a78e47b2d299",
+    "viewModelInstanceId": "d874ce43-5047-4179-a976-2a075bee7d75",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|snapToGrid": 10,
+                "layout": "absolute"
+            },
+            "configAlternates": {
+                "designer|snapToGrid": "number",
+                "layout": "string"
+            },
+            "name": "MyContainer4",
+            "designerId": "04016f0d-4d93-46b3-8ba0-ff27edd92898",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "designer|displayName": "myPictureForm",
+                        "flex": null,
+                        "id": "myPictureFormId",
+                        "layout": "auto",
+                        "layout|x": 0,
+                        "layout|y": -9,
+                        "title": "My Second Form"
+                    },
+                    "configAlternates": {
+                        "bodyPadding": "auto",
+                        "designer|displayName": "string",
+                        "flex": "number",
+                        "id": "string",
+                        "layout": "string",
+                        "layout|x": "number",
+                        "layout|y": "number",
+                        "title": "string"
+                    },
+                    "name": "MyForm1",
+                    "designerId": "5a2a62f7-9996-40dc-b3de-586d66a505c6",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "ButtonContainer"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string"
+                            },
+                            "name": "MyContainer3",
+                            "designerId": "ca04c223-f8a1-411d-abd7-819fbed5d129",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "backPage",
+                                        "id": "backPageId",
+                                        "text": "Back page"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "id": "string",
+                                        "text": "string"
+                                    },
+                                    "name": "MyButton2",
+                                    "designerId": "01d61dbf-0350-4f76-bdb8-a68df0fe8076",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBackPageIdClick",
+                                                "implHandler": [
+                                                    "Ext.MessageBox().alert(\"Alert!\",\"You clicked the button!\");",
+                                                    "Ext.create('MyApp.view.OuterViewport',{}).show();"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onBackPageIdClick",
+                                            "designerId": "7b8311e6-ca44-4086-9093-9628a78e0578"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

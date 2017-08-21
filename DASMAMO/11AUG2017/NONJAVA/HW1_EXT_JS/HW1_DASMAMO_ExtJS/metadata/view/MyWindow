@@ -1,0 +1,166 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mywindow",
+        "designer|userClassName": "MyWindow",
+        "height": 250,
+        "title": "",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "5d87b8e7-fe01-444c-806e-ac9e3948b542",
+    "viewControllerInstanceId": "ba9eb558-a840-436e-94f2-54183e35f348",
+    "viewModelInstanceId": "7187de74-36f1-4997-95e0-b0ada166d379",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "title": "string"
+            },
+            "name": "MyForm2",
+            "designerId": "a0e3af5f-5b73-4bdf-975b-b0d3d38b8fb7",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "emptyText": "email",
+                        "fieldLabel": "",
+                        "layout|anchor": "100%",
+                        "maxWidth": 250,
+                        "minWidth": 250,
+                        "width": 378
+                    },
+                    "configAlternates": {
+                        "emptyText": "string",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "maxWidth": "number",
+                        "minWidth": "number",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField4",
+                    "designerId": "9bdbd3a9-9153-4dc5-9027-512420010ed9"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "emptyText": "username",
+                        "fieldLabel": "",
+                        "maxWidth": 250,
+                        "minWidth": 250,
+                        "width": 250
+                    },
+                    "configAlternates": {
+                        "emptyText": "string",
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "minWidth": "number",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField5",
+                    "designerId": "8943792b-38e8-4f18-b210-a21ccd82a9ba"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "emptyText": "password",
+                        "fieldLabel": "",
+                        "maxWidth": 250,
+                        "minWidth": 250,
+                        "width": 250
+                    },
+                    "configAlternates": {
+                        "emptyText": "string",
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "minWidth": "number",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField6",
+                    "designerId": "744a33d4-8f03-4b13-8db9-63187a2e4a29"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Register!"
+                    },
+                    "configAlternates": {
+                        "text": "string"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "78179053-9e5d-40fe-bce3-ed18e0a6be9e",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRegClick",
+                                "implHandler": [
+                                    "var msg = Ext.create('Ext.window.MessageBox');",
+                                    "\t",
+                                    "msg.alert('You are now registered!');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onRegClick",
+                            "designerId": "95284a8b-4aeb-48f5-83d7-23045f1ff0c5"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

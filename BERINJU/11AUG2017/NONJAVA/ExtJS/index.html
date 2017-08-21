@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-triton/resources/theme-triton-all.css" rel="stylesheet" />
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+      <script type="text/javascript">
+         Ext.onReady(function() {
+
+        
+            
+            Ext.create('Ext.Panel', {
+            renderTo: Ext.getBody(),
+            height: 180,
+            width: 300,
+            bodyPadding: 5,
+            width: 350,
+            title: 'Login Page',
+			items: [
+            {
+						fieldLabel: 'Username',
+                        xtype     : 'textfield',
+                        emptyText : 'Enter Username',
+                        anchor    : '100%',
+						id: 'Username'
+            },{
+						fieldLabel: 'Password',
+                        xtype     : 'textfield',
+						id      : 'Password',
+						inputType: 'password',
+                        emptyText : 'Enter Password',
+                        anchor    : '100%'
+			},{	 
+						xtype: 'button',
+                        text: 'Please Login',
+						anchor : '100%',
+						handler: function(){
+							var username = Ext.getCmp('Username').getValue();
+							var password = Ext.getCmp('Password').getValue();
+							if(username=='admin'&&password=='admin'){
+							Ext.MessageBox.alert('Login Successful', 'User confirmed.',showResult);
+							}else{
+								Ext.MessageBox.alert('Login Failed', 'Incorrect credentials.');
+							}
+						}
+			}
+        ]
+            });
+			
+				function showResult(){
+			 window.location.href = ('stats.html');
+		 }
+
+          
+         });
+      </script>
+   </head>
+   <body>
+       
+      <div id="helloWorldPanel" />
+
+      
+      <div id = 'helloWorldPanel1' />   <!--  panel will be rendered here-- >
+        
+        <div id='helloWorldPanel3' />
+        
+
+        <div id='helloWorldPanel2' />
+
+
+   </body>
+</html>
