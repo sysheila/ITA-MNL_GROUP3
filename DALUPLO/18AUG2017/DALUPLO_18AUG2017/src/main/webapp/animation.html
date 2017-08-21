@@ -1,0 +1,61 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    progress {
+      width: 5%;
+    }
+  </style>
+  <script type="text/javascript">
+        
+            var imgObj = null;
+            
+            function init(){
+               imgObj = document.getElementById('pingu');
+               imgObj.style.position= 'relative'; 
+               imgObj.style.left = '0px'; 
+               imgObj.style.right = '0px'; 
+            }
+            
+            function moveRight(){
+               imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+            }
+            
+            function moveLeft(){
+                imgObj.style.left = parseInt(imgObj.style.left) - 10 + 'px';
+             }
+            
+            function autoRight(){
+                imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+                animate = setTimeout(autoRight,70); // call moveRight in 20msec
+             }
+            function autoLeft(){
+                imgObj.style.left = parseInt(imgObj.style.left) - 10 + 'px';
+                animate = setTimeout(autoLeft,70); // call moveRight in 20msec
+             }
+
+            function stop(){
+               clearTimeout(animate);
+               
+            }
+            
+            window.onload =init;
+         
+      </script>
+</head>
+
+<body>
+
+	<div>
+  		<img src="pingu.png" id="pingu"></img>
+	</div>
+	<button onclick="moveRight()"> Right</button>
+  	<button onclick="moveLeft()"> Left</button>
+  	<button onclick="autoRight()"> Auto Right</button>
+  	<button onclick="autoLeft()"> Auto Left</button>
+	<button onclick="stop()"> Stop </button>
+
+</body>
+
+</html>
