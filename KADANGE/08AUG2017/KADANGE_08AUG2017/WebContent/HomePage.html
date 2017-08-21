@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome :D</title>
+	<script>
+		var showInput = true;
+		window.savings=0;
+		var actionToDo;
+		var user;
+		
+		function showLoginUser(){
+			var cookie = document.cookie;
+			if(cookie == ""){
+				if(!alert("Session expired! Logging out...") == true){
+					/* toSignout(); */
+					window.location="LoginPage.html"
+				}
+			}else{
+				var cookies = cookie.split(';');
+				var name = cookie.split(';')[0].split('=')[1];
+				document.getElementById("loginUser").innerHTML = "Hello "+name;
+			}
+		}		
+		function showInputForm(action){
+			var inputForm = document.getElementById("divInputForm");
+			actionToDo = action;
+			if(showInput==false){
+				inputForm.style.visibility = "hidden";
+				showInput = true;
+			}else{
+				inputForm.style.visibility = "visible";
+				showInput = false;
+			}
+		}
+		function toDeposit(){
+	    	console.log("TEST");
+	    	var action = document.getElementById("depositForm").id;
+	    	showInputForm(action);
+	    }
+		function toWithdraw(){
+			console.log("TEST");
+	    	var action = document.getElementById("withdrawForm").id;
+	    	showInputForm(action);
+		}
+		function calculate(){
+			var form = document.getElementById("inputForm");
+			var amount = form.elements.amount.value;
+			
+			if(actionToDo=="depositForm"){
+				window.savings = parseInt(window.savings) + parseInt(amount);
+				toDeposit();
+			}else if(actionToDo=="withdrawForm"){
+				if(window.savings < amount){
+					alert("Insufficient amount. Savings is only "+window.savings);
+				}else{
+					window.savings = parseInt(window.savings) - parseInt(amount);
+				}
+				toWithdraw();
+			}
+		}
+		function balance(){
+			alert("Current savings amount is "+savings);
+		}
+		function toSignout(){
+			document.cookie = "";
+			var form = document.getElementById("signOutForm");
+			form.action = "Bank";
+		}
+	</script>
+</head>
+<body onload = showLoginUser()>
+	<h1 id="loginUser"></h1>
+	<div id="option1">
+		<table border=1>
+			<tr>
+				<td><p>Select from something to do</p></td>
+			</tr>
+			<tr>
+				<th><form id="depositForm" onsubmit="toDeposit(); return false"><button type="submit">Deposit</button></form></th>
+			</tr>
+			<tr>
+				<th><form id="withdrawForm" onsubmit="toWithdraw(); return false"><button type="submit">Withdraw</button></form></th>
+			</tr>
+			<tr>
+				<th><button id="balanceForm" type="submit" onclick="balance()" name="toBalance"
+						value="deposit">Balance</button></th>
+			</tr>
+			<tr>
+				<th><form id="signOutForm" method="post"><button id="signOutButton" type="submit" onclick="toSignout()" name="signout"
+						value="signout">Sign out</button></form></th>
+			</tr>
+		</table>
+	</div>
+	<div id="divInputForm" style="visibility: hidden">
+		<form id="inputForm" onsubmit="calculate(); return false">
+			<table border=1>
+				<tr>
+					<th>Enter amount:</th>
+					<th><input id="inputAmount" type="text" name="amount"
+						value="0.0"></th>
+				</tr>
+				<tr>
+					<th><button id="calButton" type="submit">Submit</button></th>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div id="option2" style="visibility: hidden">
+		<h1>Select from Options to do</h1>
+		<form id="formDeposit" onsubmit="toDeposit()" method="post">
+			<table border=1>
+				<tr>
+					<th>Deposit:</th>
+					<th><input id="depositAmnt" type="text" name="amount"
+						value="0.0"></th>
+				</tr>
+				<tr>
+					<th><button type="submit" name="deposit" value="deposit">Deposit</button></th>
+				</tr>
+			</table>
+		</form>
+		<form id="formWithdraw" onsubmit="toWithdraw()" method="post">
+			<table border=1>
+				<tr>
+					<th>Withdraw:</th>
+					<th><input id="withdrawAmnt" type="text" name="amount"
+						value="0.0"></th>
+				</tr>
+				<tr>
+					<th><button type="submit" name="withdraw" value="withdraw">Withdraw</button></th>
+				</tr>
+			</table>
+		</form>
+		<form id="formBalance" onsubmit="toBalance()" method="post">
+			<button type="submit" name="balance" value="balance">Check
+				Balance</button>
+		</form>
+		<form action="TestServlet2" method="post">
+			<button name="signout" value="signout">Sign out</button>
+		</form>
+	</div>
+</body>
+</html>

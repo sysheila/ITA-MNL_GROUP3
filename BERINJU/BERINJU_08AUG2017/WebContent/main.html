@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="utils/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<script type="text/javascript" charset="utf-8"
+	src="controllers/login.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="text/javascript" charset="utf-8"
+	src="utils/js/materialize.min.js"></script>
+<title>Hi</title>
+
+<header>
+	<nav class="red lighten-2 z-depth-2">
+		<div class="nav-wrapper" style="padding-left: 30px;">
+			<a href="#" class="brand-logo">>>> Simple Banking Application</a>
+			<ul id="nav-mobile" class="right">
+				<li><a href="welcome.html" Simple>Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+</header>
+</head>
+<body>
+	<div class="parallax-container" style="height: 1000px;">
+		 <!--  <div class="parallax">
+			<img src="utils/img/city.jpg">
+		</div>--> 
+		<div class="row" style="padding-top: 100px;">
+			<div class="col s4">
+				<div class="card  z-depth-4">
+					<div class="card-image">
+						<img src="utils/img/balance.jpg"> <span class="card-title">
+						</span>
+					</div>
+					<div class="card-content" style="padding: 25px;">
+						<!--  -<form method = "post" action="Test">-->
+						<form action="javascript:verify()">
+							<h4>Balance</h4>
+							<input class="input-field" type="text" id="balance"
+								name="balance" placeholder="Remaining balance" value="1000"
+								disabled>
+							<div class="row">
+								<center>
+									<button data-target="modal1" type="submit"
+										class="modal-trigger waves-effect waves-light btn z-depth-1 red lighten-2">
+										<i class="material-icons left">cloud</i>Send
+									</button>
+								</center>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="col s4">
+				<div class="card  z-depth-4">
+					<div class="card-image">
+						<img src="utils/img/deposit.jpg"> <span class="card-title">
+						</span>
+					</div>
+					<div class="card-content" style="padding: 25px;">
+						<!--  -<form method = "post" action="Test">-->
+						<form action="javascript:deposit()">
+							<h4>Deposit</h4>
+							<input class="input-field" type="text" id="deposit"
+								name="deposit" placeholder="Enter amount to deposit"
+								class="validate" required autofocus>
+							<div class="row">
+								<center>
+									<button type="submit"
+										class="waves-effect waves-light btn z-depth-1 red lighten-2">
+										<i class="material-icons left">send</i>Send
+									</button>
+								</center>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col s4">
+				<div class="card  z-depth-4">
+					<div class="card-image">
+						<img src="utils/img/withdraw.jpg"> <span class="card-title">
+						</span>
+					</div>
+					<div class="card-content" style="padding: 25px;">
+						<!--  -<form method = "post" action="Test">-->
+						<form action="javascript:withdraw()">
+							<h4>Withdraw</h4>
+							<input class="input-field" type="text" id="withdraw"
+								name="withdraw" placeholder="Enter amount to withdraw"
+								class="validate" required autofocus>
+							<div class="row">
+								<center>
+									<button type="submit"
+										class="waves-effect waves-light btn z-depth-1 red lighten-2">
+										<i class="material-icons left">cloud</i>Take
+									</button>
+								</center>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Modal Structure -->
+	<div id="modal1" class="modal bottom-sheet">
+		<div class="modal-content">
+			<h4>Confirmation</h4>
+			<p>Transaction successful. Thank you!</p>
+		</div>
+		<div class="modal-footer">
+			<button on-click="close()"
+				class="modal-action modal-close waves-effect waves-green btn-flat">Okay</button>
+		</div>
+	</div>
+
+	<!-- Modal Structure -->
+	<div id="modal2" class="modal bottom-sheet red lighten-2">
+		<div style="font-color: white;" class="modal-content">
+			<h4>Transaction Error</h4>
+			<p>You have insufficient funds.</p>
+		</div>
+		<div class="modal-footer red lighten-2">
+			<button on-click="close()"
+				class="modal-action modal-close waves-effect waves-green btn-flat">Okay</button>
+		</div>
+	</div>
+</body>
+</html>

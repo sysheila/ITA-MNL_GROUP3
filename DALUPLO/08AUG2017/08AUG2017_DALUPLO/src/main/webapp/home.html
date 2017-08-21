@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Banking 101</title>
+	<!-- css -->
+        <!-- link href="banking/WEB-INF/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/-->
+         <!-- Compiled and minified CSS -->
+		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+		
+		  <!-- Compiled and minified JavaScript -->
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+		  
+		  
+	<!--materialize js-->
+        <script type="text/javascript" src="css/materialize/js/materialize.js"></script>
+        <script src="css/materialize/js/init.js"></script>
+        
+        
+        <script>
+        	var accounts = {
+        			'dash' : ['102395',10000],
+        			'marie' : ['000000',15000000]
+        	}
+        	
+        	var userBalance = 0;
+        	var loggedUser;
+        	var accountDetails;
+        	var num1;
+        	var num;
+        	
+        	function findAccount(user,key){
+        		accountDetails = accounts[user];
+        		if(key == accountDetails[0]){
+        			//alert(accountDetails[1]); //balance
+        			document.getElementById('depositWithdraw').style.display = 'block';
+        			document.getElementById('login').style.display = 'none';
+        			
+            		loggedUser = user;
+            		userBalance = parseFloat(accountDetails[1]);
+            		//displayBalance(accountDetails[1]);
+            		
+        		}
+        		else{
+        			alert("Wrong username or password !! ");
+        		}
+        		
+        	}
+        	
+        	function showDepositCard(){
+        		document.getElementById('depositWithdraw').style.display = 'none';
+        		document.getElementById('depositDiv').style.display = 'block';
+        		displayBalance(userBalance);
+        	}
+        	
+        	function showWithdrawCard(){
+        		document.getElementById('depositWithdraw').style.display = 'none';
+        		document.getElementById('withdrawDiv').style.display = 'block';
+        		displayBalance2(userBalance);
+        	}
+        	
+        	function depositAccount(toDep){
+        		num = parseFloat(toDep);
+        		if(num > 0) {
+        			//alert(userBalance);
+        			userBalance =  userBalance + num;
+            		//alert(userBalance);
+            		displayBalance(userBalance);
+            		accountDetails[1] = userBalance;
+            		accounts.put(loggedUser,accountDetails);
+            		//document.getElementById('login') = none;
+        		}
+        		else{
+        			alert("entered 0 or negative amount");
+        		}
+        		
+        	}
+        
+        	function withdrawAccount(toWithdraw){
+        		num1 = parseFloat(toWithdraw);
+
+        		if(num1 < userBalance && num1 > 0 ) {
+	        		userBalance =  userBalance - num1;
+	        		//alert(userBalance);
+	        		displayBalance2(userBalance);
+	        		accountDetails[1] = userBalance;
+	        		accounts.put(loggedUser,accountDetails);
+	        		
+        		}else{
+        			alert("Insufficient of funds.Process is prohibited");
+        		}
+        	}
+        	
+        	function displayBalance(balance){
+				var text = document.getElementById("balanceField");
+				text.innerHTML = balance;
+        	}
+        	function displayBalance2(balance2){
+				var text = document.getElementById("balanceField2");
+				text.innerHTML = balance2;
+        	}
+        	
+        	
+        	
+        
+        </script>
+        
+</head>
+<body>
+	<div class="body">
+		
+		   <nav class="teal navbar-fixed">
+		       <div class="brand-logo center-align">
+		          Bank 101
+				</div>
+		
+	        </nav>
+	        <!-- -------------------------------------------------- login ------------------------------------------------ -->
+	        <div class="valign-wrapper">
+	        <div class="reg-form basic-form container " id ="login" style = "margin-top:10%">
+                <form role="form" method="post" class="col s10 offset-s1" action="">
+                    <div class="row">
+                        <div class="input-field col s10 offset-s1 ">
+                            <input class="form-text" placeholder="username" name="user" id = "userId" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s10 offset-s1">
+                            <input type= "password" class="form-text" placeholder="key" name="key"  id = "key" type="text">
+                        </div>
+                    </div>
+                    <div class="row center-align">
+                        <div class="input-field col s10 offset-s1">
+                            <input class="btn blue s4" type="button" value="Enter" onclick="findAccount(document.getElementById('userId').value, document.getElementById('key').value)">  
+                        </div>
+                    </div>
+            	</form>
+            </div>
+            
+            <!-- -------------------------------------------------- end login------------------------------------------------ -->
+            
+            
+            
+             <!-- -------------------------------------------------- Action ------------------------------------------------ -->
+            <div class="container col s10 offset-s1 center-align " id="depositWithdraw" hidden style = "margin-top:10%">
+            	
+            	<div class="row">
+            		<button class="btn blue s4" id="withdrawBtn" onclick = "showWithdrawCard()"> Withdraw </button>
+            	</div>
+            	<div class="row">
+            		<button class="btn green s4" id="depositBtn" onclick = "showDepositCard()"> Deposit</button>
+            	</div>
+            </div> 
+             
+             
+              <!-- -------------------------------------------------- end Action ------------------------------------------------ -->
+            
+	         <!-- -------------------------------------------------- Deposit------------------------------------------------ -->
+	        
+	      
+		        
+		     <div class="container col s4 offset-s1 center-align " id="depositDiv" hidden style="margin-top:10%">   
+		        <div id="deposit-div" class="">
+		        
+		            <form method="post" id="">
+		                <input class="form-text" placeholder="Amount to Deposit" name="toDeposit" id = "toDeposit" type="text">
+		                <input class="btn blue" type="button" value="Deposit" onclick="depositAccount(document.getElementById('toDeposit').value)">  
+		                
+		            </form>
+		            
+		           <label>Balance:  <h3 id="balanceField"></h3> </label>
+		           
+		        </div>
+		       </div>
+		       
+		       
+		       <!-- -------------------------------------------------- end Deposit ------------------------------------------------ -->
+            
+	         <!-- -------------------------------------------------- Withdraw------------------------------------------------ -->
+	        
+	      
+		        
+		     <div class="container col s4 offset-s1 center-align " id="withdrawDiv" hidden style="margin-top:10%">   
+		        <div id="withdraw-div" class="">
+		        
+		            <form method="post" id="">
+		                <input class="form-text" placeholder="Amount to Withdraw" name="toWithdraw" id = "toWithdraw" type="text">
+		                <input class="btn blue" type="button" value="Withdraw" onclick="withdrawAccount(document.getElementById('toWithdraw').value)">  
+		                
+		            </form>
+		            
+		           <label>Balance:  <h3 id="balanceField2"></h3> </label>
+		           
+		        </div>
+		       </div>
+		       
+	        
+	         
+	         
+	         
+	        </div>
+	    
+	</div>
+
+</body>
+</html>
