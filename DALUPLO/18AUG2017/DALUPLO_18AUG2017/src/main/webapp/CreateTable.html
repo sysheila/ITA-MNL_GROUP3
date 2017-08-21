@@ -1,0 +1,49 @@
+<html>
+    <head> 
+        <script> 
+       function createTable() {
+       
+           var myTableDiv = document.getElementById("tableCreated");
+           var row = parseInt(document.getElementById("row").value);
+           var col = parseInt(document.getElementById("col").value);
+           var table = document.createElement('TABLE');
+           table.border='1';
+          
+           var tableBody = document.createElement('TBODY');
+           
+           table.appendChild(tableBody);
+            
+           for (var i=0; i<row; i++){
+              var tr = document.createElement('TR');
+              tableBody.appendChild(tr);
+             
+              for (var j=0; j<col; j++){
+                  var td = document.createElement('TD');
+                  td.width='250';
+                  td.appendChild(document.createTextNode("Row- " + i + " Col-" + j));
+                  tr.appendChild(td);
+              }
+           }
+           myTableDiv.appendChild(table);
+          
+       }
+        
+        </script>
+    </head>
+    <body>
+        <div>
+            <table>
+            </table>
+        
+                <td><input type="text" id="row" /> X</td>
+                <td><input type="text" id="col" />Y</td>
+            
+                <button id="createTable" onclick="createTable()"> Create </button>
+            
+            <div id="tableCreated">
+                    
+                    </div>
+        </div>        
+    </body>
+
+</html>
