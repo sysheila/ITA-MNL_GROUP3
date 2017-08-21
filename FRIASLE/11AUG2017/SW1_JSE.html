@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script language="javascript">
+	function factor() {
+
+		var balance = document.getElementById("fName").value;
+		var value = 1;
+		for (; balance > 0; balance--) {
+			value = value * balance;
+		}
+
+		alert(value);
+	}
+	function textCombination() {
+
+		var text = document.getElementById("texCombination").value;
+		var arr = [];
+		var res = "";
+		for (var i = 0; i < text.length; i++) {
+			res = text.substring(i, i + 1);
+			arr.push(res);
+			for (var j = i + 2; j <= text.length; j++) {
+				res = text.substring(i, j);
+				arr.push(res);
+			}
+		}
+
+		alert(arr);
+	}
+	function getYear() {
+
+		var text = document.getElementById("year").value;
+		if (text % 4 == 0 || (text % 100 == 0 && text % 400 == 0)) {
+			alert("Year is a leap year");
+		} else {
+			alert("Year is not a leap year");
+		}
+
+	}
+	function getDate() {
+		var d = new Date();
+		var days = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+				"Friday", "Saturday" ];
+		alert("Today is " + days[d.getDay()]);
+
+		if (d.getHours() > 12) {
+			var hour = d.getHours() - 12;
+			var min = d.getMinutes();
+			var secs = d.getSeconds();
+			alert("Current Time is " + hour + "pm" + " : " + min + " : " + secs);
+		} else {
+			var hour = d.getHours();
+			var min = d.getMinutes();
+			var secs = d.getSeconds();
+			alert("Current Time is " + hour + "am" + " : " + min + " : " + secs);
+		}
+	}
+
+	function getTriangle() {
+		var area1 = document.getElementById("Area1").value;
+		var area2 = document.getElementById("Area2").value;
+		var area3 = document.getElementById("Area3").value;
+
+		var semip = (Number(area1) + Number(area2) + Number(area3)) * .5;
+		var a = Math.sqrt(semip * (semip - area1) * (semip - area2)
+				* (semip - area3));
+		alert(a);
+
+	}
+	function getCamel() {
+		var text = document.getElementById("camel").value;
+		var arr = [];
+		var res = "";
+		arr = text.split(" ");
+		for ( var x in arr) {
+			res += arr[x].toUpperCase().charAt(0);
+			res += arr[x].substring(1, arr[x].length);
+		}
+
+		alert(res);
+
+	}
+
+	function getReverse() {
+		var text = document.getElementById("reverse").value;
+		var res = "";
+		for (var i = text.length; i > 0; i--) {
+			res += text.charAt(i);
+		}
+		alert(res);
+
+	}
+	function is_Numeric() {
+		var text = document.getElementById("numeric").value;
+		if (!isNaN(text) && text.trim() != "") {
+			alert("true");
+		} else {
+			alert("false");
+		}
+
+	}
+	function getPrimeNumbers() {
+		var text = document.getElementById("prime").value;
+		text = Number(text);
+		var arr = [];
+		arr = [2,3,5,7];
+		for (var i = 2; i <= text; i++) {
+			if (i % 2 == 0 || i % 3 == 0 || i % 5 == 0 || i % 7 == 0) {
+
+			} else {
+				arr.push(i);
+			}
+		}
+
+		alert(arr);
+
+	}
+</script>
+</head>
+
+
+<body>
+
+	<form>
+		<input type="button" value="Get Day" onclick="getDate()">
+
+	</form>
+	<form>
+		<br> Input Factorial<br> <input id="fName" type="text"
+			name="varValue" value="0"> <br> <input type="button"
+			value="Submit" onclick="factor()">
+
+	</form>
+	<form>
+		<br> Input Text<br> <input id="texCombination" type="text"
+			name="varValue" value="dog"> <br> <input type="button"
+			value="Submit" onclick="textCombination()">
+
+	</form>
+	<form>
+		<br> Input Year<br> <input id="year" type="text"
+			name="varValue" value="2000"> <br> <input type="button"
+			value="Submit" onclick="getYear()">
+
+	</form>
+	<form>
+		<br> Triangle<br> <br> Area1<br> <input id="Area1"
+			type="text" name="Area1" value="0"> <br> <br> Area2<br>
+		<input id="Area2" type="text" name="Area2" value="0"> <br>
+		<br> Area3<br> <input id="Area3" type="text" name="Area3"
+			value="0"> <br> <input type="button" value="Submit"
+			onclick="getTriangle()">
+
+	</form>
+
+	<form>
+		<br> Camelize<br> <input id="camel" type="text" name="camel"
+			value=""> <br> <input type="button" value="Submit"
+			onclick="getCamel()">
+
+	</form>
+
+	<form>
+		<br> Reverse<br> <input id="reverse" type="text"
+			name="reverse" value=""> <br> <input type="button"
+			value="reverse" onclick="getReverse()">
+
+	</form>
+	<form>
+		<br> Numeric<br> <input id="numeric" type="text"
+			name="numeric" value=""> <br> <input type="button"
+			value="numeric" onclick="is_Numeric()">
+
+	</form>
+
+	<form>
+		<br> Prime Numbers<br> <input id="prime" type="text"
+			name="prime" value="100"> <br> <input type="button"
+			value=prime onclick="getPrimeNumbers()">
+
+	</form>
+</body>
+</html>
