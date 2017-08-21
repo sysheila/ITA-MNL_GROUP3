@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+   <bean id="drawing" class="com.oocl.castich.sw2.Drawing" scope="singleton">
+		<property name="shape">
+			<bean id="circle2" class="com.oocl.castich.sw2.Circle"> </bean>
+		</property>
+   </bean>
+   <bean id="triangle" class="com.oocl.castich.sw2.Triangle" scope="singleton"></bean>
+   <bean id="circle" class="com.oocl.castich.sw2.Circle" scope="singleton"></bean>
+</beans>

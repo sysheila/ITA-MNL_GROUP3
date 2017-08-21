@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+
+	<bean id="employees" class="com.oocl.berinju.hw3.HW3_Employee">
+		<property name="company" value="OOCL"/>
+	</bean>  
+	
+	<bean id="ceo" parent="employees" class="com.oocl.berinju.hw3.HW3_CEO">
+		<property name="name" value="Junno Paolo M. Beringuela"/>
+		<property name="number" value="2011-01668"/>
+		<property name="address" value="Philippines"/>
+		<property name="salary" value="PHP 999999"/>
+		<!--  No implementaion of Company since it is inherited from employees bean  -->
+		<!--  <property name="company" value="OOCL"/>  -->
+	</bean>  
+ </beans>
