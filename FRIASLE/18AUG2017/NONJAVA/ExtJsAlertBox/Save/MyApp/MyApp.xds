@@ -1,0 +1,38 @@
+{
+    "name": "MyApp",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": "D:/EXTJSITA/ExtJsAlertBox/Publish"
+    },
+    "xdsVersion": "3.0.2",
+    "xdsBuild": 1375,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "2d208326-6f0e-4179-89af-59723f4baa59"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "8ba46124-d73d-46ce-9e66-00a341b1091a",
+            "3db6b9ef-b448-40a3-86c8-65390cc9a5a4"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

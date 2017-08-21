@@ -1,0 +1,7 @@
+input
+input
+input
+input
+input
+input
+src/main/java/com/oocl/berinju/hw7/open.txt

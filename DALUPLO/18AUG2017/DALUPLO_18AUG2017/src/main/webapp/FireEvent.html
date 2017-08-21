@@ -1,0 +1,45 @@
+<html>
+   <head>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-neptune/resources/theme-neptune-all.css" rel="stylesheet" />
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+      <script type="text/javascript">
+      Ext.define('secondWindow',{
+    	    extend:'Ext.window.Window',
+    	    title:'Second Window',
+    	    height:100,
+    	    width:100,
+    	    modal:true,
+    	    draggable:true
+    	});
+         Ext.onReady(function(){
+            var button = Ext.create('Ext.Button', {
+               renderTo: Ext.getElementById('panel'),
+               text: 'My Button',
+               id:'btnAction',
+               width:'150px',
+               height:'30px',
+               listeners: {
+                  myEvent: function(button) {
+
+                	  Ext.create('Ext.window.Window', {
+                	      title: 'Window Alerted',
+                	      height: 200,
+                	      width: 400,    
+                	      items:{
+                	                html: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                	      }
+                	  }).show();
+                  }
+            
+               }
+            });
+            Ext.defer(function() {
+               button.fireEvent('myEvent');
+            }, 3000);
+         }); 
+      </script> 
+   </head>
+   <body>
+      <div id = 'panel'></div> 
+   </body>
+</html>

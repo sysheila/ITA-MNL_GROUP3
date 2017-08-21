@@ -1,0 +1,71 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "myviewport",
+        "designer|userClassName": "MyViewport",
+        "height": 250,
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "MyViewport",
+    "designerId": "33ad25bf-be2f-4f43-a385-4252752928cb",
+    "viewControllerInstanceId": "8469749e-d2db-4516-9f0b-ba97e0ab9d6e",
+    "viewModelInstanceId": "93b73f14-731f-4a4c-9c2e-0159d8afbf6b",
+    "cn": [
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Click Me!"
+            },
+            "configAlternates": {
+                "text": "string"
+            },
+            "name": "MyButton",
+            "designerId": "6ce1beb6-4b7d-4ce9-bb03-dee3dbe6505c",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFireEvent",
+                        "implHandler": [
+                            "Ext.Msg.alert('Status', 'This is an Ext JS message box! I am draggable too :D');",
+                            ""
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFireEvent",
+                    "designerId": "cdaf2424-3c9a-45ce-ba88-f4d1d1b196e1"
+                }
+            ]
+        }
+    ]
+}

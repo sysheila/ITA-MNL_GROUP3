@@ -1,0 +1,55 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userClassName": "MyViewport"
+    },
+    "designerId": "2d208326-6f0e-4179-89af-59723f4baa59",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "406ceefd-d5a6-4a6c-b01a-450a15e3489c"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Alert"
+            },
+            "designerId": "4609e0b5-0c6b-419f-a121-917374ad4a40",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onButtonClick",
+                        "implHandler": [
+                            "Ext.Msg.alert(\"Alert Box\", \"My custom event is called\");"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "designerId": "38f4c9b5-0d1f-4827-a35c-7dbc5901842f"
+                }
+            ]
+        }
+    ]
+}

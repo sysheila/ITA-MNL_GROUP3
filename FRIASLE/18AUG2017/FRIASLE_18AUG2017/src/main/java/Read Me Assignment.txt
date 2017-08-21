@@ -1,0 +1,3 @@
+Java and JS HW is under "com" directory
+Java Seatwork is under "practice" folder
+ExtJs HW is at NONJAVA Folder

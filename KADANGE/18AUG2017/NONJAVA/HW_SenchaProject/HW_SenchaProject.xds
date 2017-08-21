@@ -1,0 +1,50 @@
+{
+    "name": "HW_SenchaProject",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.5.1.240",
+            "frameworkVersion": "6.5.0.775"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:60551/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "4.2.2",
+    "xdsBuild": 282,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext65",
+    "viewOrderMap": {
+        "view": [
+            "4c393d80-2652-42c0-accb-64d098ae811c",
+            "171a0114-e014-493d-81ef-6cc0be61ef8a",
+            "799469d8-369b-4d16-8394-932c9c3ed2ea"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "a2ad837b-845a-460d-b371-20b7d894b69e",
+            "b85ca1c4-2723-43a2-a160-bd4abf1e4fae"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+2
+1
+5
+4
+3
+A
+ABC
+BCD
+AFG
+AAF
+B
+abc
+10

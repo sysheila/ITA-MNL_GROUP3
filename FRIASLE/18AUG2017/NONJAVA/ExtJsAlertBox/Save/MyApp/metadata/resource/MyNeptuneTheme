@@ -1,0 +1,20 @@
+{
+    "type": "neptunethemeresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyNeptuneTheme"
+    },
+    "designerId": "3db6b9ef-b448-40a3-86c8-65390cc9a5a4",
+    "storage": {
+        "needsCompile": false,
+        "simple": {
+            "pkgVersion": 1
+        },
+        "nameIndex": 1,
+        "varData": {}
+    }
+}
