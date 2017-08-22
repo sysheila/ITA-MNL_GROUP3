@@ -4,6 +4,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 import net.webservicex.GeoIP;
@@ -25,27 +27,49 @@ public class HW1_Resource {
 		}
 		
 		
+		/**
+		 * Sample usage : http://localhost:6082/BERINJU_21AUG2017/hw/web/removeWhiteSpaces/this is a text with spaces
+		 * **/
 		@GET
 		@Produces("text/plain")
-		@Path("/removeDuplicates")
-		public String removeDuplicates(){
-			remove();
-			return "Done. Please check the console for the output.";
+		@Path("/removeWhiteSpaces/{string}")
+		public String removeDuplicates(@PathParam("string") String string){
+			String st = remove(string);
+			return "Done. Please check the console for the output. \n" + st;
 		}
 		
-		public void remove(){
-			ArrayList<String> list= new ArrayList<String>();
-			list.add("Dog");
-			list.add("Cat");
-			list.add("注释");
-			System.out.println("Original : ");
-			for(String str : list) {
-				System.out.println(str);
+		public String remove(String st){
+			st = st.replaceAll("\\s","");
+			st = st.replaceAll("[^\\p{ASCII}]","");
+			System.out.println(st);
+			return st;
+		}
+		
+		
+		/**
+		 * Sample usage : http://localhost:6082/BERINJU_21AUG2017/hw/web/openProgram/1
+		 * @throws IOException 
+		 * **/
+		@GET
+		@Produces("text/plain")
+		@Path("/openProgram/{number}")
+		public String openProgram(@PathParam("number") String number) throws IOException{
+			String st = open(number);
+			return "Done. Please check the console for the output. \n" + st;
+		}
+		
+		public String open(String option) throws IOException{
+			if(option.equalsIgnoreCase("1")) {
+				Runtime.getRuntime().exec("Notepad.exe");
+				return "Opening Notepad.";
 			}
-			System.out.println("Filtered : ");
-			//list = (ArrayList<String>) list.stream().distinct().collect(Collectors.toList());
-			for(String str : list) {
-				System.out.println(str);
+			else if(option.equalsIgnoreCase("2")){
+				Runtime.getRuntime().exec("C:\\Program Files (x86)\\Windows Media Player\\wmplayer.exe");
+				Runtime.getRuntime().exec("dvdplay.exe");
+				return "Opening Windows Media Player.";
 			}
+			else
+			return option;
+			
 		}
 }
