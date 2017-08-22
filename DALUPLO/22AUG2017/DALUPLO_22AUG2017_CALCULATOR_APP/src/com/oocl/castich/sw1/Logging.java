@@ -6,6 +6,7 @@ import org.aspectj.lang.annotation.Before;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.net.InetAddress;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -57,13 +58,13 @@ public class Logging {
    public void afterReturningAdvice(Object retVal){
 	   DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	   Date date = new Date();
-	   
+	   InetAddress ip;
 	   
       System.out.println("Calculator web service: " + retVal.toString() );
       try {
     	  fw = new FileWriter(".\\src\\com\\oocl\\castich\\sw1\\Calculator.txt", true);
     	  bw = new BufferedWriter(fw);
-    	  bw.write(dateFormat.format(date) + ": Access calculator web service: " + retVal.toString() + "\n");
+    	  bw.write(dateFormat.format(date) +": IP= " + InetAddress.getLocalHost() + ": Access calculator web service: " + retVal.toString() + "\n");
     	  bw.close();
     	  fw.close();
       }
