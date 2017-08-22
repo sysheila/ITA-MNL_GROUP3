@@ -5,10 +5,14 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Date;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.xml.ws.WebServiceContext;
+import javax.xml.ws.handler.MessageContext;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -19,14 +23,19 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class SW1_Logging {
+	@Resource 
+	WebServiceContext wsContext;
 	File file = new File("D:\\log.txt");
 	InetAddress address;
 	Date date = new Date();
-	public void log() {
+	public void log(String name) {
+//		MessageContext mc = wsContext.getMessageContext();
+//	    HttpServletRequest req = (HttpServletRequest)mc.get(MessageContext.SERVLET_REQUEST);
 		String msg="";
 		try {
-			msg = "Host Address: "+address.getLocalHost()+" : timestamp: "+date.toString();
+			msg = "Host Address: "+address.getLocalHost()+" : timestamp: "+date.toString()+" is accessing "+name+"\n";
 		} catch (UnknownHostException e1) {
+			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		if(!file.exists()) {
@@ -55,9 +64,9 @@ public class SW1_Logging {
 	 * execution.
 	 */
 	@Before("selectAll()")
-	public void beforeAdvice() {
+	public void beforeAdvice(JoinPoint jp) {
 		System.out.println("Going to setup calculator.");
-		log();
+		log(jp.getSignature().getName());
 	}
 
 	/**

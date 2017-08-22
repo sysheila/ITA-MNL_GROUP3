@@ -6,7 +6,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 @WebService
-public class ProductCatalogue {
+public class MyProductCatalogue {
 	
 	ProductServiceImple productService = new ProductServiceImple();
 
