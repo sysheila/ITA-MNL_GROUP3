@@ -20,15 +20,38 @@
          <aop:after-throwing pointcut-ref = "selectAll" 
             throwing = "ex" method = "AfterThrowingAdvice"/>
       </aop:aspect>
+      
+      
    </aop:config>
 
+   <aop:config>
+      
+       <aop:aspect id = "log2" ref = "logging2">
+         <aop:pointcut id = "selectAll2" expression = "execution(* com.oocl.berinju.sw2.*.*(..))"/>
+         
+         <aop:before pointcut-ref = "selectAll2" method = "beforeAdvice"/>
+         <aop:after pointcut-ref = "selectAll2" method = "afterAdvice"/>
+         <aop:after-returning pointcut-ref = "selectAll2" 
+            returning = "retVal" method = "afterReturningAdvice"/>
+         
+         <aop:after-throwing pointcut-ref = "selectAll2" 
+            throwing = "ex" method = "AfterThrowingAdvice"/>
+      </aop:aspect>
+      
+   </aop:config>
+   
+   
    <!-- Definition for student bean -->
    <bean id = "student" class = "com.oocl.berinju.spring.Student">
       <property name = "name" value = "Forrest" />
       <property name = "age" value = "36"/>      
    </bean>
-
+   
+   <!-- Definition for gene ws -->
+   <bean id = "geneWS" class = "com.oocl.berinju.sw2.App"/>
    <!-- Definition for logging aspect -->
    <bean id = "logging" class = "com.oocl.berinju.spring.Logging"/> 
+   <!-- Definition for logging aspect -->
+   <bean id = "logging2" class = "com.oocl.berinju.sw2.Logger"/> 
       
 </beans>
