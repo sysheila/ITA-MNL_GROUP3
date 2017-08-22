@@ -1,5 +1,9 @@
 package com.oocl.berinju.sw2;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Date;
+
 public class Logger {
 
 		   /** 
@@ -24,6 +28,17 @@ public class Logger {
 		   */
 		   public void afterReturningAdvice(Object retVal) {
 		      System.out.println("Returning:" + retVal.toString() );
+		      InetAddress ip;
+			   
+			  try {
+				ip = InetAddress.getLocalHost();
+				Date date = new Date();
+				System.out.println(ip + date.toGMTString());
+			  } catch (UnknownHostException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}  
+			 
 		   }
 
 		   /**

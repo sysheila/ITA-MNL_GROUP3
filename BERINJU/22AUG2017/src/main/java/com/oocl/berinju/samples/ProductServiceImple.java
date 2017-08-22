@@ -4,10 +4,10 @@ import java.util.*;
 
 public class ProductServiceImple {
 
-	List<String> bookList = new ArrayList<>();
-	List<String> musicList = new ArrayList<>();
-	List<String> movieList = new ArrayList<>();
-	List<String> fastFoodList = new ArrayList<>();
+	List<String> bookList = new ArrayList<String>();
+	List<String> musicList = new ArrayList<String>();
+	List<String> movieList = new ArrayList<String>();
+	List<String> fastFoodList = new ArrayList<String>();
 	
 	public ProductServiceImple () {
 		bookList.add("The Alchemist");
