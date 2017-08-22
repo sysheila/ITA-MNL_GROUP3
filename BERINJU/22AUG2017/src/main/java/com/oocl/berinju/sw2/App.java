@@ -21,7 +21,7 @@ public class App {
 		double sagot = gsp.calculate(cal.getArg0(), cal.getArg1(), cal.getArg2());
 		return sagot;
 		
-	}
+	} 
 	public static void main(String[] args) {
 		
 		// TODO Auto-generated method stub
