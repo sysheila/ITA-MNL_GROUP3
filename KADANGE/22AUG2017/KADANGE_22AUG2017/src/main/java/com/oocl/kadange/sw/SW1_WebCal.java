@@ -4,10 +4,15 @@ import java.util.List;
 
 import javax.jws.*;
 
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 @WebService
 public class SW1_WebCal {
-
-	SW1_Calculator calculator = new SW1_Calculator();
+	
+	AbstractApplicationContext context = new ClassPathXmlApplicationContext("WebCalBeans.xml");
+	SW1_Calculator calculator = (SW1_Calculator)context.getBean("webcal");
+//	SW1_Calculator calculator = new SW1_Calculator();
 	
 	//Annotation @WebMethod is I think automatically called in @WebService
 	@WebMethod
