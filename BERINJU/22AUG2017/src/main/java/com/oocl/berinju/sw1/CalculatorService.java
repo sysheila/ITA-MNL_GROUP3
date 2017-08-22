@@ -1,6 +1,4 @@
-package com.oocl.berinju.sw;
-
-import java.util.List;
+package com.oocl.berinju.sw1;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;

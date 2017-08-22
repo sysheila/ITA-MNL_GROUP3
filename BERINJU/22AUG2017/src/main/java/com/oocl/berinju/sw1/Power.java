@@ -1,6 +1,5 @@
-package com.oocl.berinju.sw;
+package com.oocl.berinju.sw1;
 
-import java.util.function.Function;
 
 public class Power {
 //	public double getPower(double a) {
