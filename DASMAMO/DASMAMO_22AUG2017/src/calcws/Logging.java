@@ -1,12 +1,15 @@
 package calcws;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.InetAddress;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.sql.Timestamp;
 import java.util.Date;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -17,9 +20,12 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class Logging {
+	static HttpServletRequest request;
 	InetAddress thisIp;
+	File logDir = new File("D:\\WSlogs");
+	File logsTxt = new File("D:\\WSlogs\\logs.txt");
 	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-	
+	CalcMain cm = new CalcMain();
 	   /** 
      * This is the method which I would like to execute
      * before a selected method execution.
@@ -40,43 +46,36 @@ public class Logging {
 
 	   @After("selectAll()")
   public void afterAdvice() throws IOException{
-     System.out.println("Results have been posted");
-     System.out.println( thisIp.getLocalHost());
-     //method 2 - via Date
+		   //method 2 - via Date
      Date date = new Date();
      System.out.println(new Timestamp(date.getTime()));
-/*
-     //logfile
-     Logger logger = Logger.getLogger("MyLog");  
-     FileHandler fh;  
-
-     try {  
-
-         // This block configure the logger with handler and formatter  
-         fh = new FileHandler("MyLogFile.log");  
-         logger.addHandler(fh);
-         SimpleFormatter formatter = new SimpleFormatter();  
-         fh.setFormatter(formatter);  
-
-         // the following statement is used to log any messages  
-         logger.info(thisIp.getHostName() + " " + thisIp.getLocalHost() + this);  
-
-     } catch (SecurityException e) {  
-         e.printStackTrace();  
-     } catch (IOException e) {  
-         e.printStackTrace();  
-     }  */
-
+     System.out.println("See logs at D:\\WSLogs");
   }
 
   /** 
      * This is the method which I would like to execute
      * when any method returns.
+ * @throws IOException 
   */
 	   @AfterReturning(pointcut = "selectAll()", returning = "retVal")
-  public void afterReturningAdvice(Object retVal) {
+  public void afterReturningAdvice(Object retVal) throws IOException {
      System.out.println("Returning:" + retVal.toString() );
+     Date date = new Date();
+		String text = thisIp.getLocalHost().toString() + "used " + this.toString() + date.toString() + System.lineSeparator();
+		if (!logDir.exists()) {
+			logDir.mkdir();
+			logsTxt.createNewFile();
+			Files.write(Paths.get(logsTxt.getAbsolutePath()), text.getBytes(), StandardOpenOption.APPEND);
+		} else {
+			if (!logsTxt.exists()) {
+				logsTxt.createNewFile();
+				Files.write(Paths.get(logsTxt.getAbsolutePath()), text.getBytes(), StandardOpenOption.APPEND);
+			} else {
+				Files.write(Paths.get(logsTxt.getAbsolutePath()), text.getBytes(), StandardOpenOption.APPEND);
+			}
+		}
   }
+	   
 
   /**
      * This is the method which I would like to execute
@@ -85,6 +84,8 @@ public class Logging {
 @AfterThrowing(pointcut = "selectAll()", throwing = "ex")
   public void AfterThrowingAdvice(IllegalArgumentException ex){
      System.out.println("There has been an exception: " + ex.toString());   
-  }
+
+}
+
 
 }
