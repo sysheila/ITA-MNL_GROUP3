@@ -14,6 +14,13 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+
+	<dependency>
+		<groupId>javassist</groupId>
+		<artifactId>javassist</artifactId>
+		<version>3.12.1.GA</version>
+	</dependency>
   </dependencies>
   <build>
     <finalName>BERINJU_24AUG2017</finalName>

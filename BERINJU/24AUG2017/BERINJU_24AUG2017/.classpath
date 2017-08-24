@@ -29,5 +29,88 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 8.5/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-aop-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-aop-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-aop-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-aspects-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-aspects-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-aspects-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-beans-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-beans-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-beans-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-context-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-context-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-context-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-context-support-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-context-support-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-context-support-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-core-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-core-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-core-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-expression-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-expression-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-expression-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-instrument-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-instrument-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-instrument-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-instrument-tomcat-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-instrument-tomcat-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-instrument-tomcat-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-jdbc-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-jdbc-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-jdbc-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-jms-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-jms-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-jms-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-messaging-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-messaging-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-messaging-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-orm-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-orm-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-orm-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-oxm-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-oxm-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-oxm-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-test-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-test-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-test-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-tx-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-tx-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-tx-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-web-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-web-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-web-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-webmvc-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-webmvc-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-webmvc-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-webmvc-portlet-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-webmvc-portlet-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-webmvc-portlet-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-websocket-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-websocket-4.3.8.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-4.3.8/spring-framework-4.3.8.RELEASE/libs/spring-websocket-4.3.8.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/asm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/asm-attrs.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/c3p0-0.9.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/cglib-2.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/commons-collections-2.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/ehcache-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/ejb3-persistence.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/hibernate3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/hibernate-annotations.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/hibernate-commons-annotations.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/hibernate-validator.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/jdbc2_0-stdext.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/jta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/log4j-1.2.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/slf4j-jdk14-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/slf4j-jdk14-1.7.25-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/slf4j-log4j12-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/xalan.jar"/>
+	<classpathentry kind="lib" path="C:/Users/berinju/Desktop/Source files/hibernatejar/xerces-2.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/oraclexe/app/oracle/product/11.2.0/server/jdbc/lib/ojdbc6.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
