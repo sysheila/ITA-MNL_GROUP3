@@ -1,4 +1,4 @@
-package com.oocl.castich.hw;
+package com.oocl.castich.hw1sw1;
 
 public class InsufficientFundsException extends Throwable{
 	double amount;

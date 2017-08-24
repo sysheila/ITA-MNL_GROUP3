@@ -1,4 +1,4 @@
-package com.oocl.castich.hw;
+package com.oocl.castich.hw1sw1;
 
 public class Account{
 	private double deposit;

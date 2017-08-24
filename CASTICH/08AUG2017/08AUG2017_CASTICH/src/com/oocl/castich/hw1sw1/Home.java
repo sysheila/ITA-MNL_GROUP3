@@ -1,4 +1,4 @@
-package com.oocl.castich.hw;
+package com.oocl.castich.hw1sw1;
 
 import java.io.IOException;
 
@@ -10,18 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class BankingHome
+ * Servlet implementation class Home
  */
-@WebServlet("/BankingHome")
-public class BankingHome extends HttpServlet {
+@WebServlet("/Home")
+public class Home extends HttpServlet {
+	private static String page="";
 	private static final long serialVersionUID = 1L;
-    private Account account;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BankingHome() {
+    public Home() {
         super();
-        
         // TODO Auto-generated constructor stub
     }
 
@@ -30,7 +30,7 @@ public class BankingHome extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher view = request.getRequestDispatcher("banking_home.html");
+		RequestDispatcher view = request.getRequestDispatcher("index.html");
 		view.forward(request, response);
 	}
 
@@ -39,18 +39,10 @@ public class BankingHome extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		String num = request.getParameter("acctNum");
-//		String pin = request.getParameter("pin");
-//		
-//		account = new Account(20000);
-//		account.setNumber(num);
-//		account.setPin(pin);
-//		doGet(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("BankingHome");
+		rd.forward(request, response);
 	}
 	
 	
-	public void test() {
-		
-	}
 
 }
