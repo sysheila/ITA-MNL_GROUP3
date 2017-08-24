@@ -1,4 +1,4 @@
-package exercise1.test;
+package com.oocl.berinju.sw1;
 
 import static org.junit.Assert.*;
 
@@ -12,8 +12,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-
-import exercise1.StringHelper;
 
 @RunWith(Parameterized.class)
 public class StringHelperTest {

@@ -1,4 +1,4 @@
-package exercise1;
+package com.oocl.berinju.sw1;
 
 public class StringHelper {
 
