@@ -15,6 +15,7 @@ public class SW1_ExceptionExerciseBank{
 	}
 	
 	public void getOptions(){
+		sc = null;
 		System.out.println("====== Select an option: ======");
 		System.out.println("Select 1 to Deposit");
 		System.out.println("Select 2 to Withdraw");
@@ -40,9 +41,12 @@ public class SW1_ExceptionExerciseBank{
 				doCheckBalance();
 			}else if(action==4){
 				System.out.println("Exiting...");
+			}else {
+				System.out.println("Invalid input. Must enter option 1 - 4 only");
+				getOptions();
 			}
 		}else{
-			System.out.println("Invalid input. Must enter an amount");
+			System.out.println("Invalid input. Must enter option 1 - 4 only");
 			getOptions();
 		}
 	}
@@ -68,7 +72,7 @@ public class SW1_ExceptionExerciseBank{
 				getOptions();
 			}
 		}else{
-			System.out.println("Amount entered not valid!");
+			System.out.println("Amount entered not valid! Enter amount XXXX only");
 			getOptions();
 		}
 	}
@@ -100,7 +104,7 @@ public class SW1_ExceptionExerciseBank{
 				getOptions();
 			}
 		}else{
-			System.out.println("Amount entered not valid!");
+			System.out.println("Amount entered not valid! Enter amount XXXX only");
 			getOptions();
 		}
 	}
