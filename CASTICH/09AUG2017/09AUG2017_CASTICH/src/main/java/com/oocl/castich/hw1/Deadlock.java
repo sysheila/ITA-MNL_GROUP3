@@ -1,4 +1,4 @@
-package com.oocl.castich.hw;
+package com.oocl.castich.hw1;
 
 public class Deadlock {
 

@@ -1,4 +1,4 @@
-package com.oocl.castich.sw;
+package com.oocl.castich.sw1;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

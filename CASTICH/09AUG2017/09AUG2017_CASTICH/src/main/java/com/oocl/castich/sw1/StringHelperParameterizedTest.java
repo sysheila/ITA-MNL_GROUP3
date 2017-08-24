@@ -1,4 +1,4 @@
-package com.oocl.castich.sw;
+package com.oocl.castich.sw1;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
