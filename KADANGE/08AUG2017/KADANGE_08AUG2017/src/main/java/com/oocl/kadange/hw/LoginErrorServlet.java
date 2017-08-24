@@ -1,4 +1,4 @@
-package day7.JavaTraining.Assignment;
+package com.oocl.kadange.hw;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,17 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Bank
+ * Servlet implementation class LoginErrorServlet
  */
-@WebServlet("/Bank")
-public class Bank extends HttpServlet {
+@WebServlet("/LoginError")
+public class LoginErrorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private int savings = 0;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Bank() {
+    public LoginErrorServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,10 +27,7 @@ public class Bank extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String formId = "";
-//		formId = request
-		System.out.println(formId);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.sendRedirect("LoginPage.html");
 	}
 
@@ -41,23 +37,6 @@ public class Bank extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-	}
-	
-	private void deposit(int deposit){
-		this.savings += deposit;
-	}
-	
-	private String withdraw(int withdraw){
-		if(withdraw <= this.savings){
-			this.savings -= withdraw;
-			return "Successfully withdraw "+withdraw;
-		}else{
-			return "Insufficient fund";
-		}
-	}
-	
-	private String checkBalance(){
-		return "Current account balance is "+this.savings;
 	}
 
 }

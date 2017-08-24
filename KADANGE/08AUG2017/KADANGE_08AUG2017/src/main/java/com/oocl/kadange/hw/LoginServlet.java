@@ -1,4 +1,4 @@
-package day7.JavaTraining.Assignment;
+package com.oocl.kadange.hw;
 
 import java.io.IOException;
 
