@@ -1,4 +1,4 @@
-package com.oocl.berinju.hibernate;
+package com.oocl.berinju.sw;
 
 import java.util.List;
 import java.util.Date;

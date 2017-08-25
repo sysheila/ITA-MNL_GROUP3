@@ -1,4 +1,4 @@
-package com.oocl.berinju.hibernate;
+package com.oocl.berinju.sw;
 
 
 public class Employee {
