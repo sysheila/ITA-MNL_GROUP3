@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bank 2000</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#btnHello").click(function(){
+	  alert("Hello, " + $("#txtName").val()+" ("+ $("#txtEmail").val() +") It's good to know you're "+$("#txtAge").val()+"!");
+	});
+});​
+
+</script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Login</h1>
+            <div class="account-wall">
+            	<form method="get" action="BankingHome">
+                <input type="text" class="form-control" placeholder="Account Name" required name="name" id="name" autofocus>
+                <input type="text" class="form-control" placeholder="Account Number" required name="number" id="number" autofocus>
+                <input type="text" class="form-control" placeholder="Initial Deposit" required id="deposit" name="deposit" >
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    Create Account
+                </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<script>
+	var z;
+	function login(username, password, form) {
+		console.log(form);
+		form.action = "Login";
+		/* form.action = "http://localhost:8080/Banking/HomePage.html" */
+		document.getElementById("test").innerHTML = (username+" "+password);
+		/* loadXMLDoc(); */
+	}
+	
+	function getCredentials(){
+		var form = document.getElementById("loginForm");
+		var uname = form.elements.username.value;
+		var pass = form.elements.password.value;
+		/* document.getElementById("test").innerHTML = uname; */
+		login(uname,pass,form);
+	}
+	
+	/* function loadXMLDoc() {
+	    var xmlhttp = new XMLHttpRequest();
+
+	    xmlhttp.onreadystatechange = function() {
+	        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+	           if (xmlhttp.status == 200) {
+	               document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+	           }
+	           else if (xmlhttp.status == 400) {
+	              alert('There was an error 400');
+	           }
+	           else {
+	               alert('something else other than 200 was returned');
+	           }
+	        }
+	    };
+
+	    xmlhttp.open("GET", "ajax_info.txt", true);
+	    xmlhttp.send();
+	} */
+</script>
+</head>
+<body>
+	<p>Enter credentials to access bank</p>
+	<form id="loginForm" method="post">
+	<!-- <form id="loginForm" onsubmit="getCredentials(); return false" method="post"> -->
+		<table>
+			<tr>
+				<th>Username:</th>
+				<th><input id="username" type="text" name="username" value="admin"></th>
+			</tr>
+			<tr>
+				<th>Password:</th>
+				<th><input id="password" type="password" name="password" value="admin"></th>
+			</tr>
+		</table>
+		<button type="submit" onclick="return getCredentials()">Login</button>
+		<!-- <button type="submit">Login</button> -->
+	</form>
+	<p id="test"></p>
+	<p id="test2"></p>
+</body>
+</html>
