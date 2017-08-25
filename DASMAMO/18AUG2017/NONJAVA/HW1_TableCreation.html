@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Exercise W3D5</title>
+<head>
+    <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+</head>
+<style type="text/css">
+#catGIF{
+    height: 300px;
+    color: 'white';
+}
+</style>
+
+<script type="text/javascript">
+
+    function init(){
+        imgObj = document.getElementById('cat');
+        imgObj.style.position= 'relative'; 
+        imgObj.style.left = imgObj.offsetLeft + 'px'; 
+    }
+    function createTable(){
+        var tablearea = document.getElementById('tableArea');
+        var table = document.createElement('table');
+        var intRow = document.getElementById('rowNum').value;
+        var intCol = document.getElementById('columnNum').value
+        for (var i = 1; i <= intRow; i++){
+            var tr = document.createElement('tr');   
+          for (var j = 1; j<= intCol; j++) {
+                var td1 = document.createElement('td');
+                var text1 = document.createTextNode('Data');
+                td1.style.border = "1px solid #000";
+                td1.appendChild(text1);
+                tr.appendChild(td1);
+
+            };  
+            table.appendChild(tr);
+        }
+        tablearea.appendChild(table);
+    }
+
+    function moveRight(){
+
+        imgObj = document.getElementById('cat');
+        imgObj.style.left = parseInt(imgObj.style.left) + 1 + 'px';
+        if(imgObj.offsetLeft<900){
+            setTimeout(moveRight,5);
+        }
+    }
+    function moveLeft(){
+        imgObj = document.getElementById('cat');
+        imgObj.style.left = parseInt(imgObj.style.left) - 1 + 'px';
+        if(imgObj.offsetLeft>0){
+            setTimeout(moveLeft,5);
+        }
+    }
+    window.onload = init;
+
+</script>
+    <body>
+        <div class="container">
+           <div class="row">
+                    <div class="card" >
+                        <div class="card-tabs">
+                            <ul class="tabs tabs-fixed-width">
+                                <li class="tab"><a href="#tables">Table</a></li>
+                                <li class="tab"><a href="#events">Events</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="card-content grey lighten-4">
+                            <div id="tables">
+                                <form accept-charset=utf-8>
+                                        <input id="rowNum" type="number" placeholder="Row" >
+                                        <input id="columnNum" type="number" placeholder="Column" >
+                                    <center>
+                                        <button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: createTable();return false;"> Create Table
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    <div id="tableArea"></div>
+                                </center>
+                                </form>
+                            </div>
+
+                            <div id="events">
+                                <form>
+                                    <div>
+                                        <div id="catGIF">
+                                            <img id = 'cat' src="http://fc07.deviantart.net/fs71/f/2012/178/b/3/cat_run_cycle_by_nicowulfkat-d554y7j.gif" height = '200px'>
+                                        </div>  
+                                        <button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: moveLeft();return false;"> Left
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                        <button class="btn waves-effect waves-light pink" type="submit" name = "button"  onclick="javascript: moveRight();return false;"> Right
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                   </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>
