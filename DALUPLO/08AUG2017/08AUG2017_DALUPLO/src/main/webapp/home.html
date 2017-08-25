@@ -79,7 +79,7 @@
         	function withdrawAccount(toWithdraw){
         		num1 = parseFloat(toWithdraw);
 
-        		if(num1 < userBalance && num1 > 0 ) {
+        		if(num1 <= userBalance && num1 > 0 ) {
 	        		userBalance =  userBalance - num1;
 	        		//alert(userBalance);
 	        		displayBalance2(userBalance);
@@ -98,6 +98,23 @@
         	function displayBalance2(balance2){
 				var text = document.getElementById("balanceField2");
 				text.innerHTML = balance2;
+        	}
+            
+            function backFromDeposit(){
+				document.getElementById('depositWithdraw').style.display = 'block';
+                document.getElementById('depositDiv').style.display = 'none';
+        	}
+            function backFromWithdraw(){
+				document.getElementById('depositWithdraw').style.display = 'block';
+                document.getElementById('withdrawDiv').style.display = 'none';
+        	}
+            
+            function logout(){
+				document.getElementById('depositWithdraw').style.display = 'none';
+                document.getElementById('login').style.display = 'block';
+        			
+            		loggedUser = null;
+            		userBalance = null;
         	}
         	
         	
@@ -150,6 +167,9 @@
             	<div class="row">
             		<button class="btn green s4" id="depositBtn" onclick = "showDepositCard()"> Deposit</button>
             	</div>
+                <div class="row">
+            		<button class="btn red s4" id="depositBtn" onclick = "logout()"> Logout</button>
+            	</div>
             </div> 
              
              
@@ -169,7 +189,7 @@
 		            </form>
 		            
 		           <label>Balance:  <h3 id="balanceField"></h3> </label>
-		           
+                    <button class="btn yellow" id ="back" onclick="backFromDeposit()"> Back </button>
 		        </div>
 		       </div>
 		       
@@ -190,6 +210,7 @@
 		            </form>
 		            
 		           <label>Balance:  <h3 id="balanceField2"></h3> </label>
+                    <button class="btn yellow" id ="back" onclick="backFromWithdraw()"> Back </button>
 		           
 		        </div>
 		       </div>
