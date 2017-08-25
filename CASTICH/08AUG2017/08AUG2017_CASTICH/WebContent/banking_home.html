@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home - Bank 2000</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript">
+$(document).ready(function(){
+   
+   var name = urldecode(GetURLParameter("name"));
+   var number = GetURLParameter("number");
+   var deposit = parseFloat(GetURLParameter("deposit"));
+   var account = new Account(name, number, deposit);
+   
+   $("#rowName").append(account.getName());
+   $("#rowNumber").append(account.getNumber());
+   $("#rowDeposit").append(account.getDeposit());
+   
+   $("#btnProceed").click(function(){
+	   var choice = $("#choice").val();
+	   var txtAmount = $("#txtAmount");
+	   choice = parseInt(choice, 10);
+	   console.log(choice);
+	   
+	   if(!$.isNumeric(txtAmount.val())){
+		   txtAmount.val("");
+		   alert("Amount must be numeric and greater than 0!");
+	   }
+	   
+	   else{
+		   var amount = parseFloat(txtAmount.val(),10);
+		   
+		   if(choice==1 && account.getDeposit()<amount){
+			   console.log("test");
+			   txtAmount.val("");
+			   
+			   // $("#myModal").modal("show");
+			   alert("Insufficient funds! Withdraw transaction cancelled.");
+		   }
+		   
+		   else if(amount<=0){
+			   alert("Amount must be greater than 0!");
+		   }
+		   
+		   else if(choice==1){
+			   account.deposit=account.getDeposit()-amount;
+			   alert("Successfully withdrawn "+amount+"!")
+			   $("#rowDeposit").empty();
+			   $("#rowDeposit").append(account.getDeposit());
+			   
+		   }
+		   
+		   else if(choice==2){
+			   account.deposit=account.getDeposit()+amount;
+			   $("#rowDeposit").empty();
+			   $("#rowDeposit").append(account.getDeposit());
+			   console.log(account.getDeposit());
+		   }
+	   }
+	   
+	   
+   });
+});
+
+class Account{
+	constructor(name, number, deposit){
+		this.name = name;
+		this.number = number;
+		this.deposit = deposit;
+	}
+	
+	getName(){
+		return this.name;
+	}
+	
+	getNumber(){
+		return this.number;
+	}
+	
+	getDeposit(){
+		return this.deposit;
+	}
+}
+
+function GetURLParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}
+
+function urldecode(str) {
+	   return decodeURIComponent((str+'').replace(/\+/g, '%20'));
+	}
+
+</script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-md-offset-0">
+			<table class="table table-bordered table-striped table-hover">
+				<thead>
+					<tr>
+						<td class="text text-info">Account Name</td>
+						<td class="text text-info">Account Number</td>
+						<td class="text text-info">Deposit</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="rowName"></td>
+						<td id="rowNumber"></td>
+						<td id="rowDeposit"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-md-offset-0">
+			<label for="lblAmount">Amount</label>
+	    	<input type="text" class="form-control" id="txtAmount" placeholder="Amount">
+	    	<select class="form-control" id="choice">
+	    		<option value="1">Withdraw</option>
+	    		<option value="2">Deposit</option>
+	    	</select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-md-offset-0" align="right"><button id="btnProceed" class="btn btn-info">Proceed</button></div>
+	</div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</body>
+</html>
