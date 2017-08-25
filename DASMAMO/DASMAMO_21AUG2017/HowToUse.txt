@@ -1,7 +1,0 @@
-Homework Webservices:
-HW1: 
- - http://localhost:8090/DASMAMO_21AUG2017/hw/removeWhite/<string>
- - NOTE! URL has automatic escape character. Incase of # and % usage, you must use %23 and %25 respectively
-HW2: 
- - http://localhost:8090/DASMAMO_21AUG2017/hw/openApp/1 for Notepad
- - http://localhost:8090/DASMAMO_21AUG2017/hw/openApp/2 for Windows Media Player
