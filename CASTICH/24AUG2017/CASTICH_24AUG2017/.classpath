@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/asm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/asm-attrs.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/c3p0-0.9.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/cglib-2.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/commons-collections-2.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/ehcache-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/ejb3-persistence.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/hibernate3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/hibernate-annotations.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/hibernate-commons-annotations.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/hibernate-validator.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/jdbc2_0-stdext.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/jta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/log4j-1.2.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/slf4j-jdk14-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/slf4j-jdk14-1.7.25-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/slf4j-log4j12-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/xalan.jar"/>
+	<classpathentry kind="lib" path="C:/Users/castich/Desktop/20170824 Files/Hibernate all/hibernatejar/xerces-2.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/JavaTools/MySQL GUI Tools 5.0/java/lib/mysql-connector-java-5.0.4-bin.jar"/>
+	<classpathentry kind="lib" path="D:/oraclexe/ojdbc5.jar"/>
+	<classpathentry kind="lib" path="D:/oraclexe/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="D:/oraclexe/ojdbc6_g.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
