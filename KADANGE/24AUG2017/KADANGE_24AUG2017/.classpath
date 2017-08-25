@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/asm.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/asm-attrs.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/c3p0-0.9.1.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/cglib-2.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/commons-collections-2.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/ehcache-1.2.3.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/ejb3-persistence.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/hibernate3.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/hibernate-annotations.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/hibernate-commons-annotations.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/hibernate-validator.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/jdbc2_0-stdext.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/jta.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/log4j-1.2.11.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/slf4j-jdk14-1.7.25.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/slf4j-jdk14-1.7.25-sources.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/slf4j-log4j12-1.7.25.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/xalan.jar"/>
+	<classpathentry kind="lib" path="D:/1 GENE_ITA/4 Documents/JAR Files/hibernatejar/xerces-2.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/oraclexe/app/oracle/product/11.2.0/server/jdbc/lib/ojdbc6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
